@@ -3,11 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Puccettoni Fort Lauderdale</title>
+  <title>Puccettoni | Authentic Italian Pizza & Food</title>
+  <style>
+    :root{
+      --accent:#c98a52;
+      --text:#4b423f;
+      --light:#faf7f3;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#ffffff;
+      color:var(--text);
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:24px 20px 50px;
+      text-align:center;
+    }
+
+    .logo{
+      max-width:780px;
+      width:100%;
+      height:auto;
+      display:block;
+      margin:10px auto 30px;
+    }
+
+    h2{
+      margin:20px 0 18px;
+      font-size:48px;
+      line-height:1.1;
+      letter-spacing:1px;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      flex-wrap:wrap;
+      margin:0 0 34px;
+    }
+
+    .btn{
+      display:inline-block;
+      min-width:210px;
+      padding:14px 22px;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:600;
+      border-radius:2px;
+      transition:opacity .2s ease;
+    }
+
+    .btn:hover{
+      opacity:.9;
+    }
+
+    .hero-image{
+      width:100%;
+      max-width:980px;
+      display:block;
+      margin:0 auto 36px;
+      border-radius:2px;
+    }
+
+    .footer{
+      font-size:13px;
+      color:#7d746f;
+      margin-top:10px;
+    }
+
+    @media (max-width: 768px){
+      .container{
+        padding:18px 14px 36px;
+      }
+
+      h2{
+        font-size:34px;
+      }
+
+      .btn{
+        min-width:100%;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align:center; padding:60px;">
-  <h1>Puccettoni Fort Lauderdale</h1>
-  <p>Authentic Italian Pizza</p>
-  <p>Official website coming soon.</p>
+<body>
+  <div class="container">
+    <!-- Replace logo.png with your real logo file -->
+    <img src="logo.png" alt="Puccettoni logo" class="logo" />
+
+    <h2>ORDER ONLINE</h2>
+
+    <div class="buttons">
+      <a class="btn" href="https://order.toasttab.com/online/puccettoni-1255-s-powerline-rd" target="_blank">Pompano Beach</a>
+      <a class="btn" href="https://order.toasttab.com/online/puccettoni_fort_lauderdale" target="_blank">Fort Lauderdale</a>
+      <a class="btn" href="https://www.puccettoni.com" target="_blank">Catering</a>
+    </div>
+
+    <!-- Replace hero.jpg with your real food image -->
+    <img src="hero.jpg" alt="Puccettoni Italian food" class="hero-image" />
+
+    <div class="footer">
+      Puccettoni Holdings LLC · 1255 S Powerline Road, Pompano Beach, FL 33069
+    </div>
+  </div>
 </body>
 </html>
+
+Sent from Outlook for Android

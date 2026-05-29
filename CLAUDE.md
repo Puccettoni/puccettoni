@@ -15,8 +15,10 @@ Este é o índice. **Antes de trabalhar em qualquer coisa nesta pasta, leia os d
 
 ## Estrutura da pasta
 
-- `teste.html` — landing page do funil de cliente (identidade visual oficial aplicada; logo carregando corretamente desde 29/05/2026).
-- `Images/logo.png` — logo oficial transparente do Marco.
+- `index.html` — homepage institucional (Vercel serve em `/`). Antes `site_institucional.html`, renomeada para casar com convenção do Vercel.
+- `teste.html` — landing page do funil de cliente / oferta (separada do site institucional).
+- `Images/` — logo oficial + fotos dos pratos (42 itens fotografados; Deli e Mozzarella ainda sem foto).
+- `vercel.json` + `.vercelignore` — config de deploy. `.vercelignore` mantém os `.md` internos fora do site público.
 - `BRIEFING_MARCO.md` — briefing do cliente.
 - `CONTEXTO_PROJETO_PUCCETTONI.md` — contexto técnico de execução.
 

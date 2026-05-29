@@ -72,7 +72,7 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 - Pasta do projeto: Desktop/Marco.
 - Arquivos HTML principais:
   - `teste.html` — landing page do funil de cliente (oferta + captura de lead).
-  - `site_institucional.html` — homepage institucional (menu, catering, story, community, location, franchise, contact).
+  - `index.html` — homepage institucional (menu, catering, story, community, location, franchise, contact). **Era `site_institucional.html` até 29/05/2026; renomeada para `index.html` para casar com a convenção do Vercel** (raiz `/` serve homepage automaticamente, sem precisar de rewrite).
 - Logo em: Images/logo.png (transparente).
 - Ambos os HTMLs já usam a identidade oficial (cores + fontes + logo carregando corretamente).
 
@@ -80,7 +80,7 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 - Oferta atual de exemplo: focaccia grátis no primeiro pedido (BLOCO MARCADO como fácil de trocar — oferta final ainda não confirmada pelo Marco).
 - Formulário pede: nome, e-mail, WhatsApp, preferência. Hoje é só demonstração (mostra mensagem de boas-vindas).
 
-### Site institucional (site_institucional.html)
+### Site institucional (index.html)
 - Estrutura segue o que o Marco pediu no briefing: hero → combos âncora → menu completo → catering → story → community → reviews → location → franchise → contact.
 - Componentes interativos implementados (29/05/2026, escopo "fase 1 de interatividade"):
   - **Chip nav do menu** — categorias âncora (Combos / Pizza / Focaccia / Gnocchi / Panzerotti / Desserts / Deli / Mozzarella) com sticky bar abaixo do topo, smooth scroll e active-state via IntersectionObserver. É navegação, não filtro QSR (decisão para não brigar com o posicionamento médio-alto).
@@ -89,7 +89,7 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 - Maps já aponta pra URL real do Google Maps (search por endereço). Order Direct continua marcado .pending até o Marco fornecer URL direta (Toast ou domínio).
 
 ### Formulários esperando integração
-Ambos `teste.html` (lead de cliente) e `site_institucional.html` (catering inquiry) hoje só rodam demo no front. Em produção devem:
+Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só rodam demo no front. Em produção devem:
 - enviar contato ao HubSpot (form do funil → contato + tag "lead-funnel"; form de catering → contato + tag "catering-inquiry");
 - disparar evento `generate_lead` no GA4 + Pixel (com parâmetro distinguindo origem: funnel vs catering, porque LTV/score esperado é diferente).
 

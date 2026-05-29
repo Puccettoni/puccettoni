@@ -72,12 +72,16 @@
   .cat-title{font-family:'Cinzel',serif;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);
     border-bottom:1.5px solid var(--line);padding-bottom:10px;margin-bottom:20px}
   .items{display:grid;grid-template-columns:1fr 1fr;gap:8px 40px}
-  .item{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dotted var(--line);align-items:baseline}
-  .item .nm{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px}
-  .item .ds{font-size:13px;color:var(--ink-soft);display:block;font-family:'Manrope',sans-serif;font-weight:400}
-  .item .pr{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--orange);white-space:nowrap}
+  .item{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px dotted var(--line);align-items:center}
+  .item .thumb{width:64px;height:64px;border-radius:10px;object-fit:cover;flex-shrink:0;display:block;box-shadow:0 4px 12px -6px rgba(30,20,10,.25)}
+  .item .thumb-empty{background:linear-gradient(135deg,#ecd9bd,#e3cda8)}
+  .item .info{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+  .item .nm{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;line-height:1.2}
+  .item .ds{font-size:13px;color:var(--ink-soft);display:block;font-family:'Manrope',sans-serif;font-weight:400;line-height:1.4}
+  .item .pr{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--orange);white-space:nowrap;align-self:center}
   .item .tag-pop{font-size:9px;background:var(--tomato);color:#fff;padding:2px 7px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-left:6px;vertical-align:middle;font-family:'Manrope'}
   @media(max-width:760px){.items{grid-template-columns:1fr;gap:6px}}
+  @media(max-width:480px){.item .thumb{width:56px;height:56px}}
   .menu-note{text-align:center;font-size:12px;color:var(--tomato);margin-top:10px;font-weight:600}
 
   .catering{position:relative}
@@ -90,7 +94,9 @@
   .heroes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .hcard{background:var(--mozz);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .22s,box-shadow .22s}
   .hcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  .hcard .ph{height:150px;background:linear-gradient(135deg,#ecd9bd,#e3cda8);display:flex;align-items:center;justify-content:center;color:rgba(30,30,30,.4);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+  .hcard .ph{height:180px;background:linear-gradient(135deg,#ecd9bd,#e3cda8);display:flex;align-items:center;justify-content:center;color:rgba(30,30,30,.4);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+  .hcard .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .hcard:hover .ph img{transform:scale(1.04)}
   .hcard .bd{padding:20px 22px}
   .hcard h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px}
   .hcard p{font-size:13.5px;color:var(--ink-soft);margin:5px 0 10px;min-height:38px}
@@ -231,9 +237,9 @@
       <h2>The combos people <em>order first</em></h2>
     </div>
     <div class="heroes">
-      <div class="hcard rv"><div class="ph">Photo · Pizza Combo</div><div class="bd"><h3>Pizza 12" Combo</h3><p>A full Italian meal: your choice of 12" pizza, drink, and dessert.</p><span class="pr">$19.90</span></div></div>
-      <div class="hcard rv"><div class="ph">Photo · Truffle Pizza</div><div class="bd"><h3>Truffle Pizza 12"</h3><p>Truffle cream, mozzarella, pecorino romano, Parma ham, arugula.</p><span class="pr">$13.90</span></div></div>
-      <div class="hcard rv"><div class="ph">Photo · Sicilian Tray</div><div class="bd"><h3>Sicilian Rustic — Full Tray</h3><p>9 square slices, semi-dry tomatoes, oregano, EVO oil. Made to share.</p><span class="pr">$24.00</span></div></div>
+      <div class="hcard rv"><div class="ph"><img src="Images/Pizza%2012%20Combo.png" alt="Pizza 12 Combo"></div><div class="bd"><h3>Pizza 12" Combo</h3><p>A full Italian meal: your choice of 12" pizza, drink, and dessert.</p><span class="pr">$19.90</span></div></div>
+      <div class="hcard rv"><div class="ph"><img src="Images/Truffle%20Pizza%2012.png" alt="Truffle Pizza 12 inch"></div><div class="bd"><h3>Truffle Pizza 12"</h3><p>Truffle cream, mozzarella, pecorino romano, Parma ham, arugula.</p><span class="pr">$13.90</span></div></div>
+      <div class="hcard rv"><div class="ph"><img src="Images/Sicilian%20Rustic%20Pizza%20%E2%80%93%20Full%20Tray.png" alt="Sicilian Rustic — Full Tray"></div><div class="bd"><h3>Sicilian Rustic — Full Tray</h3><p>9 square slices, semi-dry tomatoes, oregano, EVO oil. Made to share.</p><span class="pr">$24.00</span></div></div>
     </div>
     <div style="text-align:center;margin-top:30px">
       <a href="#order" class="btn btn-orange pending">Order Direct · Pickup or Delivery</a>
@@ -264,102 +270,102 @@
     <div class="cat rv" id="cat-combos">
       <div class="cat-title">Combos</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Pizza 12" Combo</span><span class="ds">12" pizza with your choice of drink and dessert</span></span><span class="pr">$19.90</span></div>
-        <div class="item"><span><span class="nm">Focaccia Sandwich Combo</span><span class="ds">Artisan focaccia sandwich, drink, and dessert</span></span><span class="pr">$18.90</span></div>
-        <div class="item"><span><span class="nm">Panzerotto Combo</span><span class="ds">Traditional panzerotto, drink, and dessert</span></span><span class="pr">$18.90</span></div>
-        <div class="item"><span><span class="nm">Gnocchi Combo</span><span class="ds">Homemade gnocchi, drink, and dessert</span></span><span class="pr">$21.99</span></div>
+        <div class="item"><img src="Images/Pizza%2012%20Combo.png" alt="Pizza 12 inch Combo" class="thumb"><div class="info"><span class="nm">Pizza 12" Combo</span><span class="ds">12" pizza with your choice of drink and dessert</span></div><span class="pr">$19.90</span></div>
+        <div class="item"><img src="Images/Focaccia%20Sandwich%20Combo.png" alt="Focaccia Sandwich Combo" class="thumb"><div class="info"><span class="nm">Focaccia Sandwich Combo</span><span class="ds">Artisan focaccia sandwich, drink, and dessert</span></div><span class="pr">$18.90</span></div>
+        <div class="item"><img src="Images/Panzerotto%20Combo.png" alt="Panzerotto Combo" class="thumb"><div class="info"><span class="nm">Panzerotto Combo</span><span class="ds">Traditional panzerotto, drink, and dessert</span></div><span class="pr">$18.90</span></div>
+        <div class="item"><img src="Images/Gnocchi%20Combo.png" alt="Gnocchi Combo" class="thumb"><div class="info"><span class="nm">Gnocchi Combo</span><span class="ds">Homemade gnocchi, drink, and dessert</span></div><span class="pr">$21.99</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-pizza">
       <div class="cat-title">Pizza</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Margherita <span class="tag-pop">Classic</span></span><span class="ds">tomato sauce, mozzarella, basil, EVO oil</span></span><span class="pr">$9.90</span></div>
-        <div class="item"><span><span class="nm">Pepperoni</span><span class="ds">tomato sauce, mozzarella, pepperoni</span></span><span class="pr">$11.90</span></div>
-        <div class="item"><span><span class="nm">Marinara</span><span class="ds">tomato sauce, mozzarella, anchovies, oregano</span></span><span class="pr">$11.90</span></div>
-        <div class="item"><span><span class="nm">Capricciosa</span><span class="ds">tomato sauce, mozzarella, artichokes, mushrooms</span></span><span class="pr">$12.90</span></div>
-        <div class="item"><span><span class="nm">Vegan</span><span class="ds">vegan mozzarella, eggplant, basil</span></span><span class="pr">$12.90</span></div>
-        <div class="item"><span><span class="nm">Diavola</span><span class="ds">tomato sauce, mozzarella, Spianata Calabra, chili cream</span></span><span class="pr">$12.90</span></div>
-        <div class="item"><span><span class="nm">Truffle <span class="tag-pop">Premium</span></span><span class="ds">truffle cream, mozzarella, pecorino, Parma ham, arugula</span></span><span class="pr">$13.90</span></div>
-        <div class="item"><span><span class="nm">Amalfi</span><span class="ds">mozzarella, Parma ham, Parmigiano, semi-dry tomatoes, arugula</span></span><span class="pr">$13.90</span></div>
-        <div class="item"><span><span class="nm">Mushrooms &amp; Pepperoni</span><span class="ds">tomato sauce, mozzarella, mushrooms, pepperoni</span></span><span class="pr">$13.90</span></div>
-        <div class="item"><span><span class="nm">Create Your Pizza</span><span class="ds">up to 4 classic toppings, mozzarella &amp; sauce included</span></span><span class="pr">$14.90</span></div>
-        <div class="item"><span><span class="nm">Sicilian Rustic — Full Tray</span><span class="ds">9 square slices, semi-dry tomatoes, oregano, EVO oil</span></span><span class="pr">$24.00</span></div>
+        <div class="item"><img src="Images/Margherita%20Pizza%2012.png" alt="Margherita" class="thumb"><div class="info"><span class="nm">Margherita <span class="tag-pop">Classic</span></span><span class="ds">tomato sauce, mozzarella, basil, EVO oil</span></div><span class="pr">$9.90</span></div>
+        <div class="item"><img src="Images/Pepperoni%20Pizza%2012.png" alt="Pepperoni" class="thumb"><div class="info"><span class="nm">Pepperoni</span><span class="ds">tomato sauce, mozzarella, pepperoni</span></div><span class="pr">$11.90</span></div>
+        <div class="item"><img src="Images/Marinara%20Pizza%2012.png" alt="Marinara" class="thumb"><div class="info"><span class="nm">Marinara</span><span class="ds">tomato sauce, mozzarella, anchovies, oregano</span></div><span class="pr">$11.90</span></div>
+        <div class="item"><img src="Images/Capricciosa%20Pizza%2012.png" alt="Capricciosa" class="thumb"><div class="info"><span class="nm">Capricciosa</span><span class="ds">tomato sauce, mozzarella, artichokes, mushrooms</span></div><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Vegan%20Pizza%2012.png" alt="Vegan" class="thumb"><div class="info"><span class="nm">Vegan</span><span class="ds">vegan mozzarella, eggplant, basil</span></div><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Diavola%20Pizza%2012.png" alt="Diavola" class="thumb"><div class="info"><span class="nm">Diavola</span><span class="ds">tomato sauce, mozzarella, Spianata Calabra, chili cream</span></div><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Truffle%20Pizza%2012.png" alt="Truffle" class="thumb"><div class="info"><span class="nm">Truffle <span class="tag-pop">Premium</span></span><span class="ds">truffle cream, mozzarella, pecorino, Parma ham, arugula</span></div><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Amalfi%20Pizza%2012.png" alt="Amalfi" class="thumb"><div class="info"><span class="nm">Amalfi</span><span class="ds">mozzarella, Parma ham, Parmigiano, semi-dry tomatoes, arugula</span></div><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Mushrooms%20Pepperoni%20Pizza%2012.png" alt="Mushrooms and Pepperoni" class="thumb"><div class="info"><span class="nm">Mushrooms &amp; Pepperoni</span><span class="ds">tomato sauce, mozzarella, mushrooms, pepperoni</span></div><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Create%20your%20Pizza%2012.png" alt="Create Your Pizza" class="thumb"><div class="info"><span class="nm">Create Your Pizza</span><span class="ds">up to 4 classic toppings, mozzarella &amp; sauce included</span></div><span class="pr">$14.90</span></div>
+        <div class="item"><img src="Images/Sicilian%20Rustic%20Pizza%20%E2%80%93%20Full%20Tray.png" alt="Sicilian Rustic Full Tray" class="thumb"><div class="info"><span class="nm">Sicilian Rustic — Full Tray</span><span class="ds">9 square slices, semi-dry tomatoes, oregano, EVO oil</span></div><span class="pr">$24.00</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-focaccia">
       <div class="cat-title">Focaccia Sandwiches</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Calabria</span><span class="ds">spicy Calabrian soppressata, chili cream, provolone</span></span><span class="pr">$9.90</span></div>
-        <div class="item"><span><span class="nm">Bologna</span><span class="ds">mortadella, pistachio cream, ricotta</span></span><span class="pr">$9.90</span></div>
-        <div class="item"><span><span class="nm">Napoli</span><span class="ds">Napoli salami, provolone, arugula</span></span><span class="pr">$11.90</span></div>
-        <div class="item"><span><span class="nm">Capri</span><span class="ds">eggplant, artichokes, semi-dry tomatoes, basil</span></span><span class="pr">$12.90</span></div>
-        <div class="item"><span><span class="nm">Positano</span><span class="ds">Parma ham, burrata, arugula, semi-dry tomatoes</span></span><span class="pr">$12.90</span></div>
-        <div class="item"><span><span class="nm">Venezia</span><span class="ds">speck, provolone, arugula, fig cream</span></span><span class="pr">$12.90</span></div>
-        <div class="item"><span><span class="nm">Roma</span><span class="ds">porchetta, provolone, arugula, pink sauce</span></span><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Calabria.png" alt="Calabria focaccia" class="thumb"><div class="info"><span class="nm">Calabria</span><span class="ds">spicy Calabrian soppressata, chili cream, provolone</span></div><span class="pr">$9.90</span></div>
+        <div class="item"><img src="Images/Bologna.png" alt="Bologna focaccia" class="thumb"><div class="info"><span class="nm">Bologna</span><span class="ds">mortadella, pistachio cream, ricotta</span></div><span class="pr">$9.90</span></div>
+        <div class="item"><img src="Images/Napoli.png" alt="Napoli focaccia" class="thumb"><div class="info"><span class="nm">Napoli</span><span class="ds">Napoli salami, provolone, arugula</span></div><span class="pr">$11.90</span></div>
+        <div class="item"><img src="Images/Capri.png" alt="Capri focaccia" class="thumb"><div class="info"><span class="nm">Capri</span><span class="ds">eggplant, artichokes, semi-dry tomatoes, basil</span></div><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Positano.png" alt="Positano focaccia" class="thumb"><div class="info"><span class="nm">Positano</span><span class="ds">Parma ham, burrata, arugula, semi-dry tomatoes</span></div><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Venezia.png" alt="Venezia focaccia" class="thumb"><div class="info"><span class="nm">Venezia</span><span class="ds">speck, provolone, arugula, fig cream</span></div><span class="pr">$12.90</span></div>
+        <div class="item"><img src="Images/Roma.png" alt="Roma focaccia" class="thumb"><div class="info"><span class="nm">Roma</span><span class="ds">porchetta, provolone, arugula, pink sauce</span></div><span class="pr">$12.90</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-gnocchi">
       <div class="cat-title">Gnocchi</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Arrabbiata (Vegan)</span><span class="ds">tomato sauce, parsley, garlic, fresh tomatoes, red pepper</span></span><span class="pr">$13.90</span></div>
-        <div class="item"><span><span class="nm">Cacio e Pepe</span><span class="ds">pecorino romano, black pepper</span></span><span class="pr">$13.90</span></div>
-        <div class="item"><span><span class="nm">Pesto Meatballs</span><span class="ds">pesto, chicken</span></span><span class="pr">$13.90</span></div>
-        <div class="item"><span><span class="nm">Sorrentina</span><span class="ds">tomato sauce, mozzarella, Parmigiano Reggiano</span></span><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Arrabbiata%20Vegan%20Gnocchi.png" alt="Arrabbiata Vegan Gnocchi" class="thumb"><div class="info"><span class="nm">Arrabbiata (Vegan)</span><span class="ds">tomato sauce, parsley, garlic, fresh tomatoes, red pepper</span></div><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Cacio%20e%20Pepe%20Gnocchi.png" alt="Cacio e Pepe Gnocchi" class="thumb"><div class="info"><span class="nm">Cacio e Pepe</span><span class="ds">pecorino romano, black pepper</span></div><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Pesto%20Meatballs%20Gnocchi.png" alt="Pesto Meatballs Gnocchi" class="thumb"><div class="info"><span class="nm">Pesto Meatballs</span><span class="ds">pesto, chicken</span></div><span class="pr">$13.90</span></div>
+        <div class="item"><img src="Images/Sorrentina%20Gnocchi.png" alt="Sorrentina Gnocchi" class="thumb"><div class="info"><span class="nm">Sorrentina</span><span class="ds">tomato sauce, mozzarella, Parmigiano Reggiano</span></div><span class="pr">$13.90</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-panzerotti">
       <div class="cat-title">Panzerotti</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Classico</span><span class="ds">tomato sauce, mozzarella, basil</span></span><span class="pr">$9.90</span></div>
-        <div class="item"><span><span class="nm">Pepperoni</span><span class="ds">tomato sauce, mozzarella, pepperoni</span></span><span class="pr">$9.90</span></div>
-        <div class="item"><span><span class="nm">Truffle</span><span class="ds">truffle cream, mozzarella, pecorino, mushrooms</span></span><span class="pr">$10.90</span></div>
-        <div class="item"><span><span class="nm">Pesto</span><span class="ds">pesto, mozzarella, pecorino romano</span></span><span class="pr">$10.90</span></div>
-        <div class="item"><span><span class="nm">Nutella</span><span class="ds">nutella, powdered sugar</span></span><span class="pr">$10.90</span></div>
+        <div class="item"><img src="Images/Classico%20Panzerotto.png" alt="Classico Panzerotto" class="thumb"><div class="info"><span class="nm">Classico</span><span class="ds">tomato sauce, mozzarella, basil</span></div><span class="pr">$9.90</span></div>
+        <div class="item"><img src="Images/Pepperoni%20Panzerotto.png" alt="Pepperoni Panzerotto" class="thumb"><div class="info"><span class="nm">Pepperoni</span><span class="ds">tomato sauce, mozzarella, pepperoni</span></div><span class="pr">$9.90</span></div>
+        <div class="item"><img src="Images/Truffle%20Panzerotto.png" alt="Truffle Panzerotto" class="thumb"><div class="info"><span class="nm">Truffle</span><span class="ds">truffle cream, mozzarella, pecorino, mushrooms</span></div><span class="pr">$10.90</span></div>
+        <div class="item"><img src="Images/Pesto%20Panzerotto.png" alt="Pesto Panzerotto" class="thumb"><div class="info"><span class="nm">Pesto</span><span class="ds">pesto, mozzarella, pecorino romano</span></div><span class="pr">$10.90</span></div>
+        <div class="item"><img src="Images/Nutella%20Panzerotto.png" alt="Nutella Panzerotto" class="thumb"><div class="info"><span class="nm">Nutella</span><span class="ds">nutella, powdered sugar</span></div><span class="pr">$10.90</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-desserts">
       <div class="cat-title">Desserts</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Cannolo Siciliano</span></span><span class="pr">$3.00</span></div>
-        <div class="item"><span><span class="nm">Italian Chocolate Puff Pastry</span></span><span class="pr">$3.00</span></div>
-        <div class="item"><span><span class="nm">Mini Nutella Panzerotto</span></span><span class="pr">$5.00</span></div>
-        <div class="item"><span><span class="nm">Code d'Aragosta (3 pcs)</span></span><span class="pr">$7.00</span></div>
-        <div class="item"><span><span class="nm">Neapolitan Babà</span></span><span class="pr">$8.00</span></div>
-        <div class="item"><span><span class="nm">Pastiera Napoletana</span></span><span class="pr">$8.50</span></div>
-        <div class="item"><span><span class="nm">Tiramisu Cake Slice</span></span><span class="pr">$7.50</span></div>
-        <div class="item"><span><span class="nm">Ricotta Pistachio Cake</span></span><span class="pr">$7.50</span></div>
-        <div class="item"><span><span class="nm">Mascarpone Limoncello Cake</span></span><span class="pr">$7.50</span></div>
-        <div class="item"><span><span class="nm">Delizia al Limone di Sorrento</span></span><span class="pr">$9.00</span></div>
-        <div class="item"><span><span class="nm">Cake Ricotta &amp; Pear</span></span><span class="pr">$9.00</span></div>
+        <div class="item"><img src="Images/Cannolo%20Siciliano.png" alt="Cannolo Siciliano" class="thumb"><div class="info"><span class="nm">Cannolo Siciliano</span></div><span class="pr">$3.00</span></div>
+        <div class="item"><img src="Images/Italian%20Chocolate%20Puff%20Pastry.png" alt="Italian Chocolate Puff Pastry" class="thumb"><div class="info"><span class="nm">Italian Chocolate Puff Pastry</span></div><span class="pr">$3.00</span></div>
+        <div class="item"><img src="Images/Mini%20Nutella%20Panzerotto.png" alt="Mini Nutella Panzerotto" class="thumb"><div class="info"><span class="nm">Mini Nutella Panzerotto</span></div><span class="pr">$5.00</span></div>
+        <div class="item"><img src="Images/Code%20d%E2%80%99Aragosta%20%283%20pcs%29.png" alt="Code d'Aragosta" class="thumb"><div class="info"><span class="nm">Code d'Aragosta (3 pcs)</span></div><span class="pr">$7.00</span></div>
+        <div class="item"><img src="Images/Neapolitan%20Bab%C3%A0.png" alt="Neapolitan Babà" class="thumb"><div class="info"><span class="nm">Neapolitan Babà</span></div><span class="pr">$8.00</span></div>
+        <div class="item"><img src="Images/Pastiera%20Napoletana.png" alt="Pastiera Napoletana" class="thumb"><div class="info"><span class="nm">Pastiera Napoletana</span></div><span class="pr">$8.50</span></div>
+        <div class="item"><img src="Images/Tiramisu%20Cake%20Slice.png" alt="Tiramisu Cake Slice" class="thumb"><div class="info"><span class="nm">Tiramisu Cake Slice</span></div><span class="pr">$7.50</span></div>
+        <div class="item"><img src="Images/Ricotta%20Pistachio%20Cake%20Slice.png" alt="Ricotta Pistachio Cake" class="thumb"><div class="info"><span class="nm">Ricotta Pistachio Cake</span></div><span class="pr">$7.50</span></div>
+        <div class="item"><img src="Images/Mascarpone%20Limoncello%20Cake%20Slice.png" alt="Mascarpone Limoncello Cake" class="thumb"><div class="info"><span class="nm">Mascarpone Limoncello Cake</span></div><span class="pr">$7.50</span></div>
+        <div class="item"><img src="Images/Delizia%20al%20Limone%20di%20Sorrento.png" alt="Delizia al Limone di Sorrento" class="thumb"><div class="info"><span class="nm">Delizia al Limone di Sorrento</span></div><span class="pr">$9.00</span></div>
+        <div class="item"><img src="Images/Cake%20Ricotta%20Pear.png" alt="Cake Ricotta and Pear" class="thumb"><div class="info"><span class="nm">Cake Ricotta &amp; Pear</span></div><span class="pr">$9.00</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-deli">
       <div class="cat-title">Italian Deli</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Porchetta — ½ LB</span></span><span class="pr">$18.00</span></div>
-        <div class="item"><span><span class="nm">Parma Ham — ½ LB</span></span><span class="pr">$13.00</span></div>
-        <div class="item"><span><span class="nm">Mortadella — ½ LB</span></span><span class="pr">$10.00</span></div>
-        <div class="item"><span><span class="nm">Napoli Salami — ½ LB</span></span><span class="pr">$16.50</span></div>
-        <div class="item"><span><span class="nm">Speck — ½ LB</span></span><span class="pr">$15.00</span></div>
-        <div class="item"><span><span class="nm">Spianata Calabra — ½ LB</span></span><span class="pr">$16.50</span></div>
-        <div class="item"><span><span class="nm">Provolone — ½ LB</span></span><span class="pr">$15.00</span></div>
-        <div class="item"><span><span class="nm">Black Truffle Sauce — 17.6 oz</span></span><span class="pr">$24.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Porchetta — ½ LB</span></div><span class="pr">$18.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Parma Ham — ½ LB</span></div><span class="pr">$13.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Mortadella — ½ LB</span></div><span class="pr">$10.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Napoli Salami — ½ LB</span></div><span class="pr">$16.50</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Speck — ½ LB</span></div><span class="pr">$15.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Spianata Calabra — ½ LB</span></div><span class="pr">$16.50</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Provolone — ½ LB</span></div><span class="pr">$15.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Black Truffle Sauce — 17.6 oz</span></div><span class="pr">$24.00</span></div>
       </div>
     </div>
 
     <div class="cat rv" id="cat-mozzarella">
       <div class="cat-title">Fresh Mozzarella · 48h Pre-Order</div>
       <div class="items">
-        <div class="item"><span><span class="nm">Fresh Buffalo Mozzarella</span><span class="ds">handcrafted, no preservatives · perfect for catering</span></span><span class="pr">$11.00</span></div>
-        <div class="item"><span><span class="nm">Fresh Burrata</span><span class="ds">creamy stracciatella center · made to order</span></span><span class="pr">$9.00</span></div>
-        <div class="item"><span><span class="nm">Fresh Mozzarella Ball</span><span class="ds">soft, milky, versatile</span></span><span class="pr">$7.00</span></div>
-        <div class="item"><span><span class="nm">Fresh Mozzarella Treccia</span><span class="ds">braided fresh mozzarella</span></span><span class="pr">$8.50</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Fresh Buffalo Mozzarella</span><span class="ds">handcrafted, no preservatives · perfect for catering</span></div><span class="pr">$11.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Fresh Burrata</span><span class="ds">creamy stracciatella center · made to order</span></div><span class="pr">$9.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Fresh Mozzarella Ball</span><span class="ds">soft, milky, versatile</span></div><span class="pr">$7.00</span></div>
+        <div class="item"><div class="thumb thumb-empty"></div><div class="info"><span class="nm">Fresh Mozzarella Treccia</span><span class="ds">braided fresh mozzarella</span></div><span class="pr">$8.50</span></div>
       </div>
       <div class="menu-note">Pre-order only · call (754) 307-4992 · 48h advance notice</div>
     </div>

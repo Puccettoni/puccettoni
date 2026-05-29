@@ -137,6 +137,7 @@ Quando o Marco descreveu o negócio em texto livre, ele usou estas frases. Usar 
 - Escolher a **oferta inicial para clientes** (brinde, cupom, combo ou outro).
 - Confirmar a **verba inicial de ads** (separada do custo das ferramentas).
 - **Funil de investidor:** números reais validados (faturamento, margem, investimento inicial, payback, expansão) e se já existe material jurídico/comercial de franquia ou se começa do zero.
+- **Fotos faltantes do menu:** Italian Deli (8 itens — Porchetta, Parma Ham, Mortadella, Napoli Salami, Speck, Spianata Calabra, Provolone, Black Truffle Sauce) e Fresh Mozzarella (4 itens — Buffalo, Burrata, Ball, Treccia). Resto do menu (42 itens) já tem foto e está aplicado no site. Esses 12 estão com placeholder neutro até o Marco/fotógrafo entregar.
 
 ---
 

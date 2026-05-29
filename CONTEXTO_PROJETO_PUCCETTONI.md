@@ -93,6 +93,14 @@ Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só 
 - enviar contato ao HubSpot (form do funil → contato + tag "lead-funnel"; form de catering → contato + tag "catering-inquiry");
 - disparar evento `generate_lead` no GA4 + Pixel (com parâmetro distinguindo origem: funnel vs catering, porque LTV/score esperado é diferente).
 
+### Infra de deploy (Vercel)
+- **Hosting:** Vercel, projeto `puccettoni-pizza` na Team "LucaBravo's projects" (plano Hobby). Auto-deploy via integração GitHub.
+- **URL de produção:** `https://puccettoni-pizza.vercel.app` (subdomínio Vercel; quando o domínio `www.puccettoni.com` migrar pra cá, ele substitui).
+- **Repositório:** `github.com/lucascmbizinoto-ux/puccettoni_pizza` (privado).
+- **Restrição importante (Hobby + repo privado):** Vercel só aceita deploys cujo commit author seja o dono da conta GitHub conectada (`lucascmbizinoto-ux`). Por isso este repo tem identidade git local setada (`git config user.email "250785916+lucascmbizinoto-ux@users.noreply.github.com"`) em vez de usar a identidade global. Commits feitos com outra identidade ficam BLOCKED no Vercel.
+- **`vercel.json`:** apenas `{ "cleanUrls": true }` (sem rewrites; `index.html` na raiz serve a homepage pela convenção padrão).
+- **`.vercelignore`:** mantém os `.md` internos (BRIEFING, CONTEXTO, CLAUDE, README), `.gitignore`, `.git/`, `.sixth/` fora do site público. Ficam só no GitHub.
+
 ---
 
 ## 4. HIPÓTESES (NÃO tratar como fato)

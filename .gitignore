@@ -1,0 +1,11 @@
+# Internal tool folder (empty)
+.sixth/
+
+# OS metadata
+Thumbs.db
+.DS_Store
+
+# Editor backups / temp
+*.swp
+*.bak
+*~

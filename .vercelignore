@@ -1,0 +1,14 @@
+# Internal project context — kept in the GitHub repo but not deployed publicly.
+BRIEFING_MARCO.md
+CONTEXTO_PROJETO_PUCCETTONI.md
+CLAUDE.md
+README.md
+
+# Repo / tooling metadata
+.gitignore
+.git/
+.sixth/
+
+# OS metadata
+Thumbs.db
+.DS_Store

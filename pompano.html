@@ -36,12 +36,12 @@
   nav{position:sticky;top:0;z-index:200;background:rgba(255,244,227,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .navin{display:flex;align-items:center;justify-content:space-between;height:130px;gap:24px}
   .navin .logo{height:96px;transition:transform .2s}
-  .navlinks{display:flex;gap:28px;font-size:17px;font-weight:600;letter-spacing:.06em}
-  .navlinks a{color:var(--ink-soft);transition:color .2s}.navlinks a:hover{color:var(--orange)}
+  .navlinks{display:flex;gap:22px;font-size:17px;font-weight:600;letter-spacing:.06em}
+  .navlinks a{color:var(--ink-soft);transition:color .2s;white-space:nowrap}.navlinks a:hover{color:var(--orange)}
   .navbtn{background:var(--orange);color:#fff;padding:18px 42px;border-radius:36px;font-weight:700;font-size:19px;letter-spacing:.05em;white-space:nowrap;box-shadow:0 14px 32px -10px rgba(193,121,19,.7);transition:transform .2s,box-shadow .2s,background .2s}
   .navbtn:hover{transform:scale(1.05);box-shadow:0 16px 32px -10px rgba(193,121,19,.75);background:var(--orange-deep)}
   @media(max-width:920px){.navlinks{display:none}}
-  @media(max-width:1024px){.navin{height:108px;gap:20px}.navin .logo{height:78px}.navlinks{gap:22px}.navlinks a{font-size:15px;letter-spacing:.05em}.navbtn{padding:15px 34px;font-size:16px}.menu-nav{top:108px}.cat[id]{scroll-margin-top:160px}}
+  @media(max-width:1024px){.navin{height:108px;gap:20px}.navin .logo{height:78px}.navlinks{gap:18px}.navlinks a{font-size:15px;letter-spacing:.05em;white-space:nowrap}.navbtn{padding:15px 34px;font-size:16px}.menu-nav{top:108px}.cat[id]{scroll-margin-top:160px}}
   @media(max-width:680px){.navin{height:88px}.navin .logo{height:60px}.navlinks{gap:20px;font-size:15px}.navbtn{padding:13px 28px;font-size:15px}.pending::after{font-size:10px;padding:2px 8px}.menu-nav{top:88px}}
 
   header.hero{position:relative;padding:54px 0 54px;text-align:center;overflow:hidden}
@@ -579,6 +579,11 @@
     e.preventDefault();
     cf.style.display='none';
     document.getElementById('cateringThanks').classList.add('show');
+  });
+</script>
+</body>
+</html>
+
   });
 </script>
 </body>

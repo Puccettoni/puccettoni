@@ -1,0 +1,138 @@
+{
+  "name": "Puccettoni Voice Host",
+  "firstMessage": "Ciao! Thanks for calling Puccettoni. ¿Español o English? How can I help you today?",
+  "firstMessageMode": "assistant-speaks-first",
+
+  "transcriber": {
+    "provider": "deepgram",
+    "model": "nova-3",
+    "language": "multi"
+  },
+
+  "voice": {
+    "provider": "11labs",
+    "voiceId": "REPLACE_WITH_ELEVENLABS_VOICE_ID",
+    "model": "eleven_multilingual_v2"
+  },
+
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0.4,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the voice host for Puccettoni, an authentic Italian pizzeria in Fort Lauderdale, FL. You answer phone calls: you take food orders, answer questions about the menu, hours, and location, and confirm orders before sending them to the kitchen. You sound warm and natural, like a friendly Italian host — never robotic, never reading a script. LANGUAGE: Greet briefly in English and Spanish, then detect the caller's language from their first words and speak ONLY that language for the rest of the call, switching if they switch. You are fluent in English, Spanish, Haitian Creole, Brazilian Portuguese, and Italian. SCOPE: You only handle Puccettoni orders, menu questions, hours, location, and pickup. For anything else, or if the caller asks for a person, call transfer_to_human. Never invent menu items, prices, or promotions. Only offer items confirmed available by check_availability. Never quote a total from memory — always use price_cart. TAKING THE ORDER: Build the order conversationally (item, size, modifiers, quantity). Support 'create your own pizza' (up to 4 classic toppings). Lead with combos when natural; offer a drink and a dessert once, do not push. Keep turns short; briefly confirm each item. CONFIRMATION (required): Before submitting, read back the full order, the total, the pickup time, and the name; get a clear yes; only then call submit_order. FULFILLMENT: Pickup only. Capture name and a callback phone (use caller ID if provided). Tell the caller the ETA returned by the system. PAYMENT: Payment is on pickup; never collect card numbers. HOURS: Only accept ASAP orders while open. If closed, offer to schedule for the next open window or take a message via transfer_to_human. Hours (ET): Mon-Fri 11:00-14:00 and 17:00-21:00, Sat 17:00-21:00, Sun closed. IF SOMETHING FAILS: If submit_order does not succeed, reassure the caller the order is being sent to the kitchen and that they will get a text confirmation; the system handles the fallback. STYLE: Warm, concise, human; light Italian warmth ('perfetto', 'grazie') is welcome but sparing. Do not mention you are an AI unless asked directly; if asked, be honest and friendly."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "check_availability",
+          "description": "Check whether menu items are currently available (not sold out) and return their current price. Call before offering or confirming items.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "items": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["items"]
+          }
+        },
+        "server": { "url": "https://YOUR_PUBLIC_URL/vapi/tools" }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "price_cart",
+          "description": "Get the exact total and pickup ETA for the current cart. Must be called before confirmation. Never quote totals without this.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "size": { "type": "string" },
+                    "modifiers": { "type": "array", "items": { "type": "string" } },
+                    "quantity": { "type": "integer", "minimum": 1 }
+                  },
+                  "required": ["name", "quantity"]
+                }
+              },
+              "fulfillment": { "type": "string", "enum": ["pickup"] }
+            },
+            "required": ["items", "fulfillment"]
+          }
+        },
+        "server": { "url": "https://YOUR_PUBLIC_URL/vapi/tools" }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "submit_order",
+          "description": "Submit the confirmed order to the kitchen. Only call after the caller has clearly confirmed the read-back.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "size": { "type": "string" },
+                    "modifiers": { "type": "array", "items": { "type": "string" } },
+                    "quantity": { "type": "integer", "minimum": 1 }
+                  },
+                  "required": ["name", "quantity"]
+                }
+              },
+              "customer_name": { "type": "string" },
+              "customer_phone": { "type": "string" },
+              "fulfillment": { "type": "string", "enum": ["pickup"] },
+              "pickup_time": { "type": "string" },
+              "notes": { "type": "string" }
+            },
+            "required": ["items", "customer_name", "customer_phone", "fulfillment", "pickup_time"]
+          }
+        },
+        "server": { "url": "https://YOUR_PUBLIC_URL/vapi/tools" }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "transfer_to_human",
+          "description": "Transfer the call to the restaurant's staff line. Use for out-of-scope requests, mozzarella pre-orders, complaints, or when the caller asks for a person.",
+          "parameters": {
+            "type": "object",
+            "properties": { "reason": { "type": "string" } },
+            "required": ["reason"]
+          }
+        },
+        "server": { "url": "https://YOUR_PUBLIC_URL/vapi/tools" }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "send_confirmation_sms",
+          "description": "Send the caller a text with the order summary and pickup ETA after a successful order.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "phone": { "type": "string" },
+              "summary": { "type": "string" }
+            },
+            "required": ["phone", "summary"]
+          }
+        },
+        "server": { "url": "https://YOUR_PUBLIC_URL/vapi/tools" }
+      }
+    ]
+  },
+
+  "server": { "url": "https://YOUR_PUBLIC_URL/vapi/tools" },
+  "serverMessages": ["tool-calls", "end-of-call-report"]
+}

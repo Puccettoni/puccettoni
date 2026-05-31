@@ -1,0 +1,23 @@
+{
+  "name": "puccettoni-voice",
+  "version": "0.1.0",
+  "description": "Puccettoni — voice ordering agent backend (Phase 0 demo). Webhook server that Vapi calls when the agent uses a tool.",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch server/index.ts",
+    "start": "node dist/server/index.js",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "twilio": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}

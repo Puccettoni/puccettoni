@@ -1,0 +1,90 @@
+[
+  {
+    "name": "check_availability",
+    "description": "Check whether menu items are currently available (not sold out) and return their current price. Call before offering or confirming items.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Menu item names as understood from the caller (fuzzy match is handled server-side)."
+        }
+      },
+      "required": ["items"]
+    }
+  },
+  {
+    "name": "price_cart",
+    "description": "Get the exact total and pickup ETA for the current cart. Must be called before confirmation. Never quote totals without this.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "size": { "type": "string" },
+              "modifiers": { "type": "array", "items": { "type": "string" } },
+              "quantity": { "type": "integer", "minimum": 1 }
+            },
+            "required": ["name", "quantity"]
+          }
+        },
+        "fulfillment": { "type": "string", "enum": ["pickup"] }
+      },
+      "required": ["items", "fulfillment"]
+    }
+  },
+  {
+    "name": "submit_order",
+    "description": "Submit the confirmed order to the kitchen. Only call after the caller has clearly confirmed the read-back.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "size": { "type": "string" },
+              "modifiers": { "type": "array", "items": { "type": "string" } },
+              "quantity": { "type": "integer", "minimum": 1 }
+            },
+            "required": ["name", "quantity"]
+          }
+        },
+        "customer_name": { "type": "string" },
+        "customer_phone": { "type": "string" },
+        "fulfillment": { "type": "string", "enum": ["pickup"] },
+        "pickup_time": { "type": "string", "description": "ISO 8601 time, or 'asap'." },
+        "notes": { "type": "string" }
+      },
+      "required": ["items", "customer_name", "customer_phone", "fulfillment", "pickup_time"]
+    }
+  },
+  {
+    "name": "transfer_to_human",
+    "description": "Transfer the call to the restaurant's staff line. Use for out-of-scope requests, mozzarella pre-orders, complaints, or when the caller asks for a person.",
+    "parameters": {
+      "type": "object",
+      "properties": { "reason": { "type": "string" } },
+      "required": ["reason"]
+    }
+  },
+  {
+    "name": "send_confirmation_sms",
+    "description": "Send the caller a text with the order summary and pickup ETA after a successful order.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "phone": { "type": "string" },
+        "summary": { "type": "string" }
+      },
+      "required": ["phone", "summary"]
+    }
+  }
+]

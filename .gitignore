@@ -9,3 +9,7 @@ Thumbs.db
 *.swp
 *.bak
 *~
+
+# backups locais e arquivos temporarios
+*.backup-*
+test_write.txt

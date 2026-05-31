@@ -24,8 +24,8 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
   a{color:inherit;text-decoration:none}
   .pending{outline:2px dashed var(--tomato);outline-offset:3px;position:relative}
-  .pending::after{content:"link pendente";position:absolute;top:-10px;right:-6px;background:var(--tomato);color:#fff;font-size:10px;
-    padding:3px 9px;border-radius:20px;letter-spacing:.06em;font-weight:700;text-transform:uppercase}
+  .pending::after{content:"link pendente";position:absolute;top:-10px;right:-6px;background:var(--tomato);color:#fff;font-size:13px;
+    padding:5px 14px;border-radius:20px;letter-spacing:.06em;font-weight:700;text-transform:uppercase}
 
   .concept-tag{position:fixed;bottom:14px;left:14px;z-index:9000;background:var(--charcoal);color:var(--cream);
     font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:30px;font-weight:600}
@@ -34,14 +34,14 @@
   .topband{background:var(--charcoal);color:var(--cream);text-align:center;padding:8px;font-size:12px;letter-spacing:.05em}
   .topband b{color:var(--orange)}
   nav{position:sticky;top:0;z-index:200;background:rgba(255,244,227,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .navin{display:flex;align-items:center;justify-content:space-between;height:88px;gap:18px}
-  .navin .logo{height:64px;transition:transform .2s}
-  .navlinks{display:flex;gap:26px;font-size:15px;font-weight:600;letter-spacing:.04em}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:180px;gap:32px}
+  .navin .logo{height:140px;transition:transform .2s}
+  .navlinks{display:flex;gap:40px;font-size:22px;font-weight:600;letter-spacing:.09em}
   .navlinks a{color:var(--ink-soft);transition:color .2s}.navlinks a:hover{color:var(--orange)}
-  .navbtn{background:var(--orange);color:#fff;padding:14px 30px;border-radius:32px;font-weight:700;font-size:15.5px;letter-spacing:.04em;white-space:nowrap;box-shadow:0 10px 22px -10px rgba(193,121,19,.6);transition:transform .2s,box-shadow .2s,background .2s}
-  .navbtn:hover{transform:scale(1.04);box-shadow:0 16px 32px -10px rgba(193,121,19,.75);background:var(--orange-deep)}
+  .navbtn{background:var(--orange);color:#fff;padding:26px 58px;border-radius:40px;font-weight:700;font-size:24px;letter-spacing:.09em;white-space:nowrap;box-shadow:0 18px 40px -10px rgba(193,121,19,.8);transition:transform .2s,box-shadow .2s,background .2s}
+  .navbtn:hover{transform:scale(1.08);box-shadow:0 16px 32px -10px rgba(193,121,19,.75);background:var(--orange-deep)}
   @media(max-width:920px){.navlinks{display:none}}
-  @media(max-width:680px){.navin{height:72px}.navin .logo{height:50px}.navbtn{padding:11px 22px;font-size:14px}}
+  @media(max-width:680px){.navin{height:110px}.navin .logo{height:82px}.navbtn{padding:18px 38px;font-size:20px}}
 
   header.hero{position:relative;padding:54px 0 54px;text-align:center;overflow:hidden}
   .hero .glow{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:96vmax;height:60vmax;
@@ -153,13 +153,13 @@
   footer .bn{font-family:'Cinzel',serif;color:var(--cream);font-size:20px;letter-spacing:.12em;margin-bottom:8px}
 
   /* menu category chips — scroll-to-section, not filter */
-  .menu-nav{position:sticky;top:88px;z-index:150;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:-32px -26px 36px;padding:12px 26px}
+  .menu-nav{position:sticky;top:180px;z-index:150;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:-32px -26px 36px;padding:12px 26px}
   .menu-nav-in{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .menu-nav-in::-webkit-scrollbar{display:none}
   .menu-chip{flex-shrink:0;font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);background:transparent;border:1.5px solid var(--line);border-radius:30px;padding:9px 16px;cursor:pointer;transition:all .18s;white-space:nowrap}
   .menu-chip:hover{color:var(--orange);border-color:var(--orange)}
   .menu-chip.active{color:#fff;background:var(--orange);border-color:var(--orange)}
-  .cat[id]{scroll-margin-top:160px}
+  .cat[id]{scroll-margin-top:240px}
 
   /* catering inquiry form */
   .cat-form-card{max-width:680px;margin:36px auto 0;background:var(--mozz);border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:var(--shadow)}

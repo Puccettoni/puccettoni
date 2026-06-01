@@ -154,6 +154,150 @@
     .catering-teaser__ctas{flex-direction:column;align-items:stretch}
     .catering-btn{width:100%}
   }
+
+  /* === Sponsor campaign + football animation === */
+  .sponsor-campaign{
+    position:relative;margin-top:clamp(36px,5vh,52px);
+    padding:clamp(32px,4.5vw,48px) clamp(20px,3vw,32px);
+    background:linear-gradient(180deg,var(--charcoal) 0%,#2a1f12 100%);
+    color:var(--cream);border-radius:24px;text-align:center;overflow:hidden;
+    box-shadow:0 28px 60px -28px rgba(40,24,8,.55);
+    animation:rise .9s .6s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .sponsor-campaign::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(80% 60% at 50% -10%,rgba(193,121,19,.22),transparent 60%);
+  }
+  .sponsor-eyebrow{position:relative;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.34em;
+    text-transform:uppercase;color:#E8B86C;font-weight:600;margin-bottom:10px;opacity:.95}
+  .sponsor-title{position:relative;font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(26px,4.2vw,38px);line-height:1.08;margin-bottom:14px}
+  .sponsor-title em{color:var(--orange);font-style:italic}
+  .sponsor-copy{position:relative;max-width:560px;margin:0 auto 22px;
+    font-size:15px;line-height:1.55;color:rgba(255,244,227,.78)}
+  .sponsor-cta{position:relative;display:inline-flex;align-items:center;gap:10px;
+    font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+    color:#fff;background:var(--orange);padding:14px 28px;border:none;border-radius:30px;cursor:pointer;
+    box-shadow:0 14px 30px -12px rgba(193,121,19,.7);
+    transition:background .25s,transform .25s,box-shadow .25s}
+  .sponsor-cta:hover,.sponsor-cta:focus-visible{background:var(--orange-deep);transform:translateY(-2px);
+    outline:none;box-shadow:0 18px 36px -12px rgba(193,121,19,.8)}
+
+  .football-animation-stage{position:relative;height:200px;margin:24px auto 0;max-width:640px;
+    background:linear-gradient(180deg,transparent 0%,transparent 70%,rgba(63,107,59,.18) 72%,rgba(63,107,59,.32) 100%);
+    border-radius:14px;overflow:hidden}
+  .football-animation-stage::after{content:"";position:absolute;left:8%;right:8%;bottom:18%;height:1px;
+    background:repeating-linear-gradient(90deg,rgba(255,244,227,.35) 0 12px,transparent 12px 24px)}
+  @media(max-width:680px){.football-animation-stage{height:160px}}
+
+  .football-ball{position:absolute;left:6%;bottom:22%;width:36px;height:22px;
+    background:radial-gradient(ellipse at 35% 35%,#9a5a2a,#5e3414);border-radius:50%;
+    box-shadow:0 4px 12px -4px rgba(0,0,0,.5),inset -2px -3px 6px rgba(0,0,0,.3);
+    transform:translate(0,0) rotate(-15deg);opacity:0}
+  .football-ball::before{content:"";position:absolute;left:50%;top:50%;width:18px;height:2px;
+    background:#FFF4E3;border-radius:2px;transform:translate(-50%,-50%)}
+  .football-ball::after{content:"";position:absolute;left:50%;top:50%;width:2px;height:8px;
+    background:#FFF4E3;border-radius:2px;transform:translate(-50%,-50%)}
+  .football-ball img{width:100%;height:100%;object-fit:contain;display:block}
+  .football-ball.has-img{background:none;box-shadow:none;border-radius:0}
+  .football-ball.has-img::before,.football-ball.has-img::after{display:none}
+
+  .football-player{position:absolute;right:6%;bottom:22%;width:54px;height:86px;
+    background:linear-gradient(180deg,#C17913 0%,#A5650E 60%,#1E1E1E 60%,#1E1E1E 100%);
+    border-radius:8px 8px 4px 4px;opacity:0;transform:translateX(0) translateY(0);
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.5)}
+  .football-player::before{content:"";position:absolute;top:-16px;left:50%;width:22px;height:22px;
+    background:#D8A56C;border:2px solid #5e3414;border-radius:50%;transform:translateX(-50%)}
+  .football-player::after{content:"";position:absolute;top:-14px;left:50%;width:22px;height:6px;
+    background:var(--orange);transform:translateX(-50%);border-radius:8px 8px 0 0}
+  .football-player img{width:100%;height:100%;object-fit:contain;display:block}
+  .football-player.has-img{background:none;box-shadow:none;border-radius:0}
+  .football-player.has-img::before,.football-player.has-img::after{display:none}
+
+  .football-animation-stage.is-playing .football-ball{
+    animation:ball-throw 1.6s cubic-bezier(.4,.05,.6,1) forwards}
+  .football-animation-stage.is-playing .football-player{
+    animation:player-rush 1.4s .2s cubic-bezier(.3,.1,.4,1) forwards}
+  .football-animation-stage.is-caught .football-ball{opacity:0}
+  .football-animation-stage.is-caught .football-player{
+    animation:player-celebrate .35s ease-out forwards}
+
+  @keyframes ball-throw{
+    0%   {opacity:0;transform:translate(0,0) rotate(-15deg)}
+    10%  {opacity:1}
+    100% {opacity:1;transform:translate(420px,-90px) rotate(540deg)}
+  }
+  @keyframes player-rush{
+    0%   {opacity:0;transform:translateX(0) translateY(0)}
+    10%  {opacity:1}
+    60%  {opacity:1;transform:translateX(-150px) translateY(0)}
+    85%  {opacity:1;transform:translateX(-180px) translateY(-44px)}
+    100% {opacity:1;transform:translateX(-180px) translateY(0)}
+  }
+  @keyframes player-celebrate{
+    0%   {transform:translateX(-180px) translateY(0) scale(1)}
+    50%  {transform:translateX(-180px) translateY(-12px) scale(1.06)}
+    100% {transform:translateX(-180px) translateY(0) scale(1)}
+  }
+  @media(max-width:680px){
+    @keyframes ball-throw{
+      0%{opacity:0;transform:translate(0,0) rotate(-15deg)}
+      10%{opacity:1}
+      100%{opacity:1;transform:translate(240px,-58px) rotate(540deg)}
+    }
+    @keyframes player-rush{
+      0%{opacity:0;transform:translateX(0) translateY(0)}
+      10%{opacity:1}
+      60%{opacity:1;transform:translateX(-95px) translateY(0)}
+      85%{opacity:1;transform:translateX(-115px) translateY(-30px)}
+      100%{opacity:1;transform:translateX(-115px) translateY(0)}
+    }
+    @keyframes player-celebrate{
+      0%{transform:translateX(-115px) translateY(0) scale(1)}
+      50%{transform:translateX(-115px) translateY(-10px) scale(1.06)}
+      100%{transform:translateX(-115px) translateY(0) scale(1)}
+    }
+  }
+
+  /* Modal */
+  .sponsor-modal{position:fixed;inset:0;z-index:1000;display:none;
+    align-items:center;justify-content:center;padding:20px}
+  .sponsor-modal:not([hidden]){display:flex}
+  .sponsor-modal__backdrop{position:absolute;inset:0;background:rgba(20,12,4,.78);
+    backdrop-filter:blur(4px);animation:fadeIn .25s ease-out both}
+  .sponsor-modal__panel{position:relative;background:var(--mozz);color:var(--charcoal);
+    border-radius:18px;padding:clamp(20px,3vw,32px);max-width:min(92vw,720px);max-height:90vh;
+    overflow-y:auto;box-shadow:0 40px 80px -20px rgba(0,0,0,.55);
+    animation:popIn .35s cubic-bezier(.2,.8,.2,1) both;text-align:center}
+  .sponsor-modal__close{position:absolute;top:10px;right:10px;width:42px;height:42px;
+    display:flex;align-items:center;justify-content:center;background:var(--charcoal);color:#fff;
+    border:none;border-radius:50%;font-size:24px;line-height:1;cursor:pointer;
+    box-shadow:0 8px 18px -6px rgba(0,0,0,.4);transition:transform .2s,background .2s;z-index:2}
+  .sponsor-modal__close:hover,.sponsor-modal__close:focus-visible{
+    background:var(--tomato);transform:scale(1.06);outline:none}
+  .sponsor-modal__flyer{display:block;width:auto;height:auto;
+    max-width:min(92vw,640px);max-height:60vh;object-fit:contain;
+    margin:14px auto 20px;border-radius:10px}
+  .sponsor-modal__flyer.is-placeholder{width:100%;max-width:480px;height:280px;
+    background:repeating-linear-gradient(45deg,rgba(193,121,19,.12) 0 12px,rgba(193,121,19,.04) 12px 24px);
+    border:1.5px dashed var(--orange);display:flex;align-items:center;justify-content:center;
+    color:var(--ink-soft);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;text-align:center;padding:0 20px}
+  .sponsor-modal__copy{max-width:480px;margin:0 auto 18px;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+  .sponsor-modal__cta{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+    color:#fff;background:var(--orange);padding:14px 28px;border-radius:30px;
+    box-shadow:0 12px 26px -10px rgba(193,121,19,.7);transition:background .25s,transform .25s}
+  .sponsor-modal__cta:hover,.sponsor-modal__cta:focus-visible{
+    background:var(--orange-deep);transform:translateY(-2px);outline:none}
+
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes popIn{
+    from{opacity:0;transform:scale(.92) translateY(20px)}
+    to{opacity:1;transform:scale(1) translateY(0)}
+  }
+  /* === / Sponsor campaign === */
+
   @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -230,9 +374,112 @@
     </div>
   </section>
 
+  <section class="sponsor-campaign" id="sponsorCampaign">
+    <div class="sponsor-eyebrow">Community Sponsorship</div>
+    <h2 class="sponsor-title">Proudly supporting <em>local football</em></h2>
+    <p class="sponsor-copy">Watch our game-day announcement and learn more about the team Puccettoni is sponsoring.</p>
+    <button type="button" class="sponsor-cta" id="sponsorPlay" aria-label="Play sponsorship announcement">Watch Announcement</button>
+    <div class="football-animation-stage" id="footballStage" aria-hidden="true">
+      <div class="football-ball" id="footballBall"></div>
+      <div class="football-player" id="footballPlayer"></div>
+    </div>
+  </section>
+
   <div class="foot">
     Authentic Italian Pizza &amp; Food<span class="sep">·</span>Two locations in South Florida
   </div>
 </div>
+
+<div class="sponsor-modal" id="sponsorModal" role="dialog" aria-modal="true" aria-labelledby="sponsorModalTitle" hidden>
+  <div class="sponsor-modal__backdrop" data-close></div>
+  <div class="sponsor-modal__panel">
+    <button type="button" class="sponsor-modal__close" data-close aria-label="Close sponsorship announcement">×</button>
+    <h2 id="sponsorModalTitle" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Puccettoni sponsorship announcement</h2>
+    <img class="sponsor-modal__flyer" id="sponsorFlyer" alt="Puccettoni sponsorship flyer" hidden>
+    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder">Flyer image goes here — set SPONSOR_FLYER_IMAGE_URL in script</div>
+    <p class="sponsor-modal__copy">Puccettoni is proud to support local youth and community sports.</p>
+    <a class="sponsor-modal__cta" id="sponsorLearnMore" target="_blank" rel="noopener" hidden>Learn More</a>
+  </div>
+</div>
+
+<script>
+  (function(){
+    // === Sponsor campaign config — TODO: replace with real URLs ===
+    const SPONSOR_FLYER_IMAGE_URL  = '';   // TODO: URL of the campaign flyer image
+    const SPONSOR_LEARN_MORE_URL   = '';   // TODO: URL the Learn More button should open
+    const SPONSOR_PLAYER_IMAGE_URL = '';   // TODO: optional player image (overrides CSS placeholder)
+    const SPONSOR_BALL_IMAGE_URL   = '';   // TODO: optional ball image (overrides CSS placeholder)
+    // ===============================================================
+
+    const stage   = document.getElementById('footballStage');
+    const ball    = document.getElementById('footballBall');
+    const player  = document.getElementById('footballPlayer');
+    const playBtn = document.getElementById('sponsorPlay');
+    const modal   = document.getElementById('sponsorModal');
+    const flyer   = document.getElementById('sponsorFlyer');
+    const flyerPh = document.getElementById('sponsorFlyerPlaceholder');
+    const learn   = document.getElementById('sponsorLearnMore');
+    if(!stage||!ball||!player||!playBtn||!modal) return;
+
+    if(SPONSOR_BALL_IMAGE_URL){
+      const img=document.createElement('img');img.src=SPONSOR_BALL_IMAGE_URL;img.alt='';
+      ball.appendChild(img);ball.classList.add('has-img');
+    }
+    if(SPONSOR_PLAYER_IMAGE_URL){
+      const img=document.createElement('img');img.src=SPONSOR_PLAYER_IMAGE_URL;img.alt='';
+      player.appendChild(img);player.classList.add('has-img');
+    }
+    if(SPONSOR_FLYER_IMAGE_URL){
+      flyer.src=SPONSOR_FLYER_IMAGE_URL;flyer.hidden=false;flyerPh.hidden=true;
+    }
+    if(SPONSOR_LEARN_MORE_URL){
+      learn.href=SPONSOR_LEARN_MORE_URL;learn.hidden=false;
+    }
+
+    if(sessionStorage.getItem('sponsorWatched')==='1'){
+      playBtn.textContent='Replay Announcement';
+    }
+
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function openModal(){
+      modal.hidden=false;
+      sessionStorage.setItem('sponsorWatched','1');
+      playBtn.textContent='Replay Announcement';
+      document.addEventListener('keydown',onEsc);
+      setTimeout(()=>{const c=modal.querySelector('.sponsor-modal__close');if(c)c.focus();},50);
+    }
+    function closeModal(){
+      modal.hidden=true;
+      document.removeEventListener('keydown',onEsc);
+      playBtn.focus();
+    }
+    function onEsc(e){if(e.key==='Escape')closeModal();}
+
+    modal.querySelectorAll('[data-close]').forEach(el=>{
+      el.addEventListener('click',closeModal);
+    });
+
+    function resetStage(){
+      stage.classList.remove('is-playing','is-caught');
+      void stage.offsetWidth; // reflow so the animation can replay
+    }
+    function playAnimation(){
+      if(reduceMotion){openModal();return;}
+      resetStage();
+      stage.classList.add('is-playing');
+      const onPlayerEnd=(e)=>{
+        if(e.target===player&&e.animationName==='player-rush'){
+          player.removeEventListener('animationend',onPlayerEnd);
+          stage.classList.add('is-caught');
+          setTimeout(openModal,380);
+        }
+      };
+      player.addEventListener('animationend',onPlayerEnd);
+    }
+
+    playBtn.addEventListener('click',playAnimation);
+  })();
+</script>
 </body>
 </html>

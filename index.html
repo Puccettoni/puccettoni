@@ -58,6 +58,14 @@
     .hero-phone__pizza{font-size:42px}
     .hero-phone__label{font-size:11px}
   }
+  .hero-phone--small{margin-top:clamp(28px,4vh,40px);margin-bottom:clamp(8px,1.5vh,16px);padding:6px 12px}
+  .hero-phone--small .hero-phone__label{font-size:10px;letter-spacing:.32em;margin-bottom:2px}
+  .hero-phone--small .hero-phone__pizza{font-size:clamp(24px,4.3vw,41px)}
+  .hero-phone--small .hero-phone__digits{font-size:12px}
+  @media(max-width:680px){
+    .hero-phone--small .hero-phone__pizza{font-size:26px}
+    .hero-phone--small .hero-phone__label{font-size:9px}
+  }
   .choose-label{display:inline-flex;align-items:center;gap:14px;font-family:'Cinzel',serif;font-size:11px;
     letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:24px;opacity:.78;
     animation:rise .9s .24s cubic-bezier(.2,.8,.2,1) both}
@@ -87,14 +95,65 @@
   .card:hover .pin,.card:focus-visible .pin{background:var(--orange);color:#fff;border-color:var(--orange);transform:scale(1.08)}
   .city{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.4vw,34px);line-height:1.04;margin-bottom:9px}
   .addr{font-size:13.5px;color:var(--ink-soft);line-height:1.5;max-width:230px}
-  .enter{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Cinzel',serif;font-size:11.5px;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:600;transition:gap .25s}
-  .card:hover .enter,.card:focus-visible .enter{gap:13px}
-  .enter svg{transition:transform .25s}
-  .card:hover .enter svg,.card:focus-visible .enter svg{transform:translateX(4px)}
+  .card-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-top:24px;
+    font-family:'Cinzel',serif;
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:700;
+    color:#fff;background:var(--orange);
+    padding:13px 28px;border-radius:30px;
+    box-shadow:0 10px 22px -10px rgba(193,121,19,.6);
+    transition:background .25s,transform .25s,gap .25s,box-shadow .25s;
+  }
+  .card:hover .card-cta,.card:focus-visible .card-cta{
+    background:var(--orange-deep);gap:14px;
+    box-shadow:0 14px 28px -10px rgba(193,121,19,.75);
+  }
+  .card-cta svg{transition:transform .25s}
+  .card:hover .card-cta svg,.card:focus-visible .card-cta svg{transform:translateX(4px)}
   .foot{margin-top:clamp(32px,5vh,44px);font-size:12px;color:var(--ink-soft);opacity:.72;line-height:1.7;
     animation:rise .9s .5s cubic-bezier(.2,.8,.2,1) both}
   .foot .sep{color:var(--orange);margin:0 8px}
+  .catering-teaser{
+    margin-top:clamp(32px,5vh,48px);
+    padding:clamp(28px,4vw,44px) clamp(20px,3vw,32px);
+    background:linear-gradient(180deg, var(--mozz) 0%, transparent 100%);
+    border-top:1px solid var(--line);
+    text-align:center;
+    animation:rise .9s .55s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .catering-teaser__label{
+    font-family:'Cinzel',serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--basil);font-weight:600;margin-bottom:10px;opacity:.85;
+  }
+  .catering-teaser__title{
+    font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(28px,4.4vw,40px);line-height:1.1;color:var(--charcoal);
+    margin-bottom:14px;
+  }
+  .catering-teaser__title em{color:var(--orange);font-style:italic}
+  .catering-teaser__copy{
+    max-width:560px;margin:0 auto 24px;
+    font-size:15px;line-height:1.55;color:var(--ink-soft);
+  }
+  .catering-teaser__ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .catering-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    text-decoration:none;
+    font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;
+    color:var(--charcoal);background:transparent;
+    padding:14px 24px;border:1.5px solid var(--orange);border-radius:30px;
+    transition:background .25s,color .25s,transform .25s;
+  }
+  .catering-btn:hover,.catering-btn:focus-visible{
+    background:var(--orange);color:#fff;transform:translateY(-2px);
+  }
+  @media(max-width:680px){
+    .catering-teaser__ctas{flex-direction:column;align-items:stretch}
+    .catering-btn{width:100%}
+  }
   @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -122,19 +181,13 @@
     </div>
   </div>
 
-  <a class="hero-phone" href="tel:7543074992" aria-label="Order: 754 30 PIZZA — (754) 307-4992">
-    <div class="hero-phone__label">Order Direct</div>
-    <div class="hero-phone__pizza">(754) 30-PIZZA</div>
-    <div class="hero-phone__digits">(754) 307-4992</div>
-  </a>
-
   <div class="welcome">Benvenuti</div>
   <div class="tagline">Authentic Italian, <em>made fresh</em> — choose your table</div>
 
   <div class="choose-label">Select your location</div>
 
   <div class="cards">
-    <a class="card" href="pompano.html" aria-label="Enter Puccettoni Pompano Beach">
+    <a class="card" href="pompano.html#menu" aria-label="Enter Puccettoni Pompano Beach">
       <div class="pin">
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="17.5" cy="6.5" r="2.6"/>
@@ -144,10 +197,10 @@
       </div>
       <div class="city">Pompano Beach</div>
       <div class="addr">1255 South Powerline Road<br>Pompano Beach, FL 33069</div>
-      <span class="enter">Enter <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="card-cta">Order Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
 
-    <a class="card" href="fortlauderdale.html" aria-label="Enter Puccettoni Fort Lauderdale">
+    <a class="card" href="fortlauderdale.html#menu" aria-label="Enter Puccettoni Fort Lauderdale">
       <div class="pin">
         <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 21V10l5-3v14"/>
@@ -158,9 +211,25 @@
       </div>
       <div class="city">Fort Lauderdale</div>
       <div class="addr">3801 Davie Boulevard #108<br>Fort Lauderdale, FL 33312</div>
-      <span class="enter">Enter <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="card-cta">Order Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
   </div>
+
+  <a class="hero-phone hero-phone--small" href="tel:7543074992" aria-label="Order: 754 30 PIZZA — (754) 307-4992">
+    <div class="hero-phone__label">Order Direct</div>
+    <div class="hero-phone__pizza">(754) 30-PIZZA</div>
+    <div class="hero-phone__digits">(754) 307-4992</div>
+  </a>
+
+  <section class="catering-teaser">
+    <div class="catering-teaser__label">Catering &amp; Events</div>
+    <h2 class="catering-teaser__title">Bring Italy to your <em>event</em></h2>
+    <p class="catering-teaser__copy">Trays, focaccia platters, fresh mozzarella, and Italian deli — handcrafted for office lunches, weddings, and gatherings.</p>
+    <div class="catering-teaser__ctas">
+      <a class="catering-btn" href="pompano.html#catering">Catering — Pompano Beach</a>
+      <a class="catering-btn" href="fortlauderdale.html#catering">Catering — Fort Lauderdale</a>
+    </div>
+  </section>
 
   <div class="foot">
     Authentic Italian Pizza &amp; Food<span class="sep">·</span>Two locations in South Florida

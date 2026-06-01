@@ -37,6 +37,23 @@
   .navin{display:flex;align-items:center;justify-content:space-between;height:130px;gap:24px}
   .navin .logo{height:96px;transition:transform .2s}
   .navin .logo-link{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
+
+  /* === Featured favorites === */
+  .favorites{padding:78px 0;background:var(--mozz);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fav-sub{max-width:520px;margin:14px auto 0;text-align:center;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+  .fav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));gap:22px;max-width:880px;margin:40px auto 0;justify-content:center}
+  .fav-card{display:block;background:var(--cream);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--charcoal);box-shadow:0 14px 30px -16px rgba(40,24,8,.4);transition:transform .22s,box-shadow .22s,border-color .22s}
+  .fav-card:hover,.fav-card:focus-visible{transform:translateY(-6px);box-shadow:0 22px 44px -18px rgba(40,24,8,.5);border-color:rgba(193,121,19,.4);outline:none}
+  .fav-card__ph{aspect-ratio:4/3;background:linear-gradient(135deg,#ecd9bd,#e3cda8);overflow:hidden;display:block}
+  .fav-card__ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .fav-card:hover .fav-card__ph img{transform:scale(1.04)}
+  .fav-card__bd{padding:18px 22px 22px}
+  .fav-card__name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;margin-bottom:8px;line-height:1.1}
+  .fav-card__cta{font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--orange);display:inline-flex;align-items:center;gap:6px;transition:gap .22s,color .22s}
+  .fav-card:hover .fav-card__cta,.fav-card:focus-visible .fav-card__cta{gap:10px;color:var(--orange-deep)}
+  .fav-note{max-width:520px;margin:30px auto 0;text-align:center;font-size:12.5px;line-height:1.55;color:var(--ink-soft);opacity:.7;font-style:italic}
+  @media(max-width:680px){.fav-grid{grid-template-columns:1fr;max-width:420px;padding:0 8px}}
+  /* === / Featured favorites === */
   .navlinks{display:flex;gap:22px;font-size:17px;font-weight:600;letter-spacing:.06em}
   .navlinks a{color:var(--ink-soft);transition:color .2s;white-space:nowrap}.navlinks a:hover{color:var(--orange)}
   .navbtn{background:var(--orange);color:#fff;padding:18px 42px;border-radius:36px;font-weight:700;font-size:19px;letter-spacing:.05em;white-space:nowrap;box-shadow:0 14px 32px -10px rgba(193,121,19,.7);transition:transform .2s,box-shadow .2s,background .2s}
@@ -230,6 +247,62 @@
     <div class="rating"><span class="star">★★★★★</span> 4.8 on delivery · loved across Broward County</div>
   </div>
 </header>
+
+<section class="favorites" id="favorites">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-eyebrow">Featured</div>
+      <h2>Puccettoni <em>Favorites</em></h2>
+      <p class="fav-sub">Explore our most-loved categories and order directly through Toast.</p>
+    </div>
+    <div class="fav-grid">
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener" aria-label="Browse Puccettoni Combos on Toast">
+        <div class="fav-card__ph"><img src="Images/Pizza%2012%20Combo.png" alt="Puccettoni Combos"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Puccettoni Combos</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener" aria-label="Browse Pizza on Toast">
+        <div class="fav-card__ph"><img src="Images/Margherita%20Pizza%2012.png" alt="Pizza"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Pizza</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener" aria-label="Browse Focaccia Sandwiches on Toast">
+        <div class="fav-card__ph"><img src="Images/Positano.png" alt="Focaccia Sandwiches"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Focaccia Sandwiches</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener" aria-label="Browse Gnocchi on Toast">
+        <div class="fav-card__ph"><img src="Images/Sorrentina%20Gnocchi.png" alt="Gnocchi"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Gnocchi</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener" aria-label="Browse Panzerotti on Toast">
+        <div class="fav-card__ph"><img src="Images/Classico%20Panzerotto.png" alt="Panzerotti"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Panzerotti</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener" aria-label="Browse Desserts on Toast">
+        <div class="fav-card__ph"><img src="Images/Tiramisu%20Cake%20Slice.png" alt="Desserts"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Desserts</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+    </div>
+    <p class="fav-note">Full menu, prices and availability are managed on Toast.</p>
+    <!-- TODO: add Salads and Drinks cards when photos are delivered to /Images (same pattern as above; href stays the unit's Toast page). -->
+  </div>
+</section>
 
 <section class="catering" id="catering">
   <div class="wrap">

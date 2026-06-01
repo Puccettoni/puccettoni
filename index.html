@@ -376,8 +376,8 @@
 
   <section class="sponsor-campaign" id="sponsorCampaign">
     <div class="sponsor-eyebrow">Community Sponsorship</div>
-    <h2 class="sponsor-title">Proudly supporting <em>local football</em></h2>
-    <p class="sponsor-copy">Watch our game-day announcement and learn more about the team Puccettoni is sponsoring.</p>
+    <h2 class="sponsor-title">Game Day with <em>Puccettoni</em></h2>
+    <p class="sponsor-copy">We&rsquo;re proud to support local football. Watch the catch and learn more about the team we&rsquo;re sponsoring.</p>
     <button type="button" class="sponsor-cta" id="sponsorPlay" aria-label="Play sponsorship announcement">Watch Announcement</button>
     <div class="football-animation-stage" id="footballStage" aria-hidden="true">
       <div class="football-ball" id="footballBall"></div>
@@ -396,7 +396,7 @@
     <button type="button" class="sponsor-modal__close" data-close aria-label="Close sponsorship announcement">×</button>
     <h2 id="sponsorModalTitle" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Puccettoni sponsorship announcement</h2>
     <img class="sponsor-modal__flyer" id="sponsorFlyer" alt="Puccettoni sponsorship flyer" hidden>
-    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder">Flyer image goes here — set SPONSOR_FLYER_IMAGE_URL in script</div>
+    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder">Flyer image goes here — drop sponsor-flyer.png into the Images folder</div>
     <p class="sponsor-modal__copy">Puccettoni is proud to support local youth and community sports.</p>
     <a class="sponsor-modal__cta" id="sponsorLearnMore" target="_blank" rel="noopener" hidden>Learn More</a>
   </div>
@@ -404,11 +404,16 @@
 
 <script>
   (function(){
-    // === Sponsor campaign config — TODO: replace with real URLs ===
-    const SPONSOR_FLYER_IMAGE_URL  = '';   // TODO: URL of the campaign flyer image
-    const SPONSOR_LEARN_MORE_URL   = '';   // TODO: URL the Learn More button should open
-    const SPONSOR_PLAYER_IMAGE_URL = '';   // TODO: optional player image (overrides CSS placeholder)
-    const SPONSOR_BALL_IMAGE_URL   = '';   // TODO: optional ball image (overrides CSS placeholder)
+    // === Sponsor campaign config ===
+    // Drop the 3 PNGs into the Images/ folder. If any file is missing
+    // or fails to load, the CSS placeholder shows automatically.
+    const SPONSOR_CAMPAIGN = {
+      ballImage:    "Images/football-ball.png",
+      playerImage:  "Images/football-player.png",
+      flyerImage:   "Images/sponsor-flyer.png",
+      // TODO: URL the "Learn More" button should open (leave empty to hide it)
+      learnMoreUrl: ""
+    };
     // ===============================================================
 
     const stage   = document.getElementById('footballStage');
@@ -421,19 +426,26 @@
     const learn   = document.getElementById('sponsorLearnMore');
     if(!stage||!ball||!player||!playBtn||!modal) return;
 
-    if(SPONSOR_BALL_IMAGE_URL){
-      const img=document.createElement('img');img.src=SPONSOR_BALL_IMAGE_URL;img.alt='';
-      ball.appendChild(img);ball.classList.add('has-img');
+    function attachImage(host,url){
+      if(!url) return;
+      const img=document.createElement('img');
+      img.alt='';
+      img.onload=()=>host.classList.add('has-img');
+      img.onerror=()=>img.remove();  // keep CSS placeholder visible if file missing
+      img.src=url;
+      host.appendChild(img);
     }
-    if(SPONSOR_PLAYER_IMAGE_URL){
-      const img=document.createElement('img');img.src=SPONSOR_PLAYER_IMAGE_URL;img.alt='';
-      player.appendChild(img);player.classList.add('has-img');
+    attachImage(ball,   SPONSOR_CAMPAIGN.ballImage);
+    attachImage(player, SPONSOR_CAMPAIGN.playerImage);
+
+    if(SPONSOR_CAMPAIGN.flyerImage){
+      flyer.onload=()=>{flyer.hidden=false;flyerPh.hidden=true;};
+      flyer.onerror=()=>{/* keep CSS placeholder visible */};
+      flyer.src=SPONSOR_CAMPAIGN.flyerImage;
     }
-    if(SPONSOR_FLYER_IMAGE_URL){
-      flyer.src=SPONSOR_FLYER_IMAGE_URL;flyer.hidden=false;flyerPh.hidden=true;
-    }
-    if(SPONSOR_LEARN_MORE_URL){
-      learn.href=SPONSOR_LEARN_MORE_URL;learn.hidden=false;
+    if(SPONSOR_CAMPAIGN.learnMoreUrl){
+      learn.href=SPONSOR_CAMPAIGN.learnMoreUrl;
+      learn.hidden=false;
     }
 
     if(sessionStorage.getItem('sponsorWatched')==='1'){

@@ -37,6 +37,22 @@
   .navin{display:flex;align-items:center;justify-content:space-between;height:130px;gap:24px}
   .navin .logo{height:96px;transition:transform .2s}
   .navin .logo-link{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
+
+  /* === Featured favorites === */
+  .favorites{padding:78px 0;background:var(--mozz);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fav-sub{max-width:520px;margin:14px auto 0;text-align:center;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+  .fav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));gap:22px;max-width:880px;margin:40px auto 0;justify-content:center}
+  .fav-card{display:block;background:var(--cream);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--charcoal);box-shadow:0 14px 30px -16px rgba(40,24,8,.4);transition:transform .22s,box-shadow .22s,border-color .22s}
+  .fav-card:hover,.fav-card:focus-visible{transform:translateY(-6px);box-shadow:0 22px 44px -18px rgba(40,24,8,.5);border-color:rgba(193,121,19,.4);outline:none}
+  .fav-card__ph{aspect-ratio:4/3;background:linear-gradient(135deg,#ecd9bd,#e3cda8);overflow:hidden;display:block}
+  .fav-card__ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .fav-card:hover .fav-card__ph img{transform:scale(1.04)}
+  .fav-card__bd{padding:18px 22px 22px}
+  .fav-card__name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;margin-bottom:8px;line-height:1.1}
+  .fav-card__cta{font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--orange);display:inline-flex;align-items:center;gap:6px;transition:gap .22s,color .22s}
+  .fav-card:hover .fav-card__cta,.fav-card:focus-visible .fav-card__cta{gap:10px;color:var(--orange-deep)}
+  @media(max-width:680px){.fav-grid{grid-template-columns:1fr;max-width:420px;padding:0 8px}}
+  /* === / Featured favorites === */
   .navlinks{display:flex;gap:22px;font-size:17px;font-weight:600;letter-spacing:.06em}
   .navlinks a{color:var(--ink-soft);transition:color .2s;white-space:nowrap}.navlinks a:hover{color:var(--orange)}
   .navbtn{background:var(--orange);color:#fff;padding:18px 42px;border-radius:36px;font-weight:700;font-size:19px;letter-spacing:.05em;white-space:nowrap;box-shadow:0 14px 32px -10px rgba(193,121,19,.7);transition:transform .2s,box-shadow .2s,background .2s}
@@ -233,6 +249,41 @@
     <div class="rating"><span class="star">★★★★★</span> 4.8 on delivery · loved across Broward County</div>
   </div>
 </header>
+
+<section class="favorites" id="favorites">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-eyebrow">Featured</div>
+      <h2>Puccettoni <em>Favorites</em></h2>
+      <p class="fav-sub">Tap a favorite and order directly through Toast.</p>
+    </div>
+    <div class="fav-grid">
+      <a class="fav-card rv" href="https://order.toasttab.com/online/puccettoni_pompanobeach/item-margherita-pizza-12_68933c64-f74e-4107-95a9-b5906d117cb4" target="_blank" rel="noopener" aria-label="Order Margherita Pizza 12 inch on Toast">
+        <div class="fav-card__ph"><img src="Images/Margherita%20Pizza%2012.png" alt="Margherita Pizza 12 inch"></div>
+        <div class="fav-card__bd">
+          <h3 class="fav-card__name">Margherita 12&quot;</h3>
+          <span class="fav-card__cta">Order on Toast →</span>
+        </div>
+      </a>
+      <!--
+        TODO: add more featured favorites once direct Toast item URLs are confirmed for THIS location (Pompano Beach).
+        Pattern for each card:
+
+        <a class="fav-card rv" href="<POMPANO_TOAST_ITEM_URL>" target="_blank" rel="noopener" aria-label="Order <item> on Toast">
+          <div class="fav-card__ph"><img src="Images/<filename>.png" alt="<item>"></div>
+          <div class="fav-card__bd">
+            <h3 class="fav-card__name"><short name></h3>
+            <span class="fav-card__cta">Order on Toast →</span>
+          </div>
+        </a>
+
+        Candidate items (images already available in /Images): Truffle Pizza 12, Pizza 12 Combo,
+        Sicilian Rustic Full Tray, Pepperoni Pizza 12, Diavola Pizza 12, Tiramisu Cake Slice.
+        Do NOT add price or long description.
+      -->
+    </div>
+  </div>
+</section>
 
 <section class="catering" id="catering">
   <div class="wrap">

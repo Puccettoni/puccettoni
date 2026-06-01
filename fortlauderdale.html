@@ -36,6 +36,7 @@
   nav{position:sticky;top:0;z-index:200;background:rgba(255,244,227,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .navin{display:flex;align-items:center;justify-content:space-between;height:130px;gap:24px}
   .navin .logo{height:96px;transition:transform .2s}
+  .navin .logo-link{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
   .navlinks{display:flex;gap:22px;font-size:17px;font-weight:600;letter-spacing:.06em}
   .navlinks a{color:var(--ink-soft);transition:color .2s;white-space:nowrap}.navlinks a:hover{color:var(--orange)}
   .navbtn{background:var(--orange);color:#fff;padding:18px 42px;border-radius:36px;font-weight:700;font-size:19px;letter-spacing:.05em;white-space:nowrap;box-shadow:0 14px 32px -10px rgba(193,121,19,.7);transition:transform .2s,box-shadow .2s,background .2s}
@@ -204,7 +205,7 @@
 
 <nav>
   <div class="wrap navin">
-    <a href="index.html" aria-label="Go to Puccettoni home"><img src="Images/logo.png" alt="Puccettoni" class="logo" style="background:transparent"></a>
+    <a href="index.html" class="logo-link" aria-label="Go to Puccettoni home"><img src="Images/logo.png" alt="Puccettoni" class="logo" style="background:transparent"></a>
     <div class="navlinks">
       <a href="https://order.toasttab.com/online/puccettoni_fortlauderdale" target="_blank" rel="noopener">Menu</a>
       <a href="#catering">Catering</a>

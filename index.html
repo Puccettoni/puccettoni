@@ -30,7 +30,7 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   .stage{position:relative;z-index:2;width:100%;max-width:940px;padding:clamp(36px,6vh,64px) 24px;text-align:center}
   .orn{width:188px;max-width:54%;height:16px;color:var(--orange);opacity:.65;margin:0 auto 12px;display:block}
-  .logo-wrap{margin-bottom:14px;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .logo-wrap{display:block;margin-bottom:14px;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;text-decoration:none;color:inherit}
   .logo-img{display:none;width:min(440px,84%);height:auto;margin:0 auto}
   .logo-img.loaded{display:block}
   .logo-img.loaded ~ .logo-fallback{display:none}
@@ -167,7 +167,7 @@
     <circle cx="100" cy="8" r="2.6" fill="currentColor"/>
   </svg>
 
-  <div class="logo-wrap">
+  <a class="logo-wrap" href="index.html" aria-label="Go to Puccettoni home">
     <img class="logo-img" src="Images/logo.png" alt="Puccettoni — Authentic Italian Pizza & Food" onload="this.classList.add('loaded')">
     <div class="logo-fallback" aria-hidden="true">
       <svg class="crown" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
@@ -179,7 +179,7 @@
       </svg>
       <div class="wordmark">PUCCET<span>T</span>ONI</div>
     </div>
-  </div>
+  </a>
 
   <div class="welcome">Benvenuti</div>
   <div class="tagline">Authentic Italian, <em>made fresh</em> — choose your table</div>

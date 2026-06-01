@@ -413,13 +413,7 @@
         </div>
         <div class="fld">
           <label for="cPeople">How many people?</label>
-          <select id="cPeople" name="people" required>
-            <option value="">Select</option>
-            <option>5–10</option>
-            <option>10–20</option>
-            <option>20–40</option>
-            <option>40+</option>
-          </select>
+          <input type="number" id="cPeople" name="guest_count_exact" placeholder="e.g. 25" min="1" required>
         </div>
         <div class="fld">
           <label for="cOccasion">Occasion</label>
@@ -430,6 +424,24 @@
             <option>Birthday</option>
             <option>Wedding / event</option>
             <option>Other</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="cService">Service style</label>
+          <select id="cService" name="service_style" required>
+            <option value="">Select</option>
+            <option value="food_truck">Food Truck</option>
+            <option value="private_chef_onsite">Private Chef On-Site</option>
+            <option value="dropoff">Drop-off Catering</option>
+            <option value="not_sure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="cLocation">Preferred location</label>
+          <select id="cLocation" name="preferred_location" required>
+            <option value="pompano" selected>Pompano Beach</option>
+            <option value="fort_lauderdale">Fort Lauderdale</option>
+            <option value="not_sure">Not sure</option>
           </select>
         </div>
         <div class="fld full">

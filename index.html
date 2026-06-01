@@ -28,11 +28,18 @@
   }
   body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .page-layout{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,6vh,64px) 24px;display:grid;grid-template-columns:minmax(160px,220px) minmax(520px,760px) minmax(180px,240px);gap:clamp(20px,3vw,42px);align-items:start}
+  .page-layout{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,6vh,64px) 24px;display:grid;grid-template-columns:minmax(160px,220px) minmax(520px,760px) minmax(180px,240px);gap:clamp(32px,5vw,72px);align-items:start}
   .stage{position:relative;width:100%;text-align:center}
 
   /* === Side panels (Social + Products) === */
   .side-panel{width:100%}
+  /* Desktop only: float side panels alongside the scrolling stage */
+  @media(min-width:1140px){
+    .side-panel{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(193,121,19,.3) transparent}
+    .side-panel::-webkit-scrollbar{width:6px}
+    .side-panel::-webkit-scrollbar-thumb{background:rgba(193,121,19,.3);border-radius:3px}
+    .side-panel::-webkit-scrollbar-track{background:transparent}
+  }
   .side-panel__inner{background:rgba(255,244,227,.55);border:1px solid rgba(193,121,19,.16);border-radius:18px;padding:24px 20px;box-shadow:0 14px 32px -22px rgba(40,24,8,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:rise .9s .4s cubic-bezier(.2,.8,.2,1) both}
   .side-panel__eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--basil);font-weight:600;opacity:.85;margin-bottom:10px}
   .side-panel__title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;line-height:1.1;margin-bottom:10px;color:var(--charcoal)}
@@ -59,6 +66,9 @@
   .prod-card:hover .prod-card__ph img{transform:scale(1.05)}
   .prod-card__name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:14px;text-align:center;padding:8px 6px 10px;line-height:1.1;color:var(--charcoal)}
   .prod-hint{margin:14px 0 0;text-align:center;font-size:11.5px;letter-spacing:.04em;color:var(--ink-soft);font-style:italic;opacity:.85}
+  .prod-view-more-wrap{text-align:center;margin-top:14px}
+  .prod-view-more{display:inline-flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--orange);text-decoration:none;padding:9px 18px;border:1px solid rgba(193,121,19,.4);border-radius:24px;transition:background .22s,color .22s,border-color .22s,transform .22s,gap .22s}
+  .prod-view-more:hover,.prod-view-more:focus-visible{background:var(--orange);color:#fff;border-color:var(--orange);transform:translateY(-1px);gap:10px;outline:none}
 
   /* Tablet / medium screens: side panels stack below stage */
   @media(max-width:1139px){
@@ -492,6 +502,9 @@
         <!-- TODO PENDING: add Salads and Drinks cards here when photos are delivered to /Images. Keep the same .prod-card pattern. -->
       </div>
       <p class="prod-hint">Choose your location to order fresh.</p>
+      <div class="prod-view-more-wrap">
+        <a href="products.html" class="prod-view-more" aria-label="See all Puccettoni products">View More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
   </aside>
 </div>

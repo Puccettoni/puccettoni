@@ -339,6 +339,14 @@
           <input type="date" id="cDate" name="date">
         </div>
         <div class="fld">
+          <label for="cStartTime">Event start time</label>
+          <input type="time" id="cStartTime" name="event_start_time">
+        </div>
+        <div class="fld">
+          <label for="cEndTime">Event end time</label>
+          <input type="time" id="cEndTime" name="event_end_time">
+        </div>
+        <div class="fld">
           <label for="cPeople">How many people?</label>
           <input type="number" id="cPeople" name="guest_count_exact" placeholder="e.g. 25" min="1" required>
         </div>
@@ -370,6 +378,22 @@
             <option value="fort_lauderdale">Fort Lauderdale</option>
             <option value="not_sure">Not sure</option>
           </select>
+        </div>
+        <div class="fld">
+          <label for="cServers">Do you need servers?</label>
+          <select id="cServers" name="needs_servers">
+            <option value="not_sure" selected>Not sure yet</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="fld full">
+          <label for="cHeavy">Furniture &amp; heavy setup needs</label>
+          <textarea id="cHeavy" name="heavy_equipment_needs" placeholder="Tables, chairs, cocktail tables, bar stools, umbrellas, gazebo, tents, patio heaters, lounge area, etc."></textarea>
+        </div>
+        <div class="fld full">
+          <label for="cTableware">Tableware &amp; service equipment needs</label>
+          <textarea id="cTableware" name="service_equipment_needs" placeholder="Plates, cutlery, glasses, tablecloths, napkins, serving trays, chafing dishes, warmers, service tools, etc."></textarea>
         </div>
         <div class="fld full">
           <label for="cMsg">Tell us more (optional)</label>

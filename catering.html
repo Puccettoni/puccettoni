@@ -170,7 +170,7 @@
   <div class="wrap">
     <div class="cat-form-card rv" id="cateringInquiry">
       <h2>Tell us about your <em>event</em></h2>
-      <p class="sub">A few details and Marco&rsquo;s team will get back with a tailored menu and a quote.</p>
+      <p class="sub">Share a few event details so our team can recommend the right setup, staffing and service style.</p>
 
       <form class="cat-form" id="cateringForm">
         <input type="hidden" name="source" value="catering_neutral">
@@ -189,6 +189,14 @@
         <div class="fld">
           <label for="cDate">Event date</label>
           <input type="date" id="cDate" name="date">
+        </div>
+        <div class="fld">
+          <label for="cStartTime">Event start time</label>
+          <input type="time" id="cStartTime" name="event_start_time">
+        </div>
+        <div class="fld">
+          <label for="cEndTime">Event end time</label>
+          <input type="time" id="cEndTime" name="event_end_time">
         </div>
         <div class="fld">
           <label for="cPeople">How many people?</label>
@@ -222,6 +230,22 @@
             <option value="pompano">Pompano Beach</option>
             <option value="fort_lauderdale">Fort Lauderdale</option>
           </select>
+        </div>
+        <div class="fld">
+          <label for="cServers">Do you need servers?</label>
+          <select id="cServers" name="needs_servers">
+            <option value="not_sure" selected>Not sure yet</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="fld full">
+          <label for="cHeavy">Furniture &amp; heavy setup needs</label>
+          <textarea id="cHeavy" name="heavy_equipment_needs" placeholder="Tables, chairs, cocktail tables, bar stools, umbrellas, gazebo, tents, patio heaters, lounge area, etc."></textarea>
+        </div>
+        <div class="fld full">
+          <label for="cTableware">Tableware &amp; service equipment needs</label>
+          <textarea id="cTableware" name="service_equipment_needs" placeholder="Plates, cutlery, glasses, tablecloths, napkins, serving trays, chafing dishes, warmers, service tools, etc."></textarea>
         </div>
         <div class="fld full">
           <label for="cMsg">Tell us more (optional)</label>

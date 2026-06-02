@@ -57,6 +57,11 @@
   .social-tag{font-size:12px;color:var(--ink-soft);letter-spacing:.02em;margin:0}
   .social-tag a{color:var(--orange);text-decoration:none;font-weight:600}
   .social-tag a:hover,.social-tag a:focus-visible{color:var(--orange-deep);text-decoration:underline;outline:none}
+  .side-panel__inner--franchise{background:linear-gradient(180deg,rgba(250,247,240,.86),rgba(255,244,227,.62));border-color:rgba(193,121,19,.24);padding:22px 20px}
+  .franchise-mark{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--orange);background:rgba(193,121,19,.08);border:1px solid rgba(193,121,19,.22)}
+  .franchise-mark svg{width:21px;height:21px}
+  .side-panel__btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--orange);padding:11px 16px;border-radius:24px;box-shadow:0 12px 24px -14px rgba(193,121,19,.75);transition:background .22s,transform .22s,gap .22s}
+  .side-panel__btn:hover,.side-panel__btn:focus-visible{background:var(--orange-deep);transform:translateY(-1px);gap:10px;outline:none}
   .side-panel__inner--community{background:rgba(250,247,240,.72);border-color:rgba(63,107,59,.18);padding:22px 20px}
   .community-mark{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--basil);background:rgba(63,107,59,.08);border:1px solid rgba(63,107,59,.18)}
   .community-mark svg{width:21px;height:21px}
@@ -245,6 +250,22 @@
         </a>
       </div>
       <p class="social-tag">Tag us <a href="https://instagram.com/puccettonipizza" target="_blank" rel="noopener">@puccettonipizza</a></p>
+    </div>
+    <div class="side-panel__inner side-panel__inner--franchise">
+      <div class="franchise-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 21V8l8-5 8 5v13"/>
+          <path d="M9 21v-7h6v7"/>
+          <path d="M8 10h.01"/>
+          <path d="M12 8h.01"/>
+          <path d="M16 10h.01"/>
+        </svg>
+      </div>
+      <div class="side-panel__eyebrow">Franchise</div>
+      <h3 class="side-panel__title">Bring true Italian roots to your city</h3>
+      <p class="side-panel__copy">Born in Italy and built around authentic Italian pizza &amp; food, Puccettoni is opening the door for future franchise opportunities.</p>
+      <p class="community-detail">A real Italian concept, crafted for new communities.</p>
+      <a href="franchise.html" class="side-panel__btn">Explore Franchise <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="side-panel__inner side-panel__inner--community">
       <div class="community-mark" aria-hidden="true">

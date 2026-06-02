@@ -99,6 +99,8 @@ Foco em **conversão, não só engajamento**.
 ### Site
 Deixar o site mais institucional. Hoje ele parece só uma "porta" para pedidos online. A homepage deve ter, nesta lógica: história da marca, unidades, franquia/investidores, catering/eventos, prova social, e só então o CTA para pedir online.
 
+**Atualização 01/06/2026:** Puccettoni tem duas lojas — Pompano Beach e Fort Lauderdale. A experiência pública deve manter escolha de unidade, páginas/CTAs por loja e comunicação clara para cada endereço.
+
 ### Identidade da marca (paleta final definida pelo Marco)
 - **Laranja Puccettoni #C17913** — cor principal e mais importante. Usar em CTA, títulos, botões e destaques.
 - **Creme / fundo quente #FFF4E3** — backgrounds, posts e stories.

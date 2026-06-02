@@ -1,6 +1,6 @@
 # CONTEXTO DO PROJETO — PUCCETTONI
 ### Arquivo de contexto para o Claude Code · mantido por Lucas Bizinoto
-### Última atualização: 29/05/2026 (correção de endereço/telefone para Fort Lauderdale)
+### Última atualização: 01/06/2026 (correção: duas lojas confirmadas)
 
 > Claude Code: leia este arquivo inteiro antes de trabalhar. Ele separa o que está CONFIRMADO do que ainda é HIPÓTESE ou está PENDENTE. Não trate hipótese como fato. Quando algo não estiver aqui, pergunte em vez de assumir.
 
@@ -9,7 +9,7 @@
 ## 1. O QUE É O PROJETO
 
 Cliente: Puccettoni — Authentic Italian Pizza & Food.
-Restaurante italiano em Fort Lauderdale, Florida — **uma única unidade**, sem operação em Pompano Beach.
+Restaurante italiano com **duas lojas na Flórida: Pompano Beach e Fort Lauderdale**.
 Dono: Chef Marco.
 Meu papel (Lucas): estrutura técnica — funis, CRM, automações, tracking, analytics, conteúdo e a inteligência por trás.
 
@@ -21,8 +21,10 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 
 ### Negócio
 - Nome da marca conforme o logo oficial: PUCCETTONI (dois T).
-- Endereço: **3801 Davie Blvd, Fort Lauderdale, FL 33312** (única unidade — confirmado pelo Marco em 29/05/2026).
-- Telefone: **(754) 307-4992** (confirmado pelo Marco em 29/05/2026).
+- Lojas confirmadas:
+  - **Pompano Beach:** 1255 South Powerline Road, Pompano Beach, FL 33069.
+  - **Fort Lauderdale:** 3801 Davie Boulevard #108, Fort Lauderdale, FL 33312.
+- Telefone principal exibido no site: **(754) 307-4992**.
 - Site oficial: **www.puccettoni.com** (confirmado pelo Marco em 29/05/2026).
 - Instagram oficial: **@puccettonipizza** (confirmado pelo Marco em 29/05/2026).
 - Horário (confirmado pelo Marco em 29/05/2026):
@@ -39,7 +41,7 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 - Marco usa explicitamente a expressão **"order direct"** no texto de posicionamento que mandou em 29/05/2026 (lista junto com "online order, pickup, delivery"). Por isso o CTA principal da landing institucional foi colocado como **"Order Direct"** em vez de "Order Now" genérico ou "Order on Uber Eats".
 - **Hipótese a confirmar com o Marco:** "order direct" provavelmente reflete intenção de priorizar pedido direto antes das delivery apps — restaurantes geralmente fazem isso para economizar a comissão de ~15–30% cobrada pelos apps. Mas isso é inferência minha; o Marco não declarou o porquê. Confirmar com ele para garantir que a hierarquia da copy (direct primeiro, apps depois) está alinhada com a intenção.
 
-> ⚠️ **Correção 29/05/2026:** versão anterior deste arquivo listava endereço em Pompano Beach (1255 S Powerline Rd) e telefone (786) 318-0090. Esses dados estavam incorretos — o negócio é em Fort Lauderdale, uma única unidade. Qualquer material antigo que cite Pompano precisa ser revisado.
+> ⚠️ **Correção 01/06/2026:** a informação de que Puccettoni tinha apenas uma unidade estava incorreta. O projeto deve lembrar que existem **duas lojas: Pompano Beach e Fort Lauderdale**. Materiais públicos podem manter escolha de unidade e links separados de pedido por loja.
 
 ### Identidade visual (definida pelo Marco — paleta final)
 - Laranja Puccettoni #C17913 — cor principal. Botões, títulos, destaques.
@@ -71,8 +73,12 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 
 - Pasta do projeto: Desktop/Marco.
 - Arquivos HTML principais:
-  - `teste.html` — landing page do funil de cliente (oferta + captura de lead).
-  - `index.html` — homepage institucional (menu, catering, story, community, location, franchise, contact). **Era `site_institucional.html` até 29/05/2026; renomeada para `index.html` para casar com a convenção do Vercel** (raiz `/` serve homepage automaticamente, sem precisar de rewrite).
+  - `index.html` — homepage/landing de escolha de unidade, com Pompano Beach + Fort Lauderdale, CTA de pedido, teaser de catering e vitrine de produtos.
+  - `fortlauderdale.html` — página institucional da loja Fort Lauderdale.
+  - `pompano.html` — página institucional da loja Pompano Beach.
+  - `catering.html` — página neutra de catering e eventos.
+  - `products.html` — vitrine visual dos produtos.
+  - `teste.html` — landing page antiga/demo do funil de cliente (oferta + captura de lead).
 - Logo em: Images/logo.png (transparente).
 - Ambos os HTMLs já usam a identidade oficial (cores + fontes + logo carregando corretamente).
 
@@ -80,13 +86,13 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 - Oferta atual de exemplo: focaccia grátis no primeiro pedido (BLOCO MARCADO como fácil de trocar — oferta final ainda não confirmada pelo Marco).
 - Formulário pede: nome, e-mail, WhatsApp, preferência. Hoje é só demonstração (mostra mensagem de boas-vindas).
 
-### Site institucional (index.html)
-- Estrutura segue o que o Marco pediu no briefing: hero → combos âncora → menu completo → catering → story → community → reviews → location → franchise → contact.
+### Site institucional / páginas públicas
+- Estrutura atual usa `index.html` como escolha de unidade e direciona para páginas institucionais separadas por loja (`pompano.html` e `fortlauderdale.html`).
 - Componentes interativos implementados (29/05/2026, escopo "fase 1 de interatividade"):
   - **Chip nav do menu** — categorias âncora (Combos / Pizza / Focaccia / Gnocchi / Panzerotti / Desserts / Deli / Mozzarella) com sticky bar abaixo do topo, smooth scroll e active-state via IntersectionObserver. É navegação, não filtro QSR (decisão para não brigar com o posicionamento médio-alto).
   - **Catering inquiry form** — substitui o CTA solto. Campos: nome, email, telefone, data, número de pessoas, ocasião, mensagem livre. Hoje é demo (preventDefault + thanks). Em produção deve enviar pro HubSpot.
   - **Mobile sticky bottom bar** — Order (laranja, primária) / Menu / Call / Maps. Aparece só em viewport ≤ 760px. Quando ativa, esconde a Order Now do topo (evita CTA duplicado) e a concept-tag de canto.
-- Maps já aponta pra URL real do Google Maps (search por endereço). Order Direct continua marcado .pending até o Marco fornecer URL direta (Toast ou domínio).
+- Maps e Order Direct devem respeitar a unidade escolhida. Pompano e Fort Lauderdale podem ter URLs separadas de Toast/Maps.
 
 ### Formulários esperando integração
 Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só rodam demo no front. Em produção devem:
@@ -106,7 +112,7 @@ Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só 
 ## 4. HIPÓTESES (NÃO tratar como fato)
 
 - "Focaccia grátis" como primeira oferta é sugestão minha, não decisão do Marco. Ele vai escolher entre brinde, cupom ou combo.
-- Concorrentes fortes observados de fora: lista anterior incluía nomes como Sicilian Oven, La Perla di Pompano, Carlucci's, Amelia's, La Forketta — **mas esse levantamento foi feito presumindo Pompano. Refazer mapa de concorrência para Fort Lauderdale/Davie Blvd antes de usar.**
+- Concorrentes fortes observados de fora: lista anterior incluía nomes como Sicilian Oven, La Perla di Pompano, Carlucci's, Amelia's, La Forketta — **refazer mapa de concorrência por área, separando Pompano Beach e Fort Lauderdale/Davie Blvd antes de usar em estratégia.**
 - Qualquer número de ROI, CAC ou faturamento: desconhecido até o Marco fornecer. Não inventar.
 
 ---
@@ -117,7 +123,7 @@ Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só 
 - Confirmar grafia oficial do nome para todos os materiais.
 - Escolher a oferta inicial de cliente.
 - Confirmar verba de ads.
-- Refazer **mapa de concorrência** para Fort Lauderdale/Davie Blvd (o anterior, listando concorrentes de Pompano, foi descartado).
+- Refazer **mapa de concorrência** para as duas áreas: Pompano Beach e Fort Lauderdale/Davie Blvd.
 - Funil de investidor: números reais validados (faturamento, margem, investimento, payback) + se já existe material jurídico de franquia.
 
 ---

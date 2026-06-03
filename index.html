@@ -223,101 +223,143 @@
 
   @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
-  /* === Sponsor campaign + football animation (motion-driven) === */
+  /* === Sponsor campaign — stadium night cinematic === */
   .sponsor-campaign{
-    position:relative;margin-top:clamp(36px,5vh,52px);
-    padding:clamp(32px,4.5vw,48px) clamp(20px,3vw,32px);
-    background:linear-gradient(180deg,var(--charcoal) 0%,#2a1f12 100%);
-    color:var(--cream);border-radius:24px;text-align:center;overflow:hidden;
-    box-shadow:0 28px 60px -28px rgba(40,24,8,.55);
-    animation:rise .9s .6s cubic-bezier(.2,.8,.2,1) both;
+    position:relative;margin-top:clamp(40px,6vh,60px);
+    padding:clamp(48px,6vw,72px) clamp(24px,4vw,40px);
+    background:
+      radial-gradient(70% 50% at 50% 0%, rgba(193,121,19,.18) 0%, transparent 55%),
+      radial-gradient(80% 60% at 50% 110%, rgba(0,80,48,.22) 0%, transparent 60%),
+      linear-gradient(180deg, #15110a 0%, #1E1E1E 50%, #0f1812 100%);
+    color:var(--cream);border-radius:28px;text-align:center;overflow:hidden;
+    box-shadow:0 32px 80px -32px rgba(20,12,4,.7),
+               inset 0 1px 0 rgba(255,244,227,.04);
+    animation:rise 1s .6s cubic-bezier(.2,.8,.2,1) both;
   }
+  /* Stadium spotlight cone from above */
   .sponsor-campaign::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(80% 60% at 50% -10%,rgba(193,121,19,.22),transparent 60%);
+    content:"";position:absolute;left:50%;top:-12%;
+    width:140%;height:90%;pointer-events:none;mix-blend-mode:screen;opacity:.6;
+    background:conic-gradient(from 220deg at 50% 0%,
+      transparent 0deg, rgba(232,184,108,.22) 15deg,
+      rgba(255,244,227,.06) 25deg, transparent 50deg);
+    transform:translateX(-50%);
   }
-  .sponsor-eyebrow{position:relative;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.34em;
-    text-transform:uppercase;color:#E8B86C;font-weight:600;margin-bottom:10px;opacity:.95}
+  /* Vignette around edges */
+  .sponsor-campaign::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(130% 100% at 50% 50%, transparent 48%, rgba(0,0,0,.55) 100%);
+  }
+
+  .sponsor-eyebrow{position:relative;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.42em;
+    text-transform:uppercase;color:#E8B86C;font-weight:600;margin-bottom:16px;opacity:.95;
+    display:inline-flex;align-items:center;gap:14px;justify-content:center}
+  .sponsor-eyebrow::before,.sponsor-eyebrow::after{
+    content:"";width:28px;height:1px;background:currentColor;opacity:.5}
+
   .sponsor-title{position:relative;font-family:'Cormorant Garamond',serif;font-weight:600;
-    font-size:clamp(26px,4.2vw,38px);line-height:1.08;margin-bottom:14px}
-  .sponsor-title em{color:var(--orange);font-style:italic}
-  .sponsor-copy{position:relative;max-width:560px;margin:0 auto 22px;
-    font-size:15px;line-height:1.55;color:rgba(255,244,227,.78)}
-  .sponsor-cta{position:relative;display:inline-flex;align-items:center;gap:10px;
-    font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
-    color:#fff;background:var(--orange);padding:14px 28px;border:none;border-radius:30px;cursor:pointer;
-    box-shadow:0 14px 30px -12px rgba(193,121,19,.7);
-    transition:background .25s,transform .25s,box-shadow .25s}
-  .sponsor-cta:hover,.sponsor-cta:focus-visible{background:var(--orange-deep);transform:translateY(-2px);
-    outline:none;box-shadow:0 18px 36px -12px rgba(193,121,19,.8)}
-  .sponsor-cta[disabled]{opacity:.7;cursor:progress}
+    font-size:clamp(32px,5.4vw,52px);line-height:1.05;margin-bottom:18px;
+    letter-spacing:-.005em}
+  .sponsor-title em{font-style:italic;font-weight:500;
+    background:linear-gradient(90deg,#E8B86C 0%,#C17913 60%,#F47321 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 
-  .football-animation-stage{position:relative;height:200px;margin:24px auto 0;max-width:640px;
-    background:linear-gradient(180deg,transparent 0%,transparent 70%,rgba(63,107,59,.18) 72%,rgba(63,107,59,.32) 100%);
-    border-radius:14px;overflow:hidden}
-  .football-animation-stage::after{content:"";position:absolute;left:8%;right:8%;bottom:18%;height:1px;
-    background:repeating-linear-gradient(90deg,rgba(255,244,227,.35) 0 12px,transparent 12px 24px)}
-  @media(max-width:680px){.football-animation-stage{height:160px}}
+  .sponsor-copy{position:relative;max-width:540px;margin:0 auto 30px;
+    font-size:15px;line-height:1.6;color:rgba(255,244,227,.78)}
 
-  .football-ball{position:absolute;left:6%;bottom:22%;width:36px;height:22px;
-    background:radial-gradient(ellipse at 35% 35%,#9a5a2a,#5e3414);border-radius:50%;
-    box-shadow:0 4px 12px -4px rgba(0,0,0,.5),inset -2px -3px 6px rgba(0,0,0,.3);
-    transform:translate(0,0) rotate(-15deg);opacity:0;will-change:transform,opacity}
-  .football-ball::before{content:"";position:absolute;left:50%;top:50%;width:18px;height:2px;
-    background:#FFF4E3;border-radius:2px;transform:translate(-50%,-50%)}
-  .football-ball::after{content:"";position:absolute;left:50%;top:50%;width:2px;height:8px;
-    background:#FFF4E3;border-radius:2px;transform:translate(-50%,-50%)}
-  .football-ball img{width:100%;height:100%;object-fit:contain;display:block}
-  .football-ball.has-img{background:none;box-shadow:none;border-radius:0}
-  .football-ball.has-img::before,.football-ball.has-img::after{display:none}
+  .sponsor-actions{position:relative;display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  @media(max-width:480px){.sponsor-actions{flex-direction:column;align-items:stretch;width:100%;max-width:280px}}
 
-  .football-player{position:absolute;right:6%;bottom:22%;width:54px;height:86px;
-    background:linear-gradient(180deg,#C17913 0%,#A5650E 60%,#1E1E1E 60%,#1E1E1E 100%);
-    border-radius:8px 8px 4px 4px;opacity:0;transform:translate(0,0);
-    box-shadow:0 8px 20px -6px rgba(0,0,0,.5);will-change:transform,opacity}
-  .football-player::before{content:"";position:absolute;top:-16px;left:50%;width:22px;height:22px;
-    background:#D8A56C;border:2px solid #5e3414;border-radius:50%;transform:translateX(-50%)}
-  .football-player::after{content:"";position:absolute;top:-14px;left:50%;width:22px;height:6px;
-    background:var(--orange);transform:translateX(-50%);border-radius:8px 8px 0 0}
-  .football-player img{width:100%;height:100%;object-fit:contain;display:block}
-  .football-player.has-img{background:none;box-shadow:none;border-radius:0}
-  .football-player.has-img::before,.football-player.has-img::after{display:none}
+  .sponsor-cta{display:inline-flex;align-items:center;gap:10px;
+    font-family:'Cinzel',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+    color:#fff;background:var(--orange);padding:15px 30px;border:none;border-radius:32px;cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 16px 36px -14px rgba(193,121,19,.7),
+               inset 0 1px 0 rgba(255,255,255,.18);
+    transition:background .25s,transform .25s,box-shadow .25s,gap .25s,border-color .25s}
+  .sponsor-cta:hover,.sponsor-cta:focus-visible{background:var(--orange-deep);transform:translateY(-2px);gap:14px;
+    outline:none;box-shadow:0 20px 42px -14px rgba(193,121,19,.85),
+               inset 0 1px 0 rgba(255,255,255,.22)}
+  .sponsor-cta[disabled]{opacity:.7;cursor:progress;transform:none}
+  .sponsor-cta svg{transition:transform .25s}
+  .sponsor-cta:hover svg,.sponsor-cta:focus-visible svg{transform:translateX(3px)}
+
+  .sponsor-cta--ghost{background:transparent;border:1.5px solid rgba(232,184,108,.5);color:var(--cream);
+    box-shadow:none;padding:13.5px 28px}
+  .sponsor-cta--ghost:hover,.sponsor-cta--ghost:focus-visible{
+    background:rgba(232,184,108,.12);border-color:#E8B86C;color:#fff;box-shadow:none}
+
+  /* Stadium stage */
+  .football-animation-stage{position:relative;height:240px;margin:38px auto 0;max-width:680px;
+    background:linear-gradient(180deg,transparent 0%,transparent 60%,
+      rgba(0,80,48,.16) 64%, rgba(0,80,48,.30) 100%);
+    border-radius:16px;overflow:hidden}
+  /* Two yard-mark lines, the second softer */
+  .football-animation-stage::before{
+    content:"";position:absolute;left:8%;right:8%;bottom:16%;height:1px;
+    background:repeating-linear-gradient(90deg, rgba(255,244,227,.42) 0 14px, transparent 14px 28px)}
+  .football-animation-stage::after{
+    content:"";position:absolute;left:8%;right:8%;bottom:9%;height:1px;
+    background:repeating-linear-gradient(90deg, rgba(255,244,227,.18) 0 14px, transparent 14px 28px)}
+  @media(max-width:680px){.football-animation-stage{height:180px;margin-top:30px}}
+
+  .football-ball{position:absolute;left:8%;bottom:26%;width:68px;height:40px;
+    opacity:0;transform:translate(0,0) rotate(-18deg);will-change:transform,opacity;
+    filter:drop-shadow(0 6px 14px rgba(0,0,0,.55))}
+  .football-ball svg{width:100%;height:100%;display:block}
+
+  .football-player{position:absolute;right:10%;bottom:24%;width:64px;height:118px;
+    opacity:0;transform:translate(0,0);will-change:transform,opacity;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.5))}
+  .football-player svg{width:100%;height:100%;display:block}
+
+  /* Flash at the catch moment */
+  .catch-burst{position:absolute;right:14%;bottom:48%;width:24px;height:24px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,244,227,.95) 0%, rgba(232,184,108,.55) 45%, transparent 75%);
+    opacity:0;pointer-events:none;will-change:transform,opacity;mix-blend-mode:screen}
 
   /* Modal */
   .sponsor-modal{position:fixed;inset:0;z-index:1000;display:none;
     align-items:center;justify-content:center;padding:20px}
   .sponsor-modal:not([hidden]){display:flex}
-  .sponsor-modal__backdrop{position:absolute;inset:0;background:rgba(20,12,4,.78);
-    backdrop-filter:blur(4px);animation:fadeIn .25s ease-out both}
+  .sponsor-modal__backdrop{position:absolute;inset:0;background:rgba(15,8,4,.82);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fadeIn .28s ease-out both}
   .sponsor-modal__panel{position:relative;background:var(--mozz);color:var(--charcoal);
-    border-radius:18px;padding:clamp(20px,3vw,32px);max-width:min(92vw,720px);max-height:90vh;
-    overflow-y:auto;box-shadow:0 40px 80px -20px rgba(0,0,0,.55);
-    animation:popIn .35s cubic-bezier(.2,.8,.2,1) both;text-align:center}
-  .sponsor-modal__close{position:absolute;top:10px;right:10px;width:42px;height:42px;
+    border-radius:20px;padding:clamp(24px,3.5vw,40px);max-width:min(92vw,720px);max-height:90vh;
+    overflow-y:auto;box-shadow:0 50px 100px -24px rgba(0,0,0,.6);
+    animation:popIn .38s cubic-bezier(.2,.8,.2,1) both;text-align:center}
+  .sponsor-modal__eyebrow{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:10px}
+  .sponsor-modal__title{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(24px,3.6vw,32px);line-height:1.1;color:var(--charcoal);margin-bottom:14px}
+  .sponsor-modal__title em{font-style:italic;color:var(--orange)}
+  .sponsor-modal__close{position:absolute;top:12px;right:12px;width:42px;height:42px;
     display:flex;align-items:center;justify-content:center;background:var(--charcoal);color:#fff;
     border:none;border-radius:50%;font-size:24px;line-height:1;cursor:pointer;
     box-shadow:0 8px 18px -6px rgba(0,0,0,.4);transition:transform .2s,background .2s;z-index:2}
   .sponsor-modal__close:hover,.sponsor-modal__close:focus-visible{
     background:var(--tomato);transform:scale(1.06);outline:none}
   .sponsor-modal__flyer{display:block;width:auto;height:auto;
-    max-width:min(92vw,640px);max-height:60vh;object-fit:contain;
-    margin:14px auto 20px;border-radius:10px}
-  .sponsor-modal__flyer.is-placeholder{width:100%;max-width:480px;height:280px;
-    background:repeating-linear-gradient(45deg,rgba(193,121,19,.12) 0 12px,rgba(193,121,19,.04) 12px 24px);
+    max-width:min(92vw,640px);max-height:55vh;object-fit:contain;
+    margin:14px auto 22px;border-radius:12px}
+  .sponsor-modal__flyer.is-placeholder{width:100%;max-width:480px;height:240px;
+    background:repeating-linear-gradient(45deg,rgba(193,121,19,.10) 0 12px,rgba(193,121,19,.03) 12px 24px);
     border:1.5px dashed var(--orange);display:flex;align-items:center;justify-content:center;
-    color:var(--ink-soft);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;
-    text-transform:uppercase;text-align:center;padding:0 20px}
-  .sponsor-modal__copy{max-width:480px;margin:0 auto 18px;font-size:15px;line-height:1.55;color:var(--ink-soft)}
-  .sponsor-modal__cta{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-    font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
-    color:#fff;background:var(--orange);padding:14px 28px;border-radius:30px;
-    box-shadow:0 12px 26px -10px rgba(193,121,19,.7);transition:background .25s,transform .25s}
+    color:var(--ink-soft);font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.18em;
+    text-transform:uppercase;text-align:center;padding:0 24px;line-height:1.6}
+  .sponsor-modal__copy{max-width:480px;margin:0 auto 22px;font-size:15px;line-height:1.6;color:var(--ink-soft)}
+  .sponsor-modal__cta{display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    font-family:'Cinzel',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+    color:#fff;background:var(--orange);padding:14px 30px;border-radius:32px;
+    box-shadow:0 14px 30px -12px rgba(193,121,19,.75);transition:background .25s,transform .25s,gap .25s}
   .sponsor-modal__cta:hover,.sponsor-modal__cta:focus-visible{
-    background:var(--orange-deep);transform:translateY(-2px);outline:none}
+    background:var(--orange-deep);transform:translateY(-2px);gap:14px;outline:none}
+  .sponsor-modal__cta svg{transition:transform .25s}
+  .sponsor-modal__cta:hover svg,.sponsor-modal__cta:focus-visible svg{transform:translateX(3px)}
 
   @keyframes fadeIn{from{opacity:0}to{opacity:1}}
   @keyframes popIn{
-    from{opacity:0;transform:scale(.92) translateY(20px)}
+    from{opacity:0;transform:scale(.94) translateY(18px)}
     to{opacity:1;transform:scale(1) translateY(0)}
   }
   /* === / Sponsor campaign === */
@@ -435,13 +477,61 @@
   </section>
 
   <section class="sponsor-campaign" id="sponsorCampaign">
-    <div class="sponsor-eyebrow">Community Sponsorship</div>
-    <h2 class="sponsor-title">Game Day with <em>Puccettoni</em></h2>
-    <p class="sponsor-copy">We&rsquo;re proud to support local football. Watch the catch and learn more about the team we&rsquo;re sponsoring.</p>
-    <button type="button" class="sponsor-cta" id="sponsorPlay" aria-label="Play sponsorship announcement">Watch Announcement</button>
+    <div class="sponsor-eyebrow">Game Day</div>
+    <h2 class="sponsor-title">Proudly supporting the <em>Miami Hurricanes</em></h2>
+    <p class="sponsor-copy">Italian roots, South Florida pride. Puccettoni stands with the home team — kitchen open before every kickoff.</p>
+    <div class="sponsor-actions">
+      <button type="button" class="sponsor-cta" id="sponsorPlay" aria-label="Watch the Puccettoni tribute to the Miami Hurricanes">
+        Watch the Tribute
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+      </button>
+      <a class="sponsor-cta sponsor-cta--ghost" href="https://miamihurricanes.com/" target="_blank" rel="noopener" aria-label="Visit the Miami Hurricanes official site (opens in new tab)">
+        Visit the Hurricanes
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
     <div class="football-animation-stage" id="footballStage" aria-hidden="true">
-      <div class="football-ball" id="footballBall"></div>
-      <div class="football-player" id="footballPlayer"></div>
+      <div class="football-ball" id="footballBall">
+        <svg viewBox="0 0 96 60" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ballSkin" cx="34%" cy="32%" r="78%">
+              <stop offset="0%" stop-color="#B07140"/>
+              <stop offset="55%" stop-color="#6b3d1c"/>
+              <stop offset="100%" stop-color="#2a1408"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="48" cy="30" rx="46" ry="22" fill="url(#ballSkin)"/>
+          <path d="M 12 30 Q 48 23 84 30 Q 48 37 12 30 Z" fill="rgba(255,244,227,.06)"/>
+          <line x1="34" y1="30" x2="62" y2="30" stroke="#FFF4E3" stroke-width="2.4" stroke-linecap="round" opacity=".92"/>
+          <line x1="40" y1="26" x2="40" y2="34" stroke="#FFF4E3" stroke-width="1.9" stroke-linecap="round" opacity=".92"/>
+          <line x1="45" y1="25" x2="45" y2="35" stroke="#FFF4E3" stroke-width="1.9" stroke-linecap="round" opacity=".92"/>
+          <line x1="50" y1="25" x2="50" y2="35" stroke="#FFF4E3" stroke-width="1.9" stroke-linecap="round" opacity=".92"/>
+          <line x1="55" y1="25" x2="55" y2="35" stroke="#FFF4E3" stroke-width="1.9" stroke-linecap="round" opacity=".92"/>
+        </svg>
+      </div>
+      <div class="football-player" id="footballPlayer">
+        <svg viewBox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="playerSkin" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#D08820"/>
+              <stop offset="65%" stop-color="#8a5408"/>
+              <stop offset="100%" stop-color="#3a2406"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#playerSkin)">
+            <circle cx="38" cy="16" r="11"/>
+            <path d="M 28 24 L 52 30 L 58 50 L 36 54 L 20 38 Z"/>
+            <path d="M 50 32 L 70 26 L 73 33 L 54 40 Z"/>
+            <path d="M 28 38 L 10 50 L 14 57 L 32 46 Z"/>
+          </g>
+          <g fill="#1a1308">
+            <path d="M 30 50 L 58 52 L 56 68 L 32 68 Z"/>
+            <path d="M 44 62 L 64 78 L 72 78 L 72 86 L 56 84 L 40 70 Z"/>
+            <path d="M 32 62 L 28 100 L 16 118 L 10 114 L 22 96 L 26 60 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="catch-burst" id="catchBurst" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -508,12 +598,16 @@
 <div class="sponsor-modal" id="sponsorModal" role="dialog" aria-modal="true" aria-labelledby="sponsorModalTitle" hidden>
   <div class="sponsor-modal__backdrop" data-close></div>
   <div class="sponsor-modal__panel">
-    <button type="button" class="sponsor-modal__close" data-close aria-label="Close sponsorship announcement">×</button>
-    <h2 id="sponsorModalTitle" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Puccettoni sponsorship announcement</h2>
-    <img class="sponsor-modal__flyer" id="sponsorFlyer" alt="Puccettoni sponsorship flyer" hidden>
-    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder">Flyer image goes here — drop sponsor-flyer.png into the Images folder</div>
-    <p class="sponsor-modal__copy">Puccettoni is proud to support local youth and community sports.</p>
-    <a class="sponsor-modal__cta" id="sponsorLearnMore" target="_blank" rel="noopener" hidden>Learn More</a>
+    <button type="button" class="sponsor-modal__close" data-close aria-label="Close sponsorship message">×</button>
+    <div class="sponsor-modal__eyebrow">Game Day</div>
+    <h2 class="sponsor-modal__title" id="sponsorModalTitle">Proudly supporting the <em>Miami Hurricanes</em></h2>
+    <img class="sponsor-modal__flyer" id="sponsorFlyer" alt="Puccettoni × Miami Hurricanes tribute flyer" hidden>
+    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder">Tribute flyer goes here<br>Drop sponsor-flyer.png into the Images folder</div>
+    <p class="sponsor-modal__copy">Italian roots, South Florida pride. Come watch the game with us — kitchen open before every kickoff at both Pompano Beach and Fort Lauderdale.</p>
+    <a class="sponsor-modal__cta" id="sponsorLearnMore" href="https://miamihurricanes.com/" target="_blank" rel="noopener" aria-label="Visit the Miami Hurricanes official site (opens in new tab)">
+      Visit the Hurricanes
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
   </div>
 </div>
 
@@ -522,39 +616,23 @@
 
   (function(){
     // === Sponsor campaign config ===
-    // Drop the 3 PNGs into the Images/ folder. If any file is missing
-    // or fails to load, the CSS placeholder shows automatically.
+    // Flyer PNG is optional — placeholder shows if missing.
     const SPONSOR_CAMPAIGN = {
-      ballImage:    "Images/football-ball.png",
-      playerImage:  "Images/football-player.png",
       flyerImage:   "Images/sponsor-flyer.png",
-      // TODO: URL the "Learn More" button should open (leave empty to hide it)
-      learnMoreUrl: ""
+      learnMoreUrl: "https://miamihurricanes.com/"
     };
     // ===============================================================
 
     const stage   = document.getElementById('footballStage');
-    const ball     = document.getElementById('footballBall');
-    const player   = document.getElementById('footballPlayer');
-    const playBtn  = document.getElementById('sponsorPlay');
-    const modal    = document.getElementById('sponsorModal');
-    const flyer    = document.getElementById('sponsorFlyer');
-    const flyerPh  = document.getElementById('sponsorFlyerPlaceholder');
-    const learn    = document.getElementById('sponsorLearnMore');
+    const ball    = document.getElementById('footballBall');
+    const player  = document.getElementById('footballPlayer');
+    const burst   = document.getElementById('catchBurst');
+    const playBtn = document.getElementById('sponsorPlay');
+    const modal   = document.getElementById('sponsorModal');
+    const flyer   = document.getElementById('sponsorFlyer');
+    const flyerPh = document.getElementById('sponsorFlyerPlaceholder');
+    const learn   = document.getElementById('sponsorLearnMore');
     if(!stage||!ball||!player||!playBtn||!modal) return;
-
-    function attachImage(host,url){
-      if(!url) return;
-      const img=document.createElement('img');
-      img.alt='';
-      img.loading='lazy';
-      img.onload=()=>host.classList.add('has-img');
-      img.onerror=()=>img.remove();  // keep CSS placeholder visible if file missing
-      img.src=url;
-      host.appendChild(img);
-    }
-    attachImage(ball,   SPONSOR_CAMPAIGN.ballImage);
-    attachImage(player, SPONSOR_CAMPAIGN.playerImage);
 
     if(SPONSOR_CAMPAIGN.flyerImage){
       flyer.loading='lazy';
@@ -562,22 +640,20 @@
       flyer.onerror=()=>{/* keep CSS placeholder visible */};
       flyer.src=SPONSOR_CAMPAIGN.flyerImage;
     }
-    if(SPONSOR_CAMPAIGN.learnMoreUrl){
+    if(learn && SPONSOR_CAMPAIGN.learnMoreUrl){
       learn.href=SPONSOR_CAMPAIGN.learnMoreUrl;
-      learn.hidden=false;
     }
 
+    function syncReplayLabel(){
+      playBtn.querySelector('svg')?.remove();
+      playBtn.textContent='Replay the Tribute';
+      playBtn.setAttribute('aria-label','Replay the Puccettoni tribute to the Miami Hurricanes');
+    }
     if(sessionStorage.getItem('sponsorWatched')==='1'){
-      playBtn.textContent='Replay Announcement';
-      playBtn.setAttribute('aria-label','Replay sponsorship announcement');
+      syncReplayLabel();
     }
 
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function syncReplayLabel(){
-      playBtn.textContent='Replay Announcement';
-      playBtn.setAttribute('aria-label','Replay sponsorship announcement');
-    }
 
     // ---- Modal ----
     const FOCUSABLE_SEL='button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
@@ -610,15 +686,15 @@
     function onEsc(e){if(e.key==='Escape')closeModal();}
     modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
 
-    // ---- Animation (motion-driven) ----
+    // ---- Animation (multi-stage cinematic) ----
     let isPlaying=false;
 
     function resetStage(){
-      // snap both actors back to their start pose, hidden
-      ball.style.transform='translate(0px,0px) rotate(-15deg)';
+      ball.style.transform='translate(0px,0px) rotate(-18deg)';
       ball.style.opacity='0';
       player.style.transform='translate(0px,0px) scale(1)';
       player.style.opacity='0';
+      if(burst){ burst.style.opacity='0'; burst.style.transform='translate(0,0) scale(.4)'; }
     }
 
     async function playAnimation(){
@@ -629,34 +705,52 @@
       playBtn.disabled=true;
       resetStage();
 
-      // distances scale with the stage so it reads well on mobile + desktop
+      // Distances scale with stage so it reads on mobile + desktop
       const w=stage.clientWidth||640;
-      const throwX=Math.min(w*0.66,420);   // ball travels right-to-catch
-      const rushX=-Math.min(w*0.30,180);   // player rushes left toward the ball
-      const arcY=-Math.min(w*0.16,90);     // landing height of the catch
+      const throwX=Math.min(w*0.66,440);   // ball travels left → catch zone
+      const rushX=-Math.min(w*0.32,200);   // player rushes from right toward catch
+      const arcY=-Math.min(w*0.18,100);    // peak of the parabolic throw
+      const wobble=Math.min(w*0.02,12);    // small wobble at apex for realism
 
-      // ball: parabolic throw with spin, ease-out arc
+      // Ball: parabolic throw, spin + subtle apex wobble
       const ballAnim=animate(ball,
-        { opacity:[0,1,1], x:[0,throwX*0.55,throwX], y:[0,arcY*1.35,arcY], rotate:[-15,260,540] },
-        { duration:1.1, ease:[0.4,0.05,0.6,1] }
+        {
+          opacity:[0,1,1,1,0],
+          x:[0, throwX*0.30, throwX*0.55, throwX*0.85, throwX],
+          y:[0, arcY*1.15+wobble, arcY*1.45, arcY*1.10-wobble, arcY],
+          rotate:[-18, 180, 360, 540, 720]
+        },
+        { duration:1.25, ease:[0.42,0.04,0.58,1], times:[0,0.25,0.5,0.78,1] }
       );
 
-      // player: rush in, leap for the catch, settle — slight overlap with the ball
+      // Player: rush in from right, plant + leap for the catch
       const playerAnim=animate(player,
-        { opacity:[0,1,1,1], x:[0,rushX*0.83,rushX,rushX], y:[0,0,arcY*0.49,0] },
-        { duration:1.0, delay:0.15, ease:[0.3,0.1,0.4,1] }
+        {
+          opacity:[0,1,1,1,1],
+          x:[0, rushX*0.55, rushX*0.92, rushX, rushX],
+          y:[0, 0, arcY*0.18, arcY*0.55, 0],
+          scale:[1, 1, 1.02, 1.04, 1]
+        },
+        { duration:1.15, delay:0.18, ease:[0.3,0.08,0.4,1], times:[0,0.30,0.55,0.78,1] }
       );
 
       await Promise.all([ballAnim.finished, playerAnim.finished]);
 
-      // catch: ball disappears into the hands, player celebrates with a quick spring
-      ball.style.opacity='0';
+      // Catch impact: spark flash + subtle camera-like shake on the stage
+      if(burst){
+        animate(burst,
+          { opacity:[0,1,0], scale:[.4,2.6,1.8] },
+          { duration:.55, ease:[0.2,0.8,0.2,1] }
+        );
+      }
+
+      // Celebration: short spring jump + return
       await animate(player,
-        { y:[0,-12,0], scale:[1,1.06,1] },
-        { duration:0.38, ease:[0.2,0.8,0.2,1] }
+        { y:[0,-14,0,-4,0], scale:[1,1.08,1,1.03,1] },
+        { duration:0.6, ease:[0.2,0.8,0.2,1] }
       ).finished;
 
-      setTimeout(()=>{ openModal(); isPlaying=false; playBtn.disabled=false; },180);
+      setTimeout(()=>{ openModal(); isPlaying=false; playBtn.disabled=false; },220);
     }
 
     playBtn.addEventListener('click',playAnimation);

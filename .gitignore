@@ -13,3 +13,10 @@ Thumbs.db
 # backups locais e arquivos temporarios
 *.backup-*
 test_write.txt
+
+# dependencias node + tooling de dev (site e estatico; motion carrega via CDN)
+# mantidos so local para nao disparar build no Vercel nem poluir o repo
+node_modules/
+package.json
+package-lock.json
+.claude/

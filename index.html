@@ -547,6 +547,7 @@
       if(!url) return;
       const img=document.createElement('img');
       img.alt='';
+      img.loading='lazy';
       img.onload=()=>host.classList.add('has-img');
       img.onerror=()=>img.remove();  // keep CSS placeholder visible if file missing
       img.src=url;
@@ -556,6 +557,7 @@
     attachImage(player, SPONSOR_CAMPAIGN.playerImage);
 
     if(SPONSOR_CAMPAIGN.flyerImage){
+      flyer.loading='lazy';
       flyer.onload=()=>{flyer.hidden=false;flyerPh.hidden=true;};
       flyer.onerror=()=>{/* keep CSS placeholder visible */};
       flyer.src=SPONSOR_CAMPAIGN.flyerImage;
@@ -567,21 +569,42 @@
 
     if(sessionStorage.getItem('sponsorWatched')==='1'){
       playBtn.textContent='Replay Announcement';
+      playBtn.setAttribute('aria-label','Replay sponsorship announcement');
     }
 
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    function syncReplayLabel(){
+      playBtn.textContent='Replay Announcement';
+      playBtn.setAttribute('aria-label','Replay sponsorship announcement');
+    }
+
     // ---- Modal ----
+    const FOCUSABLE_SEL='button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
+    function getFocusable(){
+      return Array.from(modal.querySelectorAll(FOCUSABLE_SEL))
+        .filter(el=>!el.hasAttribute('hidden')&&el.offsetParent!==null);
+    }
+    function trapFocus(e){
+      if(e.key!=='Tab') return;
+      const f=getFocusable();
+      if(!f.length) return;
+      const first=f[0], last=f[f.length-1];
+      if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+    }
     function openModal(){
       modal.hidden=false;
       sessionStorage.setItem('sponsorWatched','1');
-      playBtn.textContent='Replay Announcement';
+      syncReplayLabel();
       document.addEventListener('keydown',onEsc);
+      modal.addEventListener('keydown',trapFocus);
       setTimeout(()=>{const c=modal.querySelector('.sponsor-modal__close');if(c)c.focus();},50);
     }
     function closeModal(){
       modal.hidden=true;
       document.removeEventListener('keydown',onEsc);
+      modal.removeEventListener('keydown',trapFocus);
       playBtn.focus();
     }
     function onEsc(e){if(e.key==='Escape')closeModal();}

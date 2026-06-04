@@ -6,18 +6,14 @@
 (function () {
   "use strict";
 
-  // Toast online-ordering links for the two open stores.
-  var TOAST_FL = "https://order.toasttab.com/online/puccettoni_fortlauderdale";
-  var TOAST_POMPANO = "https://order.toasttab.com/online/puccettoni_pompanobeach";
-
   // --- Site pages (single source of truth) ---
   // "Localização" is a dropdown: as franchises open there will be many
   // locations, so the bar shows one entry that lists the live stores.
   var LINKS = [
     { label: "Home",        href: "index.html" },
     { label: "Localização", children: [
-      { label: "Fort Lauderdale", href: TOAST_FL, external: true },
-      { label: "Pompano Beach",   href: TOAST_POMPANO, external: true }
+      { label: "Fort Lauderdale", href: "fortlauderdale.html" },
+      { label: "Pompano Beach",   href: "pompano.html" }
     ] },
     { label: "Menu",        href: "products.html" },
     { label: "Catering",    href: "catering.html" },
@@ -76,6 +72,7 @@
       "letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5b4d3c;text-decoration:none;white-space:nowrap;" +
       "transition:background .15s,color .15s}",
     ".sitenav__dropdown a:hover,.sitenav__dropdown a:focus-visible{background:rgba(193,121,19,.1);color:#C17913;outline:none}",
+    ".sitenav__dropdown a.is-active-sub{color:#C17913;background:rgba(193,121,19,.08)}",
 
     // hamburger (hidden on desktop)
     ".sitenav__toggle{display:none;flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(193,121,19,.3);" +
@@ -115,11 +112,13 @@
   // --- Desktop links markup ---
   var linksHtml = LINKS.map(function (l) {
     if (l.children) {
+      var anyActive = l.children.some(function (c) { return isActive(c.href); });
       var sub = l.children.map(function (c) {
-        return '<a href="' + c.href + '"' + ext(c) + ">" + c.label + "</a>";
+        var ca = isActive(c.href) ? ' class="is-active-sub" aria-current="page"' : "";
+        return "<a" + ca + ' href="' + c.href + '"' + ext(c) + ">" + c.label + "</a>";
       }).join("");
       return '<div class="sitenav__item">' +
-        '<button type="button" class="sitenav__link sitenav__menubtn" aria-haspopup="true" aria-expanded="false">' +
+        '<button type="button" class="sitenav__link sitenav__menubtn' + (anyActive ? " is-active" : "") + '" aria-haspopup="true" aria-expanded="false">' +
           l.label + caret +
         "</button>" +
         '<div class="sitenav__dropdown">' + sub + "</div>" +
@@ -134,7 +133,8 @@
   var panelHtml = "<ul>" + LINKS.map(function (l) {
     if (l.children) {
       return '<li class="grp">' + l.label + "</li>" + l.children.map(function (c) {
-        return '<li><a class="sub" href="' + c.href + '"' + ext(c) + ">" + c.label + "</a></li>";
+        var ca = isActive(c.href) ? "sub is-active" : "sub";
+        return '<li><a class="' + ca + '" href="' + c.href + '"' + ext(c) + ">" + c.label + "</a></li>";
       }).join("");
     }
     var active = isActive(l.href) ? " is-active" : "";

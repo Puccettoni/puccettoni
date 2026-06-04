@@ -15,7 +15,7 @@
       { label: "Fort Lauderdale", href: "fortlauderdale.html" },
       { label: "Pompano Beach",   href: "pompano.html" }
     ] },
-    { label: "Menu",        href: "products.html" },
+    { label: "Our History", href: "history.html" },
     { label: "Catering",    href: "catering.html" },
     { label: "Franchise",   href: "franchise.html" }
   ];

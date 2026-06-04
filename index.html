@@ -29,10 +29,10 @@
   body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   .page-layout{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,6vh,64px) 24px;display:grid;grid-template-columns:minmax(160px,220px) minmax(520px,760px) minmax(180px,240px);gap:clamp(32px,5vw,72px);align-items:start}
-  .stage{position:relative;width:100%;text-align:center}
+  .stage{position:relative;width:100%;min-width:0;text-align:center}
 
   /* === Side panels (Social + Products) === */
-  .side-panel{width:100%}
+  .side-panel{width:100%;min-width:0}
   /* Desktop only: float side panels alongside the scrolling stage */
   @media(min-width:1140px){
     .side-panel{position:sticky;top:24px;align-self:start}

@@ -23,9 +23,7 @@
     { label: "Catering",    href: "catering.html" },
     { label: "Franchise",   href: "franchise.html" }
   ];
-  var PHONE_TEL = "tel:7543074992";
-  var PHONE_LABEL = "Order Direct (754) 30-PIZZA";
-  var NAV_H = 60; // px
+  var NAV_H = 88; // px
 
   // --- Which page are we on? (filename, default index.html) ---
   var path = location.pathname.split("/").pop().toLowerCase();
@@ -48,8 +46,8 @@
       "display:flex;align-items:center;gap:18px}",
 
     ".sitenav__brand{display:inline-flex;align-items:center;text-decoration:none;flex:0 0 auto;margin-right:auto}",
-    ".sitenav__logo{height:42px;width:auto;display:block}",
-    "@media(max-width:520px){.sitenav__logo{height:34px}}",
+    ".sitenav__logo{height:64px;width:auto;display:block}",
+    "@media(max-width:520px){.sitenav__logo{height:48px}}",
 
     ".sitenav__links{display:flex;align-items:center;gap:clamp(14px,1.8vw,26px);list-style:none;margin:0;padding:0}",
     ".sitenav__link{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;" +
@@ -79,13 +77,6 @@
       "transition:background .15s,color .15s}",
     ".sitenav__dropdown a:hover,.sitenav__dropdown a:focus-visible{background:rgba(193,121,19,.1);color:#C17913;outline:none}",
 
-    ".sitenav__cta{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;text-decoration:none;" +
-      "font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;" +
-      "color:#fff;background:#C17913;padding:10px 18px;border-radius:24px;white-space:nowrap;" +
-      "box-shadow:0 12px 26px -14px rgba(193,121,19,.8);transition:background .22s,transform .22s,gap .22s}",
-    ".sitenav__cta:hover,.sitenav__cta:focus-visible{background:#A5650E;transform:translateY(-1px);gap:11px;outline:none}",
-    ".sitenav__cta svg{width:13px;height:13px}",
-
     // hamburger (hidden on desktop)
     ".sitenav__toggle{display:none;flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(193,121,19,.3);" +
       "border-radius:12px;background:transparent;cursor:pointer;align-items:center;justify-content:center;color:#C17913}",
@@ -107,8 +98,7 @@
     ".sitenav__panel li:last-child a{border-bottom:none}",
 
     "@media(max-width:980px){.sitenav__links{display:none}.sitenav__toggle{display:inline-flex}}",
-    "@media(max-width:520px){.sitenav__cta span{display:none}.sitenav__cta{padding:10px 12px}}",
-    "@media(prefers-reduced-motion:reduce){.sitenav,.sitenav__link::after,.sitenav__panel,.sitenav__dropdown,.sitenav__cta{transition:none}}"
+    "@media(prefers-reduced-motion:reduce){.sitenav,.sitenav__link::after,.sitenav__panel,.sitenav__dropdown{transition:none}}"
   ].join("\n");
 
   var styleEl = document.createElement("style");
@@ -119,7 +109,6 @@
   // --- Helpers ---
   function isActive(href) { return href && href.toLowerCase() === path; }
   var caret = '<svg class="sitenav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
-  var phoneIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
 
   function ext(item) { return item.external ? ' target="_blank" rel="noopener"' : ""; }
 
@@ -161,9 +150,6 @@
         '<img class="sitenav__logo" src="Images/logo.png" alt="Puccettoni">' +
       "</a>" +
       '<nav class="sitenav__links" aria-label="Primary">' + linksHtml + "</nav>" +
-      '<a class="sitenav__cta" href="' + PHONE_TEL + '" aria-label="' + PHONE_LABEL + '">' +
-        phoneIcon + "<span>Order Direct</span>" +
-      "</a>" +
       '<button class="sitenav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sitenavPanel">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>' +
       "</button>" +

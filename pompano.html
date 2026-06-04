@@ -59,8 +59,8 @@
   .navbtn{background:var(--orange);color:#fff;padding:18px 42px;border-radius:36px;font-weight:700;font-size:19px;letter-spacing:.05em;white-space:nowrap;box-shadow:0 14px 32px -10px rgba(193,121,19,.7);transition:transform .2s,box-shadow .2s,background .2s}
   .navbtn:hover{transform:scale(1.05);box-shadow:0 16px 32px -10px rgba(193,121,19,.75);background:var(--orange-deep)}
   @media(max-width:920px){.navlinks{display:none}}
-  @media(max-width:1024px){.navin{height:108px;gap:20px}.navin .logo{height:78px}.navlinks{gap:18px}.navlinks a{font-size:15px;letter-spacing:.05em;white-space:nowrap}.navbtn{padding:15px 34px;font-size:16px}.menu-nav{top:var(--sitenav-h,60px)}.cat[id]{scroll-margin-top:60px}}
-  @media(max-width:680px){.navin{height:76px;padding:0 14px;gap:10px}.navin .logo{height:52px}.navlinks{gap:20px;font-size:15px}.navbtn{padding:10px 18px;font-size:13px;border-radius:24px}.pending::after{font-size:9px;padding:2px 6px;top:-8px}.menu-nav{top:var(--sitenav-h,60px)}}
+  @media(max-width:1024px){.navin{height:108px;gap:20px}.navin .logo{height:78px}.navlinks{gap:18px}.navlinks a{font-size:15px;letter-spacing:.05em;white-space:nowrap}.navbtn{padding:15px 34px;font-size:16px}.menu-nav{top:0}.cat[id]{scroll-margin-top:60px}}
+  @media(max-width:680px){.navin{height:76px;padding:0 14px;gap:10px}.navin .logo{height:52px}.navlinks{gap:20px;font-size:15px}.navbtn{padding:10px 18px;font-size:13px;border-radius:24px}.pending::after{font-size:9px;padding:2px 6px;top:-8px}.menu-nav{top:0}}
 
   header.hero{position:relative;padding:54px 0 54px;text-align:center;overflow:hidden}
   .hero .glow{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:96vmax;height:60vmax;
@@ -172,7 +172,7 @@
   footer .bn{font-family:'Cinzel',serif;color:var(--cream);font-size:20px;letter-spacing:.12em;margin-bottom:8px}
 
   /* menu category chips — scroll-to-section, not filter */
-  .menu-nav{position:sticky;top:var(--sitenav-h,60px);z-index:150;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:-32px -26px 36px;padding:12px 26px}
+  .menu-nav{position:sticky;top:0;z-index:150;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:-32px -26px 36px;padding:12px 26px}
   .menu-nav-in{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .menu-nav-in::-webkit-scrollbar{display:none}
   .menu-chip{flex-shrink:0;font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);background:transparent;border:1.5px solid var(--line);border-radius:30px;padding:9px 16px;cursor:pointer;transition:all .18s;white-space:nowrap}
@@ -288,7 +288,7 @@
     <!-- TODO: add Salads and Drinks cards when photos are delivered to /Images (same pattern as above; href stays the unit's Toast page). -->
   </div>
 </section>
-
+
 
 <section class="story-wrap" id="story">
   <div class="wrap story">
@@ -363,7 +363,7 @@
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:20px"><div class="sec-eyebrow">Get in touch</div><h2>Say <em>ciao</em></h2></div>
     <div class="cgrid">
-      <div class="it"><b>Orders</b>(754) 307-4992</div>
+      <div class="it"><b>Orders</b>(754) 307-4992</div>
       <div class="it"><b>Franchise</b>Open a Puccettoni</div>
       <div class="it"><b>Follow</b><a href="https://instagram.com/puccettonipizza" target="_blank" rel="noopener">@puccettonipizza</a></div>
       <div class="it"><b>Website</b><a href="https://www.puccettoni.com" target="_blank" rel="noopener">www.puccettoni.com</a></div>
@@ -412,7 +412,7 @@
   const catObs=new IntersectionObserver(es=>{
     es.forEach(e=>{ if(e.isIntersecting) setActive(e.target.id); });
   },{rootMargin:'-160px 0px -55% 0px',threshold:0});
-  cats.forEach(c=>catObs.observe(c));
+  cats.forEach(c=>catObs.observe(c));
 </script>
   <script src="nav.js" defer></script>
 </body>

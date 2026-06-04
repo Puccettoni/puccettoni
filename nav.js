@@ -29,11 +29,10 @@
   var css = [
     ":root{--sitenav-h:" + NAV_H + "px}",
     "body{padding-top:var(--sitenav-h)!important}",
-    "html{scroll-padding-top:var(--sitenav-h)}", // in-page anchors clear the fixed bar
-    // keep index.html sticky side panels clear of the bar
-    "@media(min-width:1140px){.side-panel{top:calc(var(--sitenav-h) + 18px)!important}}",
+    // Bar is static (absolute at page top) per Marco — it scrolls away with the page,
+    // so no scroll-padding or sticky-side-panel offset is needed.
 
-    ".sitenav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--sitenav-h);" +
+    ".sitenav{position:absolute;top:0;left:0;right:0;z-index:200;height:var(--sitenav-h);" +
       "display:flex;align-items:center;font-family:'Manrope',sans-serif;" +
       "background:rgba(255,244,227,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);" +
       "border-bottom:1px solid rgba(193,121,19,.16);transition:background .25s,box-shadow .25s,border-color .25s}",
@@ -80,7 +79,7 @@
     ".sitenav__toggle svg{width:22px;height:22px}",
 
     // mobile dropdown panel
-    ".sitenav__panel{position:fixed;top:var(--sitenav-h);left:0;right:0;z-index:199;" +
+    ".sitenav__panel{position:absolute;top:100%;left:0;right:0;z-index:199;" +
       "background:rgba(255,244,227,.98);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);" +
       "border-bottom:1px solid rgba(193,121,19,.22);box-shadow:0 18px 40px -24px rgba(40,24,8,.5);" +
       "transform:translateY(-12px);opacity:0;visibility:hidden;transition:transform .26s,opacity .26s,visibility .26s}",

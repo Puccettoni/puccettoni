@@ -1,6 +1,6 @@
 # CONTEXTO DO PROJETO — PUCCETTONI
 ### Arquivo de contexto para o Claude Code · mantido por Lucas Bizinoto
-### Última atualização: 04/06/2026 (patrocínio South Florida Hurricanes)
+### Última atualização: 04/06/2026 (navegação global, Our History, franchise landing + franchise-guide)
 
 > Claude Code: leia este arquivo inteiro antes de trabalhar. Ele separa o que está CONFIRMADO do que ainda é HIPÓTESE ou está PENDENTE. Não trate hipótese como fato. Quando algo não estiver aqui, pergunte em vez de assumir.
 
@@ -79,31 +79,48 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 
 - Pasta do projeto: Desktop/Marco.
 - Arquivos HTML principais:
-  - `index.html` — homepage/landing de escolha de unidade, com Pompano Beach + Fort Lauderdale, CTA de pedido, teaser de catering, vitrine de produtos e a **seção "Game Day" de patrocínio ao South Florida Hurricanes** (escudo como marca d'água de fundo, ticker LED, modal de tributo).
-  - `fortlauderdale.html` — página institucional da loja Fort Lauderdale.
-  - `pompano.html` — página institucional da loja Pompano Beach.
-  - `catering.html` — página neutra de catering e eventos.
-  - `products.html` — vitrine visual dos produtos.
-  - `teste.html` — landing page antiga/demo do funil de cliente (oferta + captura de lead).
+  - `index.html` — homepage/landing de escolha de unidade (Pompano + Fort Lauderdale → Toast), side panels (social, community, card de Franchise), e a **seção "Game Day" de patrocínio ao South Florida Hurricanes** (escudo como marca d'água de fundo, ticker LED, modal de tributo).
+  - `fortlauderdale.html` — página institucional da loja Fort Lauderdale (história, menu fotografado com chips de categoria, favoritos). **Catering removido (04/06).**
+  - `pompano.html` — página institucional da loja Pompano Beach (idem). **Catering removido (04/06).**
+  - `catering.html` — página neutra de catering e eventos (é onde o catering vive agora).
+  - `history.html` — **NOVA (04/06)** página "Our History". Copy placeholder feita só com fatos confirmados; a história real da família vem do Marco (marcada com comentário `<!-- PLACEHOLDER -->` no HTML).
+  - `franchise.html` — **reconstruída (04/06)** como landing completa de franquia conforme spec oficial do Marco (ver subseção "Franquia" abaixo).
+  - `franchise-guide.html` — **NOVA (04/06)** landing focada (`/franchise-guide`) para campanhas de Facebook; embute o flipbook Heyzine da brochura. Sem barra de navegação global (destino de anúncio). `noindex`.
+  - `products.html` — vitrine visual do menu. **Órfã:** existe por URL mas NÃO está mais linkada na navegação (foi substituída por "Our History"). Decisão pendente: manter / deletar / realocar.
+  - `teste.html` — landing antiga/demo do funil de cliente (oferta + captura de lead). Sem barra global.
+  - `nav.js` — **barra de navegação global compartilhada (fonte única).** Injeta a barra fixa em index, pompano, fortlauderdale, catering, history, franchise. NÃO está em teste.html nem franchise-guide.html (intencional).
 - Logo em: Images/logo.png (transparente).
-- Ambos os HTMLs já usam a identidade oficial (cores + fontes + logo carregando corretamente).
+
+### Navegação global (`nav.js`) — implementada 04/06/2026
+- Barra **fixa que acompanha a rolagem** (altura 60→88px), com **logo-imagem** (não texto) à esquerda.
+- Links: **Home · Localização · Our History · Catering · Franchise**.
+  - **Localização** é um **dropdown** com as duas lojas → cada uma abre a página institucional da loja (`fortlauderdale.html` / `pompano.html`). Pensado para escalar: quando abrir franquias, vai ter muitos locais.
+  - Não há botão "Order Direct" na barra (removido a pedido do Marco). O pedido acontece dentro de cada página de loja ("Order Now" → Toast).
+- **Menu hambúrguer** no mobile (≤980px). Marca a página atual e a loja atual no dropdown.
+- Para mudar links/estilo da barra: editar **só `nav.js`**. As páginas de loja (pompano/FL) ainda têm uma **barra secundária de chips de menu** (categorias), que se ajusta à altura da barra global via `--sitenav-h`.
 
 ### Landing de funil (teste.html)
 - Oferta atual de exemplo: focaccia grátis no primeiro pedido (BLOCO MARCADO como fácil de trocar — oferta final ainda não confirmada pelo Marco).
 - Formulário pede: nome, e-mail, WhatsApp, preferência. Hoje é só demonstração (mostra mensagem de boas-vindas).
 
 ### Site institucional / páginas públicas
-- Estrutura atual usa `index.html` como escolha de unidade e direciona para páginas institucionais separadas por loja (`pompano.html` e `fortlauderdale.html`).
-- Componentes interativos implementados (29/05/2026, escopo "fase 1 de interatividade"):
-  - **Chip nav do menu** — categorias âncora (Combos / Pizza / Focaccia / Gnocchi / Panzerotti / Desserts / Deli / Mozzarella) com sticky bar abaixo do topo, smooth scroll e active-state via IntersectionObserver. É navegação, não filtro QSR (decisão para não brigar com o posicionamento médio-alto).
-  - **Catering inquiry form** — substitui o CTA solto. Campos: nome, email, telefone, data, número de pessoas, ocasião, mensagem livre. Hoje é demo (preventDefault + thanks). Em produção deve enviar pro HubSpot.
-  - **Mobile sticky bottom bar** — Order (laranja, primária) / Menu / Call / Maps. Aparece só em viewport ≤ 760px. Quando ativa, esconde a Order Now do topo (evita CTA duplicado) e a concept-tag de canto.
-- Maps e Order Direct devem respeitar a unidade escolhida. Pompano e Fort Lauderdale podem ter URLs separadas de Toast/Maps.
+- `index.html` é a escolha de unidade; a navegação global (`nav.js`) conecta todas as páginas. **Localização** no menu leva às páginas de loja.
+- Páginas de loja (`pompano.html` / `fortlauderdale.html`) ainda têm: **chip nav do menu** (categorias âncora com smooth scroll + IntersectionObserver), **mobile sticky bottom bar** (Order / Menu / Call / Maps em ≤760px) e topband. A seção de **catering foi removida das duas (04/06)** — catering agora só na `catering.html`.
+- Maps e Order respeitam a unidade. Pompano e Fort Lauderdale têm URLs separadas de Toast.
 
-### Formulários esperando integração
-Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só rodam demo no front. Em produção devem:
-- enviar contato ao HubSpot (form do funil → contato + tag "lead-funnel"; form de catering → contato + tag "catering-inquiry");
-- disparar evento `generate_lead` no GA4 + Pixel (com parâmetro distinguindo origem: funnel vs catering, porque LTV/score esperado é diferente).
+### Franquia (spec oficial do Marco — incorporada 04/06/2026)
+- **Card de Franchise na home:** sintético, leva à página dedicada. Copy atualizada para o texto do Marco (diferencial = **panzerotto**): "Bring Authentic Italian Flavor to Your City".
+- **`franchise.html` = landing completa de campanha** (acessível direto em `/franchise`, é pra lá que os anúncios de Facebook devem apontar — NÃO para a home). Seções: Hero → A Distinctive Italian Concept → Why Puccettoni (4 pilares) → Franchise Formats (3, com ressalva "subject to availability and approval") → Who We Are Looking For → Support ("may receive") → formulário qualificador → disclaimer legal completo.
+- **Botão "Discover the Concept"** (hero da franchise) → abre `/franchise-guide`.
+- **`franchise-guide.html`:** embute o **flipbook Heyzine** da brochura. Trocar o PDF = só editar `FLIPBOOK_EMBED_URL` (um lugar); a URL `/franchise-guide` nunca muda (link estável pros anúncios). Hoje mostra **placeholder** até o Marco subir o flipbook no Heyzine.
+- **Regra de compliance reforçada:** ZERO menção a ROI / lucro / performance financeira / retorno; disclaimer cobre no-offer + FDD/Item 19 + regra dos 14 dias. Manter assim em qualquer edição de franquia.
+
+### Formulários e tracking esperando integração
+Todos rodam só demo no front-end hoje. Em produção devem enviar pro HubSpot + disparar `generate_lead` no GA4/Pixel, com tag/parâmetro distinguindo a origem (LTV/score diferente):
+- `teste.html` (lead de cliente) → tag "lead-funnel".
+- `catering.html` (catering inquiry) → tag "catering-inquiry".
+- `franchise.html` (formulário qualificador) → tag "franchise-inquiry" (comentário já no código).
+- `franchise-guide.html` → já tem hooks de tracking guardados (`franchise_guide_view` + cliques nos CTAs) que viram no-op até GA4/Pixel existirem; medir quantos leads abrem a brochura e quantos pedem o próximo contato.
 
 ### Infra de deploy (Vercel)
 - **Hosting:** Vercel, projeto `puccettoni-pizza` na Team "LucaBravo's projects" (plano Hobby). Auto-deploy via integração GitHub.
@@ -131,6 +148,11 @@ Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só 
 - Confirmar verba de ads.
 - Refazer **mapa de concorrência** para as duas áreas: Pompano Beach e Fort Lauderdale/Davie Blvd.
 - Funil de investidor: números reais validados (faturamento, margem, investimento, payback) + se já existe material jurídico de franquia.
+- **História real da família** (para substituir o placeholder de `history.html`).
+- **Brochura de franquia:** PDF final de 8 páginas (logo em todas as páginas, fotos reais, texto selecionável, links clicáveis, disclaimer) → subir no **Heyzine** → colar a URL em `FLIPBOOK_EMBED_URL` de `franchise-guide.html`.
+- **Site do South Florida Hurricanes** (para ativar os botões "Visit the Hurricanes" via `learnMoreUrl`).
+- **Decisão sobre `products.html`** (vitrine de menu órfã): manter / deletar / realocar.
+- Faixa de investimento da franquia (campo "Estimated Available Investment") — definir com advogado de franquias.
 
 ---
 
@@ -146,8 +168,11 @@ Ambos `teste.html` (lead de cliente) e `index.html` (catering inquiry) hoje só 
 
 ## 7. PRÓXIMOS PASSOS TÉCNICOS
 
-1. ~~Corrigir o carregamento do logo em teste.html (verificar Images/logo.png).~~ ✅ Resolvido em 29/05/2026 — ver seção 3.
-2. Quando os acessos chegarem: instalar GA4 + GTM + Meta Pixel.
-3. Conectar o formulário da landing ao HubSpot + disparar `generate_lead`.
-4. Reorganizar/expandir o site para a versão institucional que o Marco pediu.
-5. Estruturar (sem publicar números) o funil de investidor.
+1. ~~Corrigir o carregamento do logo em teste.html.~~ ✅ 29/05/2026.
+2. ~~Reorganizar/expandir o site para a versão institucional (navegação global, páginas de loja, Our History, franquia).~~ ✅ 04/06/2026.
+3. Quando os acessos chegarem: instalar GA4 + GTM + Meta Pixel (fundação de tudo).
+4. Conectar formulários ao HubSpot + `generate_lead` (ver "Formulários e tracking esperando integração").
+5. Subir a brochura no Heyzine e ativar `franchise-guide` (colar `FLIPBOOK_EMBED_URL`).
+6. Substituir o placeholder de `history.html` pela história real do Marco.
+7. Resolver `products.html` (manter/deletar/realocar) e limpar CSS morto (nav antigo + catering) nas páginas de loja.
+8. Estruturar (sem publicar números) o funil de investidor.

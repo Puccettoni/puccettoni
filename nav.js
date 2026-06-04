@@ -27,7 +27,7 @@
   var css = [
     ":root{--sitenav-h:" + NAV_H + "px}",
     "body{padding-top:var(--sitenav-h)!important}",
-    "html{scroll-padding-top:calc(var(--sitenav-h) + 12px)}",
+    "html{scroll-padding-top:var(--sitenav-h)}", // in-page anchors clear the fixed bar
     // keep index.html sticky side panels clear of the bar
     "@media(min-width:1140px){.side-panel{top:calc(var(--sitenav-h) + 18px)!important}}",
 

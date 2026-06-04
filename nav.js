@@ -6,14 +6,22 @@
 (function () {
   "use strict";
 
+  // Toast online-ordering links for the two open stores.
+  var TOAST_FL = "https://order.toasttab.com/online/puccettoni_fortlauderdale";
+  var TOAST_POMPANO = "https://order.toasttab.com/online/puccettoni_pompanobeach";
+
   // --- Site pages (single source of truth) ---
+  // "Localização" is a dropdown: as franchises open there will be many
+  // locations, so the bar shows one entry that lists the live stores.
   var LINKS = [
-    { label: "Home",            href: "index.html" },
-    { label: "Pompano Beach",   href: "pompano.html" },
-    { label: "Fort Lauderdale", href: "fortlauderdale.html" },
-    { label: "Menu",            href: "products.html" },
-    { label: "Catering",        href: "catering.html" },
-    { label: "Franchise",       href: "franchise.html" }
+    { label: "Home",        href: "index.html" },
+    { label: "Localização", children: [
+      { label: "Fort Lauderdale", href: TOAST_FL, external: true },
+      { label: "Pompano Beach",   href: TOAST_POMPANO, external: true }
+    ] },
+    { label: "Menu",        href: "products.html" },
+    { label: "Catering",    href: "catering.html" },
+    { label: "Franchise",   href: "franchise.html" }
   ];
   var PHONE_TEL = "tel:7543074992";
   var PHONE_LABEL = "Order Direct (754) 30-PIZZA";
@@ -40,20 +48,36 @@
       "display:flex;align-items:center;gap:18px}",
 
     ".sitenav__brand{display:inline-flex;align-items:center;text-decoration:none;flex:0 0 auto;margin-right:auto}",
-    ".sitenav__wordmark{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(15px,2.2vw,18px);" +
-      "letter-spacing:.16em;color:#1E1E1E;line-height:1;white-space:nowrap}",
-    ".sitenav__wordmark span{color:#C17913}",
+    ".sitenav__logo{height:42px;width:auto;display:block}",
+    "@media(max-width:520px){.sitenav__logo{height:34px}}",
 
     ".sitenav__links{display:flex;align-items:center;gap:clamp(14px,1.8vw,26px);list-style:none;margin:0;padding:0}",
     ".sitenav__link{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;" +
       "font-weight:600;color:#5b4d3c;text-decoration:none;white-space:nowrap;position:relative;padding:6px 0;" +
-      "transition:color .2s}",
+      "background:none;border:none;cursor:pointer;transition:color .2s;display:inline-flex;align-items:center;gap:5px}",
     ".sitenav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#C17913;" +
       "transform:scaleX(0);transform-origin:left center;transition:transform .25s}",
     ".sitenav__link:hover,.sitenav__link:focus-visible{color:#C17913;outline:none}",
     ".sitenav__link:hover::after,.sitenav__link:focus-visible::after{transform:scaleX(1)}",
     ".sitenav__link.is-active{color:#C17913}",
     ".sitenav__link.is-active::after{transform:scaleX(1);opacity:.55}",
+
+    // dropdown (Localização)
+    ".sitenav__item{position:relative;display:inline-flex;align-items:center}",
+    ".sitenav__caret{width:10px;height:10px;transition:transform .22s}",
+    ".sitenav__dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);" +
+      "min-width:184px;background:#fff;border:1px solid rgba(193,121,19,.18);border-radius:12px;padding:6px;" +
+      "box-shadow:0 20px 44px -18px rgba(40,24,8,.5);opacity:0;visibility:hidden;" +
+      "transition:opacity .2s,visibility .2s,transform .2s;z-index:10}",
+    // invisible bridge so hover survives the gap between button and panel
+    ".sitenav__dropdown::before{content:'';position:absolute;top:-12px;left:0;right:0;height:12px}",
+    ".sitenav__item:hover .sitenav__dropdown,.sitenav__item:focus-within .sitenav__dropdown,.sitenav__dropdown.is-open{" +
+      "opacity:1;visibility:visible;transform:translateX(-50%) translateY(2px)}",
+    ".sitenav__item:hover .sitenav__caret,.sitenav__item:focus-within .sitenav__caret,.sitenav__menubtn[aria-expanded='true'] .sitenav__caret{transform:rotate(180deg)}",
+    ".sitenav__dropdown a{display:block;padding:11px 14px;border-radius:8px;font-family:'Cinzel',serif;font-size:11px;" +
+      "letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#5b4d3c;text-decoration:none;white-space:nowrap;" +
+      "transition:background .15s,color .15s}",
+    ".sitenav__dropdown a:hover,.sitenav__dropdown a:focus-visible{background:rgba(193,121,19,.1);color:#C17913;outline:none}",
 
     ".sitenav__cta{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;text-decoration:none;" +
       "font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;" +
@@ -67,7 +91,7 @@
       "border-radius:12px;background:transparent;cursor:pointer;align-items:center;justify-content:center;color:#C17913}",
     ".sitenav__toggle svg{width:22px;height:22px}",
 
-    // mobile dropdown
+    // mobile dropdown panel
     ".sitenav__panel{position:fixed;top:var(--sitenav-h);left:0;right:0;z-index:199;" +
       "background:rgba(255,244,227,.98);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);" +
       "border-bottom:1px solid rgba(193,121,19,.22);box-shadow:0 18px 40px -24px rgba(40,24,8,.5);" +
@@ -76,12 +100,15 @@
     ".sitenav__panel ul{list-style:none;margin:0;padding:8px clamp(16px,5vw,28px) 18px;display:flex;flex-direction:column}",
     ".sitenav__panel a{display:block;padding:13px 4px;font-family:'Cinzel',serif;font-size:13px;letter-spacing:.12em;" +
       "text-transform:uppercase;font-weight:600;color:#5b4d3c;text-decoration:none;border-bottom:1px solid rgba(193,121,19,.12)}",
-    ".sitenav__panel a:last-child{border-bottom:none}",
     ".sitenav__panel a.is-active{color:#C17913}",
+    ".sitenav__panel a.sub{padding-left:18px;font-size:12px;color:#7a6c5a}",
+    ".sitenav__panel .grp{padding:14px 4px 6px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;" +
+      "text-transform:uppercase;font-weight:700;color:#C17913}",
+    ".sitenav__panel li:last-child a{border-bottom:none}",
 
     "@media(max-width:980px){.sitenav__links{display:none}.sitenav__toggle{display:inline-flex}}",
     "@media(max-width:520px){.sitenav__cta span{display:none}.sitenav__cta{padding:10px 12px}}",
-    "@media(prefers-reduced-motion:reduce){.sitenav,.sitenav__link::after,.sitenav__panel,.sitenav__cta{transition:none}}"
+    "@media(prefers-reduced-motion:reduce){.sitenav,.sitenav__link::after,.sitenav__panel,.sitenav__dropdown,.sitenav__cta{transition:none}}"
   ].join("\n");
 
   var styleEl = document.createElement("style");
@@ -89,23 +116,51 @@
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
 
-  // --- Markup ---
+  // --- Helpers ---
+  function isActive(href) { return href && href.toLowerCase() === path; }
+  var caret = '<svg class="sitenav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
   var phoneIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+
+  function ext(item) { return item.external ? ' target="_blank" rel="noopener"' : ""; }
+
+  // --- Desktop links markup ---
+  var linksHtml = LINKS.map(function (l) {
+    if (l.children) {
+      var sub = l.children.map(function (c) {
+        return '<a href="' + c.href + '"' + ext(c) + ">" + c.label + "</a>";
+      }).join("");
+      return '<div class="sitenav__item">' +
+        '<button type="button" class="sitenav__link sitenav__menubtn" aria-haspopup="true" aria-expanded="false">' +
+          l.label + caret +
+        "</button>" +
+        '<div class="sitenav__dropdown">' + sub + "</div>" +
+      "</div>";
+    }
+    var active = isActive(l.href) ? " is-active" : "";
+    var aria = isActive(l.href) ? ' aria-current="page"' : "";
+    return '<a class="sitenav__link' + active + '" href="' + l.href + '"' + aria + ">" + l.label + "</a>";
+  }).join("");
+
+  // --- Mobile panel markup ---
+  var panelHtml = "<ul>" + LINKS.map(function (l) {
+    if (l.children) {
+      return '<li class="grp">' + l.label + "</li>" + l.children.map(function (c) {
+        return '<li><a class="sub" href="' + c.href + '"' + ext(c) + ">" + c.label + "</a></li>";
+      }).join("");
+    }
+    var active = isActive(l.href) ? " is-active" : "";
+    var aria = isActive(l.href) ? ' aria-current="page"' : "";
+    return '<li><a class="' + active.trim() + '" href="' + l.href + '"' + aria + ">" + l.label + "</a></li>";
+  }).join("") + "</ul>";
 
   var nav = document.createElement("header");
   nav.className = "sitenav";
   nav.innerHTML =
     '<div class="sitenav__inner">' +
       '<a class="sitenav__brand" href="index.html" aria-label="Puccettoni home">' +
-        '<span class="sitenav__wordmark">PUCCET<span>T</span>ONI</span>' +
+        '<img class="sitenav__logo" src="Images/logo.png" alt="Puccettoni">' +
       "</a>" +
-      '<nav class="sitenav__links" aria-label="Primary">' +
-        LINKS.map(function (l) {
-          var active = (l.href.toLowerCase() === path) ? " is-active" : "";
-          var aria = active ? ' aria-current="page"' : "";
-          return '<a class="sitenav__link' + active + '" href="' + l.href + '"' + aria + ">" + l.label + "</a>";
-        }).join("") +
-      "</nav>" +
+      '<nav class="sitenav__links" aria-label="Primary">' + linksHtml + "</nav>" +
       '<a class="sitenav__cta" href="' + PHONE_TEL + '" aria-label="' + PHONE_LABEL + '">' +
         phoneIcon + "<span>Order Direct</span>" +
       "</a>" +
@@ -117,16 +172,13 @@
   var panel = document.createElement("div");
   panel.className = "sitenav__panel";
   panel.id = "sitenavPanel";
-  panel.innerHTML = "<ul>" + LINKS.map(function (l) {
-    var active = (l.href.toLowerCase() === path) ? " is-active" : "";
-    var aria = active ? ' aria-current="page"' : "";
-    return '<li><a class="' + active.trim() + '" href="' + l.href + '"' + aria + ">" + l.label + "</a></li>";
-  }).join("") + "</ul>";
+  panel.innerHTML = panelHtml;
 
   function mount() {
     document.body.insertBefore(panel, document.body.firstChild);
     document.body.insertBefore(nav, document.body.firstChild);
 
+    // mobile hamburger
     var toggle = nav.querySelector(".sitenav__toggle");
     function setOpen(open) {
       panel.classList.toggle("is-open", open);
@@ -139,8 +191,32 @@
     panel.addEventListener("click", function (e) {
       if (e.target.tagName === "A") setOpen(false);
     });
+
+    // desktop dropdown (click for touch; CSS handles hover/focus)
+    var menuBtns = nav.querySelectorAll(".sitenav__menubtn");
+    menuBtns.forEach(function (btn) {
+      var dd = btn.nextElementSibling;
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var open = !dd.classList.contains("is-open");
+        dd.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target)) {
+        nav.querySelectorAll(".sitenav__dropdown.is-open").forEach(function (dd) {
+          dd.classList.remove("is-open");
+          var b = dd.previousElementSibling;
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        nav.querySelectorAll(".sitenav__dropdown.is-open").forEach(function (dd) { dd.classList.remove("is-open"); });
+      }
     });
 
     // shadow once scrolled

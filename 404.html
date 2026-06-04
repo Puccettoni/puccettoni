@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Puccettoni — Page Not Found</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Cinzel:wght@500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#C17913;--orange-deep:#A5650E;--cream:#FFF4E3;--charcoal:#1E1E1E;--ink-soft:#5b4d3c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--charcoal);min-height:100vh;
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:32px;overflow-x:hidden;
+    background-image:radial-gradient(120% 80% at 50% -10%,rgba(193,121,19,.16),transparent 56%)}
+  .wrap{max-width:520px}
+  .logo{width:200px;max-width:70%;height:auto;margin:0 auto 26px;display:block;filter:drop-shadow(0 6px 18px rgba(30,20,10,.1))}
+  .code{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:14px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,7vw,54px);line-height:1.05;margin-bottom:14px}
+  h1 em{font-style:italic;color:var(--orange)}
+  p{font-size:16px;line-height:1.6;color:var(--ink-soft);margin-bottom:30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;font-weight:700;color:#fff;background:var(--orange);padding:15px 32px;border-radius:40px;
+    text-decoration:none;box-shadow:0 14px 30px -14px rgba(193,121,19,.78);transition:background .2s,transform .2s,gap .2s}
+  .btn:hover,.btn:focus-visible{background:var(--orange-deep);transform:translateY(-2px);gap:14px;outline:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="/Images/logo.png" alt="Puccettoni — Authentic Italian Pizza &amp; Food"
+         onerror="this.style.display='none'">
+    <div class="code">404 · Page Not Found</div>
+    <h1>This page took an <em>Italian break</em></h1>
+    <p>The page you’re looking for isn’t on the menu. Let’s get you back to the good stuff.</p>
+    <a class="btn" href="/">Back to Home
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</body>
+</html>

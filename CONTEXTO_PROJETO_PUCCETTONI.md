@@ -1,6 +1,6 @@
 # CONTEXTO DO PROJETO — PUCCETTONI
 ### Arquivo de contexto para o Claude Code · mantido por Lucas Bizinoto
-### Última atualização: 01/06/2026 (correção: duas lojas confirmadas)
+### Última atualização: 04/06/2026 (patrocínio South Florida Hurricanes)
 
 > Claude Code: leia este arquivo inteiro antes de trabalhar. Ele separa o que está CONFIRMADO do que ainda é HIPÓTESE ou está PENDENTE. Não trate hipótese como fato. Quando algo não estiver aqui, pergunte em vez de assumir.
 
@@ -36,6 +36,12 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 - Nota de delivery observada publicamente: 4.8.
 - Presença em delivery: Uber Eats, DoorDash, Grubhub, Toast.
 - Itens citados em reviews: focacce (Roma, Positano), truffle pizza, margherita, mozzarella de búfala fresca, dolci/cannoli.
+
+### Patrocínio / campanha "Game Day"
+- O time patrocinado é o **South Florida Hurricanes** (corrigido pelo Marco em 04/06/2026).
+- ⚠️ **NÃO confundir com o "Miami Hurricanes"** (time universitário da Univ. of Miami, site `miamihurricanes.com`). Versões anteriores da landing referenciavam o Miami Hurricanes por engano — corrigido.
+- O South Florida Hurricanes **ainda não tem site** (o Marco vai criar depois). Por isso o link/botão "Visit the Hurricanes" fica oculto na landing até a URL existir. Quando existir, basta preencher `learnMoreUrl` no bloco `SPONSOR_CAMPAIGN` do `index.html` (um lugar só) que os botões aparecem.
+- Logo do time fornecido pelo Marco: `Images/Hurricanes.png` (fundo branco original). Versão com fundo recortado/transparente usada como marca d'água da seção: `Images/Hurricanes-cut.png`.
 
 ### Posicionamento de canal de pedido
 - Marco usa explicitamente a expressão **"order direct"** no texto de posicionamento que mandou em 29/05/2026 (lista junto com "online order, pickup, delivery"). Por isso o CTA principal da landing institucional foi colocado como **"Order Direct"** em vez de "Order Now" genérico ou "Order on Uber Eats".
@@ -73,7 +79,7 @@ Objetivo do Marco: um sistema digital que gere (1) clientes e pedidos, (2) inves
 
 - Pasta do projeto: Desktop/Marco.
 - Arquivos HTML principais:
-  - `index.html` — homepage/landing de escolha de unidade, com Pompano Beach + Fort Lauderdale, CTA de pedido, teaser de catering e vitrine de produtos.
+  - `index.html` — homepage/landing de escolha de unidade, com Pompano Beach + Fort Lauderdale, CTA de pedido, teaser de catering, vitrine de produtos e a **seção "Game Day" de patrocínio ao South Florida Hurricanes** (escudo como marca d'água de fundo, ticker LED, modal de tributo).
   - `fortlauderdale.html` — página institucional da loja Fort Lauderdale.
   - `pompano.html` — página institucional da loja Pompano Beach.
   - `catering.html` — página neutra de catering e eventos.

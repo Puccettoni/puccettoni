@@ -256,11 +256,12 @@
     position:absolute;inset:0;z-index:0;pointer-events:none;
     background-image:url("Images/Hurricanes-cut.png");
     background-position:center;background-repeat:no-repeat;
-    background-size:min(70%,520px) auto;
-    opacity:.16;
+    background-size:min(82%,620px) auto;
+    opacity:.42;
+    filter:saturate(1.12) brightness(1.12);
   }
   @media(max-width:600px){
-    .sponsor-bg{background-size:min(80%,320px) auto;opacity:.13}
+    .sponsor-bg{background-size:min(88%,360px) auto;opacity:.34}
   }
 
   .sponsor-eyebrow{position:relative;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.42em;
@@ -300,6 +301,8 @@
     box-shadow:none;padding:13.5px 28px}
   .sponsor-cta--ghost:hover,.sponsor-cta--ghost:focus-visible{
     background:rgba(232,184,108,.12);border-color:#E8B86C;color:#fff;box-shadow:none}
+  /* hidden attribute must beat the explicit display above (UA [hidden] loses to author CSS) */
+  .sponsor-cta[hidden],.sponsor-modal__cta[hidden]{display:none}
 
   /* Animated underline reveal under the gradient word */
   .sponsor-title em{position:relative}

@@ -206,14 +206,24 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
   document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
 
-  // form — front-end demo only; real version routes to HubSpot + fires GA4 'generate_lead'
-  document.getElementById('leadForm').addEventListener('submit',function(e){
+  // lead form — emails info@puccettoni.com via FormSubmit (no backend)
+  const lf=document.getElementById('leadForm');
+  lf.addEventListener('submit',function(e){
     e.preventDefault();
-    // In production: send to CRM (HubSpot) + dataLayer.push({event:'generate_lead'}) for GA4/Pixel
-    document.getElementById('leadForm').style.display='none';
-    document.querySelector('#offerCard .desc').style.display='none';
-    document.querySelector('#offerCard .placeholder-note').style.display='none';
-    document.getElementById('thanks').classList.add('show');
+    const btn=lf.querySelector('.submit'); const orig=btn?btn.textContent:'';
+    if(btn){btn.disabled=true;btn.textContent='Sending…';}
+    const fd=new FormData(lf);
+    fd.append('_subject','New client lead — Puccettoni');
+    fd.append('_template','table');
+    fd.append('_captcha','false');
+    fetch('https://formsubmit.co/ajax/info@puccettoni.com',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      .then(r=>r.json()).then(()=>{
+        lf.style.display='none';
+        document.querySelector('#offerCard .desc').style.display='none';
+        document.querySelector('#offerCard .placeholder-note').style.display='none';
+        document.getElementById('thanks').classList.add('show');
+      })
+      .catch(()=>{if(btn){btn.disabled=false;btn.textContent=orig;}alert('Sorry — we could not send. Please email info@puccettoni.com.');});
   });
 </script>
 </body>

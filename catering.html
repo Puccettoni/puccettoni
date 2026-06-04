@@ -263,12 +263,19 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';io.observe(el)});
 
-  // catering inquiry form — front-end demo; production routes to CRM
+  // catering inquiry — emails info@puccettoni.com via FormSubmit (no backend)
   const cf=document.getElementById('cateringForm');
   if(cf) cf.addEventListener('submit',e=>{
     e.preventDefault();
-    cf.style.display='none';
-    document.getElementById('cateringThanks').classList.add('show');
+    const btn=cf.querySelector('.submit'); const orig=btn?btn.textContent:'';
+    if(btn){btn.disabled=true;btn.textContent='Sending…';}
+    const fd=new FormData(cf);
+    fd.append('_subject','New catering inquiry — Puccettoni');
+    fd.append('_template','table');
+    fd.append('_captcha','false');
+    fetch('https://formsubmit.co/ajax/info@puccettoni.com',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      .then(r=>r.json()).then(()=>{cf.style.display='none';document.getElementById('cateringThanks').classList.add('show');})
+      .catch(()=>{if(btn){btn.disabled=false;btn.textContent=orig;}alert('Sorry — we could not send your request. Please email info@puccettoni.com or call (754) 307-4992.');});
   });
 </script>
   <script src="nav.js" defer></script>

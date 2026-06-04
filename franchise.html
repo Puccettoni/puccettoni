@@ -422,13 +422,20 @@
     revealEls.forEach(el=>el.classList.add('in'));
   }
 
-  // Front-end demo only — production routes to HubSpot + GA4 'generate_lead' (tag: franchise-inquiry)
+  // franchise inquiry — emails info@puccettoni.com via FormSubmit (no backend)
   const form=document.getElementById('franchiseForm');
   if(form){
     form.addEventListener('submit',event=>{
       event.preventDefault();
-      form.reset();
-      document.getElementById('franchiseThanks').classList.add('show');
+      const btn=form.querySelector('.submit'); const orig=btn?btn.textContent:'';
+      if(btn){btn.disabled=true;btn.textContent='Sending…';}
+      const fd=new FormData(form);
+      fd.append('_subject','New franchise inquiry — Puccettoni');
+      fd.append('_template','table');
+      fd.append('_captcha','false');
+      fetch('https://formsubmit.co/ajax/info@puccettoni.com',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+        .then(r=>r.json()).then(()=>{form.style.display='none';document.getElementById('franchiseThanks').classList.add('show');})
+        .catch(()=>{if(btn){btn.disabled=false;btn.textContent=orig;}alert('Sorry — we could not send your request. Please email info@puccettoni.com.');});
     });
   }
 </script>

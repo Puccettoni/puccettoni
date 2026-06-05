@@ -89,7 +89,7 @@
     "@media(max-width:400px){.sitenav__lang button{padding:6px 7px;font-size:9.5px}}",
 
     // mobile dropdown panel
-    ".sitenav__panel{position:absolute;top:100%;left:0;right:0;z-index:199;" +
+    ".sitenav__panel{position:absolute;top:var(--sitenav-h);left:0;right:0;z-index:199;" +
       "background:rgba(255,244,227,.98);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);" +
       "border-bottom:1px solid rgba(193,121,19,.22);box-shadow:0 18px 40px -24px rgba(40,24,8,.5);" +
       "transform:translateY(-12px);opacity:0;visibility:hidden;transition:transform .26s,opacity .26s,visibility .26s}",

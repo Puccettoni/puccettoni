@@ -53,7 +53,8 @@
   .btn-ghost--dark:hover,.btn-ghost--dark:focus-visible{border-color:var(--orange);color:var(--orange-deep);background:rgba(193,121,19,.06)}
 
   /* SECTION 1 — hero */
-  .hero{position:relative;min-height:clamp(560px,92vh,860px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  .hero{position:relative;min-height:clamp(560px,92vh,860px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
+    background:radial-gradient(120% 95% at 50% 0%, rgba(193,121,19,.22) 0%, transparent 55%), linear-gradient(180deg,#2a2018 0%,#1c150d 60%,#15100a 100%)}
   .hero__bg{position:absolute;inset:0;z-index:0}
   .hero__bg img{width:100%;height:100%;object-fit:cover}
   .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,22,10,.55),rgba(30,22,10,.62))}
@@ -146,7 +147,7 @@
 <!-- SECTION 1 — HERO -->
 <header class="hero">
   <div class="hero__bg" aria-hidden="true">
-    <img src="Images/story-hero.png" alt="" onerror="this.src='Images/Margherita%20Pizza%2012.png'">
+    <img src="Images/story-hero.png" alt="" onerror="this.style.display='none'">
   </div>
   <div class="hero__in">
     <img class="hero__logo" src="Images/logo.png" alt="Puccettoni — Authentic Italian Pizza &amp; Food">

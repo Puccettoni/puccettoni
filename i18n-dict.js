@@ -592,5 +592,17 @@ window.__PUC_DICT__ = {
     { es:"Ver Nuestro Menú <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>",
       it:"Vedi il Nostro Menu <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>",
       pt:"Ver Nosso Menu <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>" },
-  "Visit Our Locations": { es:"Visita Nuestras Sedes", it:"Visita le Nostre Sedi", pt:"Conheça Nossas Unidades" }
+  "Visit Our Locations": { es:"Visita Nuestras Sedes", it:"Visita le Nostre Sedi", pt:"Conheça Nossas Unidades" },
+
+  /* ---------- Store pages: Our Story teaser ---------- */
+  "From a Food Truck to <em>Two Homes</em>": { es:"De un Food Truck a <em>Dos Hogares</em>", it:"Da un Food Truck a <em>Due Case</em>", pt:"De um Food Truck a <em>Duas Casas</em>" },
+  "In 2023, founder Marco Maroni moved from Italy to South Florida with a simple vision — to share authentic Italian food made with heart. It began with a food truck, one pizza and one customer at a time.":
+    { es:"En 2023, el fundador Marco Maroni se mudó de Italia al sur de Florida con una visión simple — compartir auténtica comida italiana hecha con el corazón. Empezó con un food truck, una pizza y un cliente a la vez.",
+      it:"Nel 2023, il fondatore Marco Maroni si è trasferito dall'Italia al sud della Florida con una visione semplice — condividere autentica cucina italiana fatta col cuore. È iniziato con un food truck, una pizza e un cliente alla volta.",
+      pt:"Em 2023, o fundador Marco Maroni se mudou da Itália para o sul da Flórida com uma visão simples — compartilhar comida italiana autêntica feita com o coração. Começou com um food truck, uma pizza e um cliente de cada vez." },
+  "That journey grew into two homes — Pompano Beach in 2024 and Fort Lauderdale in 2025 — each built on the same belief: that food and hospitality should be made with care, authenticity and love.":
+    { es:"Ese camino se convirtió en dos hogares — Pompano Beach en 2024 y Fort Lauderdale en 2025 — cada uno construido sobre la misma creencia: que la comida y la hospitalidad deben hacerse con cuidado, autenticidad y amor.",
+      it:"Quel percorso è diventato due case — Pompano Beach nel 2024 e Fort Lauderdale nel 2025 — entrambe costruite sulla stessa convinzione: che il cibo e l'ospitalità vadano fatti con cura, autenticità e amore.",
+      pt:"Essa jornada virou duas casas — Pompano Beach em 2024 e Fort Lauderdale em 2025 — cada uma construída sobre a mesma crença: que comida e hospitalidade devem ser feitas com cuidado, autenticidade e amor." },
+  "Discover our full story →": { es:"Descubre nuestra historia completa →", it:"Scopri la nostra storia completa →", pt:"Descubra nossa história completa →" }
 };

@@ -56,6 +56,42 @@
   .btn-orange:hover{transform:translateY(-2px);background:var(--orange-deep);box-shadow:0 16px 32px -12px rgba(193,121,19,.85)}
   .hero-sub{margin-top:18px;font-size:13px;letter-spacing:.04em;color:var(--ink-soft);opacity:.86}
 
+  /* === video catering hero === */
+  .hero--video{background:radial-gradient(120% 95% at 82% 0%,rgba(193,121,19,.22),transparent 55%),linear-gradient(180deg,#2a2018 0%,#1c150d 70%,#15100a 100%);color:var(--cream);padding:clamp(40px,7vh,84px) 0;text-align:left;overflow:hidden}
+  .vhero{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,60px);align-items:center}
+  .vhero__text .hero-logo{justify-content:flex-start;margin:0 0 18px}
+  .vhero__text .hero-logo img{width:190px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.45))}
+  .vhero__text .eyebrow{color:#e8b86c}
+  .vhero__text h1{color:#fff;font-size:clamp(34px,5vw,58px);margin:14px 0 16px}
+  .vhero__text h1 em{color:#e8b86c}
+  .vhero__text .lead{max-width:520px;margin:0;font-size:clamp(15.5px,1.6vw,18px);color:rgba(255,244,227,.86);line-height:1.6}
+  .vhero .hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+  .vhero .hero-sub{color:rgba(255,244,227,.6)}
+  .btn-line{background:transparent;color:var(--cream);border:1.5px solid rgba(255,244,227,.5)}
+  .btn-line:hover{background:rgba(255,244,227,.12);border-color:var(--cream);transform:translateY(-2px)}
+  .vhero__media{display:flex;justify-content:center}
+  .creel{position:relative;width:100%;max-width:340px;aspect-ratio:9/16;max-height:74vh;border-radius:20px;overflow:hidden;
+    background:#000;box-shadow:0 40px 90px -40px rgba(0,0,0,.7),inset 0 0 0 1px rgba(232,184,108,.18)}
+  .creel__video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+  .creel__cover{position:absolute;inset:0;border:none;padding:0;margin:0;cursor:pointer;background:#15110a;display:flex;align-items:center;justify-content:center}
+  .creel__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .creel__cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,6,.12),rgba(20,14,6,.5))}
+  .creel__play{position:relative;z-index:2;width:78px;height:78px;border-radius:50%;background:rgba(193,121,19,.95);
+    display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 14px 40px -8px rgba(193,121,19,.8);transition:transform .2s,background .2s}
+  .creel__cover:hover .creel__play,.creel__cover:focus-visible .creel__play{transform:scale(1.07);background:var(--orange)}
+  .creel__play svg{width:30px;height:30px;margin-left:4px}
+  .creel__hint{position:absolute;z-index:2;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,244,227,.92);
+    font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+  @media(max-width:860px){
+    .hero--video{text-align:center}
+    .vhero{grid-template-columns:1fr;gap:28px}
+    .vhero__text .hero-logo{justify-content:center}
+    .vhero__text .lead{margin:0 auto}
+    .vhero .hero-cta{justify-content:center}
+    .vhero__media{order:-1}
+    .creel{max-width:300px}
+  }
+
   section{padding:60px 0}
   .sec-head{text-align:center;max-width:640px;margin:0 auto 42px}
   .sec-eyebrow{font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--basil);font-weight:600;display:block;margin-bottom:10px}
@@ -102,17 +138,32 @@
 <body>
 <div class="topband">Authentic Italian Pizza &amp; Food · <b>Catering &amp; Events</b></div>
 
-<header class="hero" id="home">
-  <div class="glow"></div>
-  <div class="hero-in wrap">
-    <div class="hero-logo"><img src="Images/logo.png" alt="Puccettoni — Authentic Italian Pizza &amp; Food"></div>
-    <span class="eyebrow">Puccettoni Catering</span>
-    <h1>Bring Puccettoni to <em>your next event</em></h1>
-    <p class="lead">Prepared by our restaurant team for private events, office lunches, family gatherings and local celebrations.</p>
-    <div class="hero-cta">
-      <a href="#catering-form" class="btn btn-orange">Request Catering Quote</a>
+<header class="hero hero--video" id="home">
+  <div class="vhero">
+    <div class="vhero__text">
+      <div class="hero-logo"><img src="Images/logo.png" alt="Puccettoni — Authentic Italian Pizza &amp; Food"></div>
+      <span class="eyebrow">Puccettoni Catering</span>
+      <h1>Elevated Italian Catering, the <em>Puccettoni Way.</em></h1>
+      <p class="lead">Authentic Italian food, warm hospitality and a memorable experience for private events, corporate gatherings, school celebrations and special occasions.</p>
+      <div class="hero-cta">
+        <button type="button" class="btn btn-orange" id="watchReel">Watch the Catering Experience</button>
+        <a href="#catering-form" class="btn btn-line">Request Catering Quote</a>
+      </div>
+      <p class="hero-sub">Serving Pompano Beach, Fort Lauderdale and nearby communities.</p>
     </div>
-    <p class="hero-sub">Serving Pompano Beach, Fort Lauderdale and nearby communities.</p>
+    <div class="vhero__media">
+      <div class="creel" id="creel">
+        <!-- Drop the edited reel at Images/catering-reel.mp4 and a thumbnail at Images/catering-poster.jpg -->
+        <video class="creel__video" id="cateringVideo" controls playsinline preload="none" poster="Images/catering-poster.jpg">
+          <source src="Images/catering-reel.mp4" type="video/mp4">
+        </video>
+        <button class="creel__cover" id="cateringPlay" type="button" aria-label="Play the catering reel with sound">
+          <img class="creel__poster" src="Images/catering-poster.jpg" alt="Puccettoni catering experience" onerror="this.style.display='none'">
+          <span class="creel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+          <span class="creel__hint">Watch with sound</span>
+        </button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -262,6 +313,16 @@
   // reveal-on-scroll
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';io.observe(el)});
+
+  // catering reel — plays WITH sound + controls on click (user gesture)
+  (function(){
+    const cover=document.getElementById('cateringPlay');
+    const watch=document.getElementById('watchReel');
+    const video=document.getElementById('cateringVideo');
+    function start(){ if(!video) return; if(cover) cover.style.display='none'; const p=video.play(); if(p&&p.catch) p.catch(()=>{}); }
+    if(cover) cover.addEventListener('click',start);
+    if(watch) watch.addEventListener('click',()=>{ if(video) video.scrollIntoView({behavior:'smooth',block:'center'}); start(); });
+  })();
 
   // catering inquiry — emails info@puccettoni.com via FormSubmit (no backend)
   const cf=document.getElementById('cateringForm');

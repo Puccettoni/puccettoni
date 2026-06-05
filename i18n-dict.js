@@ -604,5 +604,14 @@ window.__PUC_DICT__ = {
     { es:"Ese camino se convirtió en dos hogares — Pompano Beach en 2024 y Fort Lauderdale en 2025 — cada uno construido sobre la misma creencia: que la comida y la hospitalidad deben hacerse con cuidado, autenticidad y amor.",
       it:"Quel percorso è diventato due case — Pompano Beach nel 2024 e Fort Lauderdale nel 2025 — entrambe costruite sulla stessa convinzione: che il cibo e l'ospitalità vadano fatti con cura, autenticità e amore.",
       pt:"Essa jornada virou duas casas — Pompano Beach em 2024 e Fort Lauderdale em 2025 — cada uma construída sobre a mesma crença: que comida e hospitalidade devem ser feitas com cuidado, autenticidade e amor." },
-  "Discover our full story →": { es:"Descubre nuestra historia completa →", it:"Scopri la nostra storia completa →", pt:"Descubra nossa história completa →" }
+  "Discover our full story →": { es:"Descubre nuestra historia completa →", it:"Scopri la nostra storia completa →", pt:"Descubra nossa história completa →" },
+
+  /* ---------- Catering video hero ---------- */
+  "Elevated Italian Catering, the <em>Puccettoni Way.</em>": { es:"Catering Italiano de Alto Nivel, al <em>Estilo Puccettoni.</em>", it:"Catering Italiano di Alto Livello, alla <em>Maniera Puccettoni.</em>", pt:"Catering Italiano de Alto Nível, do <em>Jeito Puccettoni.</em>" },
+  "Authentic Italian food, warm hospitality and a memorable experience for private events, corporate gatherings, school celebrations and special occasions.":
+    { es:"Auténtica comida italiana, hospitalidad cálida y una experiencia memorable para eventos privados, encuentros corporativos, celebraciones escolares y ocasiones especiales.",
+      it:"Autentica cucina italiana, ospitalità calorosa e un'esperienza memorabile per eventi privati, incontri aziendali, feste scolastiche e occasioni speciali.",
+      pt:"Comida italiana autêntica, hospitalidade calorosa e uma experiência memorável para eventos privados, encontros corporativos, celebrações escolares e ocasiões especiais." },
+  "Watch the Catering Experience": { es:"Mira la Experiencia de Catering", it:"Guarda l'Esperienza di Catering", pt:"Veja a Experiência de Catering" },
+  "Watch with sound": { es:"Ver con sonido", it:"Guarda con audio", pt:"Assista com som" }
 };

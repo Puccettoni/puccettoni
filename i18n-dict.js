@@ -13,7 +13,6 @@ window.__PUC_DICT__ = {
   /* ---------- Global navigation ---------- */
   "Home":        { es:"Inicio",            it:"Home",             pt:"Início" },
   "Locations":   { es:"Ubicaciones",       it:"Sedi",             pt:"Localização" },
-  "Our History": { es:"Nuestra Historia",  it:"La Nostra Storia", pt:"Nossa História" },
   "Catering":    { es:"Catering",          it:"Catering",         pt:"Catering" },
   "Franchise":   { es:"Franquicias",       it:"Franchising",      pt:"Franquias" },
 
@@ -100,7 +99,7 @@ window.__PUC_DICT__ = {
       it:"Puccettoni riunisce i sapori e il calore dell'Italia — panzerotti esclusivi, pizza artigianale, panini di focaccia, gnocchi e pasticceria italiana — ogni piatto fatto a mano dallo Chef Marco.",
       pt:"A Puccettoni reúne os sabores e o aconchego da Itália — panzerotti exclusivos, pizza artesanal, sanduíches de focaccia, gnocchi e doces italianos — cada prato feito à mão pelo Chef Marco." },
   "One authentic Italian experience, made fresh every day.": { es:"Una auténtica experiencia italiana, hecha al momento cada día.", it:"Un'autentica esperienza italiana, fatta fresca ogni giorno.", pt:"Uma autêntica experiência italiana, feita fresca todos os dias." },
-  "Our History <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>":
+  "Our Story <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>":
     { es:"Nuestra Historia <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>",
       it:"La Nostra Storia <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>",
       pt:"Nossa História <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>" },
@@ -264,7 +263,7 @@ window.__PUC_DICT__ = {
       pt:"Nos Estados Unidos, nesta página não são feitas declarações sobre vendas, lucros, ROI ou desempenho da franquia; tais informações, se aplicáveis, seriam fornecidas no Item 19 do Franchise Disclosure Document (FDD). Um potencial franqueado deve receber o FDD pelo menos 14 dias corridos antes de assinar qualquer acordo vinculante ou realizar qualquer pagamento relacionado à compra da franquia." },
 
   /* ---------- History page ---------- */
-  "Authentic Italian Pizza &amp; Food · <b>Our History</b>": { es:"Auténtica Pizza y Comida Italiana · <b>Nuestra Historia</b>", it:"Autentica Pizza e Cucina Italiana · <b>La Nostra Storia</b>", pt:"Autêntica Pizza e Comida Italiana · <b>Nossa História</b>" },
+  "Authentic Italian Pizza &amp; Food · <b>Our Story</b>": { es:"Auténtica Pizza y Comida Italiana · <b>Nuestra Historia</b>", it:"Autentica Pizza e Cucina Italiana · <b>La Nostra Storia</b>", pt:"Autêntica Pizza e Comida Italiana · <b>Nossa História</b>" },
   "Italian, <em>for real</em>": { es:"Italiano, <em>de verdad</em>", it:"Italiano, <em>davvero</em>", pt:"Italiano, <em>de verdade</em>" },
   "A kitchen built on one conviction — that South Florida deserved Italian food made the genuine way.":
     { es:"Una cocina construida sobre una convicción — que el sur de Florida merecía comida italiana hecha de la manera auténtica.",

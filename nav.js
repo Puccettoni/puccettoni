@@ -79,13 +79,14 @@
     ".sitenav__toggle svg{width:22px;height:22px}",
 
     // language switcher in the bar
-    ".sitenav__lang{flex:0 0 auto;display:inline-flex;gap:1px;border:1px solid rgba(193,121,19,.28);" +
-      "border-radius:20px;padding:2px;background:rgba(255,255,255,.35)}",
-    ".sitenav__lang button{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.06em;font-weight:700;" +
-      "color:#5b4d3c;background:none;border:none;border-radius:16px;padding:5px 7px;cursor:pointer;transition:background .15s,color .15s}",
+    ".sitenav__lang{flex:0 0 auto;display:inline-flex;align-items:center;gap:1px;border:1px solid rgba(193,121,19,.28);" +
+      "border-radius:11px;padding:2px;background:rgba(255,255,255,.4)}",
+    ".sitenav__lang button{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.03em;font-weight:700;line-height:1;" +
+      "color:#5b4d3c;background:none;border:none;border-radius:7px;padding:6px 8px;" +
+      "cursor:pointer;transition:background .15s,color .15s}",
     ".sitenav__lang button[aria-current='true']{background:#C17913;color:#fff}",
     ".sitenav__lang button:hover{color:#C17913}.sitenav__lang button[aria-current='true']:hover{color:#fff}",
-    "@media(max-width:380px){.sitenav__lang button{padding:5px 5px;font-size:9px}}",
+    "@media(max-width:400px){.sitenav__lang button{padding:6px 7px;font-size:9.5px}}",
 
     // mobile dropdown panel
     ".sitenav__panel{position:absolute;top:100%;left:0;right:0;z-index:199;" +

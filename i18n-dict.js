@@ -377,10 +377,10 @@ window.__PUC_DICT__ = {
   "Pompano Beach · Florida": { es:"Pompano Beach · Florida", it:"Pompano Beach · Florida", pt:"Pompano Beach · Flórida" },
   "Fort Lauderdale · Florida": { es:"Fort Lauderdale · Florida", it:"Fort Lauderdale · Florida", pt:"Fort Lauderdale · Flórida" },
   "Authentic Italian,<br><em>made fresh.</em>": { es:"Auténtico italiano,<br><em>hecho al momento.</em>", it:"Autentico italiano,<br><em>fatto al momento.</em>", pt:"Autêntico italiano,<br><em>feito na hora.</em>" },
-  "Authentic artisan Italian pizza, gnocchi, panzerotti, focaccia sandwiches and pastries — handcrafted by Chef Marco. Order direct, pick up or have it delivered.":
-    { es:"Auténtica pizza italiana artesanal, gnocchi, panzerotti, sándwiches de focaccia y pastelería — hechos a mano por el Chef Marco. Pide directo, recoge o recíbelo en tu casa.",
-      it:"Autentica pizza italiana artigianale, gnocchi, panzerotti, panini di focaccia e pasticceria — fatti a mano dallo Chef Marco. Ordina diretto, ritira o fatti consegnare.",
-      pt:"Autêntica pizza italiana artesanal, gnocchi, panzerotti, sanduíches de focaccia e doces — feitos à mão pelo Chef Marco. Peça direto, retire ou receba em casa." },
+  "Authentic artisan Italian pizza, gnocchi, panzerotti, focaccia sandwiches and pastries. Order direct, pick up or have it delivered.":
+    { es:"Auténtica pizza italiana artesanal, gnocchi, panzerotti, sándwiches de focaccia y pastelería. Pide directo, recoge o recíbelo en tu casa.",
+      it:"Autentica pizza italiana artigianale, gnocchi, panzerotti, panini di focaccia e pasticceria. Ordina diretto, ritira o fatti consegnare.",
+      pt:"Autêntica pizza italiana artesanal, gnocchi, panzerotti, sanduíches de focaccia e doces. Peça direto, retire ou receba em casa." },
   "<span class=\"star\">★★★★★</span> 4.8 on delivery · loved across Broward County": { es:"<span class=\"star\">★★★★★</span> 4.8 en delivery · querido en todo Broward County", it:"<span class=\"star\">★★★★★</span> 4.8 sulle consegne · amato in tutta la Broward County", pt:"<span class=\"star\">★★★★★</span> 4.8 no delivery · amado em todo o Broward County" },
   "Featured": { es:"Destacados", it:"In Evidenza", pt:"Destaques" },
   "Puccettoni <em>Favorites</em>": { es:"<em>Favoritos</em> de Puccettoni", it:"<em>Preferiti</em> di Puccettoni", pt:"<em>Favoritos</em> da Puccettoni" },

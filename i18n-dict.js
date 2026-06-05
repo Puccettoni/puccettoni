@@ -494,5 +494,103 @@ window.__PUC_DICT__ = {
   "Tell us briefly about your background and the community you have in mind.": { es:"Cuéntanos brevemente sobre tu experiencia y la comunidad que tienes en mente.", it:"Raccontaci brevemente la tua esperienza e la comunità che hai in mente.", pt:"Conte-nos brevemente sobre o seu histórico e a comunidade que você tem em mente." },
   "Tables, chairs, cocktail tables, bar stools, umbrellas, gazebo, tents, patio heaters, lounge area, etc.": { es:"Mesas, sillas, mesas de cóctel, taburetes, sombrillas, gazebo, carpas, calefactores de exterior, zona lounge, etc.", it:"Tavoli, sedie, tavoli da cocktail, sgabelli, ombrelloni, gazebo, tende, riscaldatori da esterno, area lounge, ecc.", pt:"Mesas, cadeiras, mesas de coquetel, banquetas, guarda-sóis, gazebo, tendas, aquecedores de área externa, lounge, etc." },
   "Plates, cutlery, glasses, tablecloths, napkins, serving trays, chafing dishes, warmers, service tools, etc.": { es:"Platos, cubiertos, vasos, manteles, servilletas, bandejas, chafing dishes, calentadores, utensilios de servicio, etc.", it:"Piatti, posate, bicchieri, tovaglie, tovaglioli, vassoi da portata, chafing dish, scaldavivande, strumenti di servizio, ecc.", pt:"Pratos, talheres, copos, toalhas de mesa, guardanapos, bandejas, réchauds, aquecedores, utensílios de serviço, etc." },
-  "Dietary needs, vibe, anything we should know...": { es:"Necesidades dietéticas, ambiente, cualquier cosa que debamos saber...", it:"Esigenze alimentari, atmosfera, qualsiasi cosa dovremmo sapere...", pt:"Restrições alimentares, clima do evento, qualquer coisa que devamos saber..." }
+  "Dietary needs, vibe, anything we should know...": { es:"Necesidades dietéticas, ambiente, cualquier cosa que debamos saber...", it:"Esigenze alimentari, atmosfera, qualsiasi cosa dovremmo sapere...", pt:"Restrições alimentares, clima do evento, qualquer coisa que devamos saber..." },
+
+  /* ---------- Our Story page (/our-story) ---------- */
+  "Italian Food Made With Heart": { es:"Comida Italiana Hecha con el Corazón", it:"Cucina Italiana Fatta col Cuore", pt:"Comida Italiana Feita com o Coração" },
+  "From a food truck in 2023 to two South Florida locations, Puccettoni is a story built through authenticity, hospitality and love.":
+    { es:"De un food truck en 2023 a dos sedes en el sur de Florida, Puccettoni es una historia construida con autenticidad, hospitalidad y amor.",
+      it:"Da un food truck nel 2023 a due sedi nel sud della Florida, Puccettoni è una storia costruita con autenticità, ospitalità e amore.",
+      pt:"De um food truck em 2023 a duas unidades no sul da Flórida, a Puccettoni é uma história construída com autenticidade, hospitalidade e amor." },
+  "Discover Our Journey <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M6 13l6 6 6-6\"></path></svg>":
+    { es:"Descubre Nuestro Camino <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M6 13l6 6 6-6\"></path></svg>",
+      it:"Scopri il Nostro Percorso <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M6 13l6 6 6-6\"></path></svg>",
+      pt:"Descubra Nossa Jornada <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M6 13l6 6 6-6\"></path></svg>" },
+  "Our Journey Began on Wheels": { es:"Nuestro Camino Empezó Sobre Ruedas", it:"Il Nostro Viaggio è Iniziato su Quattro Ruote", pt:"Nossa Jornada Começou Sobre Rodas" },
+  "In 2023, founder Marco Maroni moved from Italy to South Florida carrying a simple but powerful vision: to share authentic Italian food in a way that felt personal, honest and full of warmth.":
+    { es:"En 2023, el fundador Marco Maroni se mudó de Italia al sur de Florida con una visión simple pero poderosa: compartir auténtica comida italiana de una manera personal, honesta y llena de calidez.",
+      it:"Nel 2023, il fondatore Marco Maroni si è trasferito dall'Italia al sud della Florida con una visione semplice ma potente: condividere autentica cucina italiana in un modo personale, onesto e pieno di calore.",
+      pt:"Em 2023, o fundador Marco Maroni se mudou da Itália para o sul da Flórida com uma visão simples, mas poderosa: compartilhar comida italiana autêntica de um jeito pessoal, honesto e cheio de aconchego." },
+  "That journey began with a food truck.": { es:"Ese camino empezó con un food truck.", it:"Quel viaggio è iniziato con un food truck.", pt:"Essa jornada começou com um food truck." },
+  "There was no artificial formula behind it. Just Italian recipes, carefully selected ingredients, long days of work and the direct connection created by serving people face to face.":
+    { es:"No había ninguna fórmula artificial detrás. Solo recetas italianas, ingredientes cuidadosamente seleccionados, largas jornadas de trabajo y la conexión directa de servir a las personas cara a cara.",
+      it:"Non c'era nessuna formula artificiale dietro. Solo ricette italiane, ingredienti selezionati con cura, lunghe giornate di lavoro e il legame diretto creato servendo le persone faccia a faccia.",
+      pt:"Não havia nenhuma fórmula artificial por trás. Apenas receitas italianas, ingredientes cuidadosamente selecionados, longos dias de trabalho e a conexão direta de servir as pessoas cara a cara." },
+  "Every pizza, every panzerotto and every customer conversation became part of the foundation of Puccettoni.":
+    { es:"Cada pizza, cada panzerotto y cada conversación con un cliente se convirtió en parte de los cimientos de Puccettoni.",
+      it:"Ogni pizza, ogni panzerotto e ogni conversazione con un cliente è diventata parte delle fondamenta di Puccettoni.",
+      pt:"Cada pizza, cada panzerotto e cada conversa com um cliente passou a fazer parte dos alicerces da Puccettoni." },
+  "What began on wheels became a place people could call their <span>Italian table.</span>":
+    { es:"Lo que empezó sobre ruedas se convirtió en un lugar que la gente podía llamar su <span>mesa italiana.</span>",
+      it:"Ciò che è iniziato su quattro ruote è diventato un luogo che le persone potevano chiamare la loro <span>tavola italiana.</span>",
+      pt:"O que começou sobre rodas virou um lugar que as pessoas podiam chamar de sua <span>mesa italiana.</span>" },
+  "The Meaning Behind Our Name": { es:"El Significado Detrás de Nuestro Nombre", it:"Il Significato Dietro il Nostro Nome", pt:"O Significado por Trás do Nosso Nome" },
+  "The name Puccettoni comes from an Italian world of affection, tenderness and human connection.":
+    { es:"El nombre Puccettoni proviene de un mundo italiano de afecto, ternura y conexión humana.",
+      it:"Il nome Puccettoni nasce da un mondo italiano fatto di affetto, tenerezza e connessione umana.",
+      pt:"O nome Puccettoni vem de um mundo italiano de afeto, ternura e conexão humana." },
+  "It is inspired by the playful Italian expression “pucci pucci,” a way of evoking sweetness, closeness and love. It also carries a nostalgic reference to Italian popular culture: a figure who was often underestimated or laughed at, yet remained deeply human.":
+    { es:"Está inspirado en la cariñosa expresión italiana “pucci pucci,” una forma de evocar dulzura, cercanía y amor. También lleva una referencia nostálgica a la cultura popular italiana: una figura a menudo subestimada o motivo de risa, pero que permanecía profundamente humana.",
+      it:"È ispirato all'affettuosa espressione italiana “pucci pucci,” un modo di evocare dolcezza, vicinanza e amore. Porta anche un riferimento nostalgico alla cultura popolare italiana: una figura spesso sottovalutata o derisa, eppure profondamente umana.",
+      pt:"É inspirado na carinhosa expressão italiana “pucci pucci,” uma forma de evocar doçura, proximidade e amor. Também traz uma referência nostálgica à cultura popular italiana: uma figura muitas vezes subestimada ou motivo de riso, mas que permanecia profundamente humana." },
+  "For us, that meaning became something positive.": { es:"Para nosotros, ese significado se convirtió en algo positivo.", it:"Per noi, quel significato è diventato qualcosa di positivo.", pt:"Para nós, esse significado se tornou algo positivo." },
+  "Puccettoni represents the people who remain genuine in a world that often values appearance more than substance. It represents warmth over distance, honesty over performance and heart over image.":
+    { es:"Puccettoni representa a las personas que siguen siendo genuinas en un mundo que a menudo valora más la apariencia que la sustancia. Representa la calidez por encima de la distancia, la honestidad por encima de la pose y el corazón por encima de la imagen.",
+      it:"Puccettoni rappresenta le persone che restano genuine in un mondo che spesso valuta l'apparenza più della sostanza. Rappresenta il calore al posto della distanza, l'onestà al posto della finzione e il cuore al posto dell'immagine.",
+      pt:"A Puccettoni representa as pessoas que permanecem genuínas em um mundo que muitas vezes valoriza mais a aparência do que a essência. Representa o acolhimento acima da distância, a honestidade acima da pose e o coração acima da imagem." },
+  "Being authentic is not a weakness. <em>It is our identity.</em>":
+    { es:"Ser auténtico no es una debilidad. <em>Es nuestra identidad.</em>",
+      it:"Essere autentici non è una debolezza. <em>È la nostra identità.</em>",
+      pt:"Ser autêntico não é uma fraqueza. <em>É a nossa identidade.</em>" },
+  "Heart.": { es:"Corazón.", it:"Cuore.", pt:"Coração." },
+  "Authenticity.": { es:"Autenticidad.", it:"Autenticità.", pt:"Autenticidade." },
+  "Hospitality.": { es:"Hospitalidad.", it:"Ospitalità.", pt:"Hospitalidade." },
+  "In a World Focused on Image, We Choose Heart": { es:"En un Mundo Centrado en la Imagen, Elegimos el Corazón", it:"In un Mondo Concentrato sull'Immagine, Scegliamo il Cuore", pt:"Em um Mundo Focado na Imagem, Escolhemos o Coração" },
+  "Puccettoni was built around a different belief: people can recognize when something is real.":
+    { es:"Puccettoni se construyó sobre una creencia diferente: las personas saben reconocer cuando algo es real.",
+      it:"Puccettoni è nata su una convinzione diversa: le persone sanno riconoscere quando qualcosa è autentico.",
+      pt:"A Puccettoni foi construída sobre uma crença diferente: as pessoas sabem reconhecer quando algo é real." },
+  "They can feel the difference between food that is simply produced and food that is prepared with care. They can recognize hospitality that comes from a script and hospitality that comes from a genuine desire to make someone feel welcome.":
+    { es:"Pueden sentir la diferencia entre la comida que simplemente se produce y la que se prepara con cuidado. Saben distinguir la hospitalidad que sigue un guion de la que nace del deseo genuino de hacer que alguien se sienta bienvenido.",
+      it:"Sentono la differenza tra il cibo semplicemente prodotto e quello preparato con cura. Riconoscono l'ospitalità che segue un copione e quella che nasce dal desiderio sincero di far sentire qualcuno il benvenuto.",
+      pt:"Elas sentem a diferença entre a comida que é apenas produzida e a comida preparada com cuidado. Reconhecem a hospitalidade que segue um roteiro e a que nasce do desejo genuíno de fazer alguém se sentir bem-vindo." },
+  "For us, love is not only part of the message. It is part of the process.": { es:"Para nosotros, el amor no es solo parte del mensaje. Es parte del proceso.", it:"Per noi, l'amore non è solo parte del messaggio. È parte del processo.", pt:"Para nós, o amor não é só parte da mensagem. É parte do processo." },
+  "It is in the attention given to the dough.": { es:"Está en la atención que damos a la masa.", it:"È nell'attenzione data all'impasto.", pt:"Está na atenção dada à massa." },
+  "It is in the ingredients we choose.": { es:"Está en los ingredientes que elegimos.", it:"È negli ingredienti che scegliamo.", pt:"Está nos ingredientes que escolhemos." },
+  "It is in the patience required to prepare something properly.": { es:"Está en la paciencia que exige preparar algo como es debido.", it:"È nella pazienza necessaria per preparare qualcosa come si deve.", pt:"Está na paciência que exige preparar algo do jeito certo." },
+  "It is in the way we welcome every customer.": { es:"Está en la forma en que recibimos a cada cliente.", it:"È nel modo in cui accogliamo ogni cliente.", pt:"Está no jeito como recebemos cada cliente." },
+  "We believe that the care placed into food becomes part of the experience people receive when they enjoy it. That is why our growth is guided not only by numbers, but by passion, trust and the sincere desire to serve something worth remembering.":
+    { es:"Creemos que el cuidado puesto en la comida se convierte en parte de la experiencia que reciben las personas al disfrutarla. Por eso nuestro crecimiento no se guía solo por números, sino por pasión, confianza y el sincero deseo de ofrecer algo digno de recordar.",
+      it:"Crediamo che la cura messa nel cibo diventi parte dell'esperienza che le persone ricevono quando lo gustano. Per questo la nostra crescita è guidata non solo dai numeri, ma dalla passione, dalla fiducia e dal desiderio sincero di servire qualcosa che valga la pena ricordare.",
+      pt:"Acreditamos que o cuidado colocado na comida vira parte da experiência que as pessoas recebem ao saboreá-la. Por isso, nosso crescimento é guiado não só por números, mas por paixão, confiança e o sincero desejo de servir algo que valha a pena lembrar." },
+  "From a Food Truck to Two South Florida Locations": { es:"De un Food Truck a Dos Sedes en el Sur de Florida", it:"Da un Food Truck a Due Sedi nel Sud della Florida", pt:"De um Food Truck a Duas Unidades no Sul da Flórida" },
+  "The Beginning": { es:"El Comienzo", it:"L'Inizio", pt:"O Começo" },
+  "Marco Maroni moves from Italy to South Florida and begins serving authentic Italian food from a food truck, building the Puccettoni experience one customer at a time.":
+    { es:"Marco Maroni se muda de Italia al sur de Florida y empieza a servir auténtica comida italiana desde un food truck, construyendo la experiencia Puccettoni cliente a cliente.",
+      it:"Marco Maroni si trasferisce dall'Italia al sud della Florida e inizia a servire autentica cucina italiana da un food truck, costruendo l'esperienza Puccettoni un cliente alla volta.",
+      pt:"Marco Maroni se muda da Itália para o sul da Flórida e começa a servir comida italiana autêntica num food truck, construindo a experiência Puccettoni um cliente de cada vez." },
+  "The First Home": { es:"El Primer Hogar", it:"La Prima Casa", pt:"A Primeira Casa" },
+  "The first Puccettoni Italian Pizza &amp; Food location opens in Pompano Beach, bringing the food truck vision into a permanent neighborhood setting.":
+    { es:"La primera sede de Puccettoni Italian Pizza &amp; Food abre en Pompano Beach, llevando la visión del food truck a un espacio permanente en el barrio.",
+      it:"La prima sede di Puccettoni Italian Pizza &amp; Food apre a Pompano Beach, portando la visione del food truck in uno spazio permanente nel quartiere.",
+      pt:"A primeira unidade da Puccettoni Italian Pizza &amp; Food abre em Pompano Beach, levando a visão do food truck para um espaço permanente no bairro." },
+  "The Next Chapter": { es:"El Siguiente Capítulo", it:"Il Prossimo Capitolo", pt:"O Próximo Capítulo" },
+  "Puccettoni opens its second location in Fort Lauderdale, continuing a journey built through passion, customer support and authentic Italian hospitality.":
+    { es:"Puccettoni abre su segunda sede en Fort Lauderdale, continuando un camino construido con pasión, el apoyo de los clientes y auténtica hospitalidad italiana.",
+      it:"Puccettoni apre la sua seconda sede a Fort Lauderdale, proseguendo un percorso costruito con passione, il sostegno dei clienti e autentica ospitalità italiana.",
+      pt:"A Puccettoni abre sua segunda unidade em Fort Lauderdale, dando continuidade a uma jornada construída com paixão, o apoio dos clientes e autêntica hospitalidade italiana." },
+  "Come Share Our Table": { es:"Ven a Compartir Nuestra Mesa", it:"Vieni a Condividere la Nostra Tavola", pt:"Venha Compartilhar Nossa Mesa" },
+  "Puccettoni is our way of bringing a piece of Italy to South Florida: not only through the food we prepare, but through the warmth, care and sense of belonging that have always made Italian hospitality special.":
+    { es:"Puccettoni es nuestra forma de traer un pedazo de Italia al sur de Florida: no solo a través de la comida que preparamos, sino del calor, el cuidado y el sentido de pertenencia que siempre han hecho especial la hospitalidad italiana.",
+      it:"Puccettoni è il nostro modo di portare un pezzo d'Italia nel sud della Florida: non solo attraverso il cibo che prepariamo, ma con il calore, la cura e il senso di appartenenza che hanno sempre reso speciale l'ospitalità italiana.",
+      pt:"A Puccettoni é a nossa forma de trazer um pedaço da Itália para o sul da Flórida: não só pela comida que preparamos, mas pelo aconchego, pelo cuidado e pelo senso de pertencimento que sempre tornaram especial a hospitalidade italiana." },
+  "Made with heart. Served with love. <span>Welcome to Puccettoni.</span>":
+    { es:"Hecho con el corazón. Servido con amor. <span>Bienvenido a Puccettoni.</span>",
+      it:"Fatto col cuore. Servito con amore. <span>Benvenuto da Puccettoni.</span>",
+      pt:"Feito com o coração. Servido com amor. <span>Bem-vindo à Puccettoni.</span>" },
+  "View Our Menu <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>":
+    { es:"Ver Nuestro Menú <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>",
+      it:"Vedi il Nostro Menu <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>",
+      pt:"Ver Nosso Menu <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>" },
+  "Visit Our Locations": { es:"Visita Nuestras Sedes", it:"Visita le Nostre Sedi", pt:"Conheça Nossas Unidades" }
 };

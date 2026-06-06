@@ -705,5 +705,8 @@ window.__PUC_DICT__ = {
   "Catering by Puccettoni · prepared by our restaurant team<span class=\"sep\">·</span><a href=\"index.html\">Back to locations</a>":
     { es:"Catering de Puccettoni · preparado por el equipo de nuestro restaurante<span class=\"sep\">·</span><a href=\"index.html\">Volver a las sedes</a>",
       it:"Catering di Puccettoni · preparato dal team del nostro ristorante<span class=\"sep\">·</span><a href=\"index.html\">Torna alle sedi</a>",
-      pt:"Catering da Puccettoni · preparado pela equipe do nosso restaurante<span class=\"sep\">·</span><a href=\"index.html\">Voltar às unidades</a>" }
+      pt:"Catering da Puccettoni · preparado pela equipe do nosso restaurante<span class=\"sep\">·</span><a href=\"index.html\">Voltar às unidades</a>" },
+
+  /* ---------- Franchise guide flipbook ---------- */
+  "Download PDF": { es:"Descargar PDF", it:"Scarica PDF", pt:"Baixar PDF" }
 };

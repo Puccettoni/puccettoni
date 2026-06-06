@@ -59,6 +59,19 @@
   .flip{position:relative;width:100%;height:min(82vh,860px);min-height:420px;border-radius:16px;overflow:hidden;
     background:#15110a;border:1px solid var(--line);box-shadow:0 40px 90px -40px rgba(20,12,4,.6)}
   .flip iframe{width:100%;height:100%;border:0;display:block}
+  .flip__track{display:flex;height:100%;transition:transform .45s cubic-bezier(.2,.8,.2,1);will-change:transform}
+  .flip__page{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:14px}
+  .flip__page img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 20px 50px -22px rgba(0,0,0,.75);-webkit-user-select:none;user-select:none}
+  .flip__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(232,184,108,.3);background:rgba(193,121,19,.92);color:#fff;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:background .2s,opacity .2s;box-shadow:0 8px 22px -8px rgba(0,0,0,.6)}
+  .flip__nav:hover:not(:disabled){background:var(--orange-deep)}
+  .flip__nav:disabled{opacity:.28;cursor:default}
+  .flip__nav svg{width:22px;height:22px}
+  .flip__nav--prev{left:12px}.flip__nav--next{right:12px}
+  .flip__count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:5;font-family:'Cinzel',serif;font-size:11px;
+    letter-spacing:.14em;color:rgba(255,244,227,.9);background:rgba(0,0,0,.4);padding:6px 15px;border-radius:20px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  @media(max-width:560px){.flip__nav{width:40px;height:40px}.flip__nav svg{width:19px;height:19px}.flip__page{padding:8px}}
   /* placeholder shown until the Heyzine embed URL is configured */
   .flip__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;padding:32px;color:rgba(255,244,227,.9);
@@ -115,18 +128,29 @@
 
     <div class="flip-wrap">
       <div class="flip" id="flip">
-        <!-- The Heyzine flipbook iframe is injected here when FLIPBOOK_EMBED_URL is set. -->
-        <div class="flip__ph" id="flipPh">
-          <div class="badge">Coming soon</div>
-          <h3>The Franchise Guide is on its way</h3>
-          <p>The digital brochure will appear here. Meanwhile, you can request franchise information below.</p>
+        <div class="flip__track" id="flipTrack">
+          <div class="flip__page"><img src="Images/fg-page-1.jpg" alt="Franchise Opportunity Guide — cover" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-2.jpg" alt="Why the market needs Puccettoni" loading="lazy" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-3.jpg" alt="Why Puccettoni is different" loading="lazy" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-4.jpg" alt="A versatile product platform" loading="lazy" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-5.jpg" alt="Italian rituals, all day long" loading="lazy" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-6.jpg" alt="Multiple revenue channels" loading="lazy" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-7.jpg" alt="Support designed to help you launch" loading="lazy" draggable="false"></div>
+          <div class="flip__page"><img src="Images/fg-page-8.jpg" alt="Start the conversation" loading="lazy" draggable="false"></div>
         </div>
+        <button type="button" class="flip__nav flip__nav--prev" id="flipPrev" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button type="button" class="flip__nav flip__nav--next" id="flipNext" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="flip__count"><span id="flipCur">1</span> / 8</div>
       </div>
       <div class="flip-tools">
         <button type="button" class="tool" id="flipFull" data-track="guide_fullscreen">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
           Fullscreen
         </button>
+        <a class="tool" href="Puccettoni-Franchise-Guide.pdf" download data-track="guide_download_pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          Download PDF
+        </a>
       </div>
     </div>
   </section>
@@ -147,16 +171,6 @@
 </footer>
 
 <script>
-  /* =====================================================================
-     FRANCHISE GUIDE — configuration
-     Paste the Heyzine (or Flipsnack) flipbook EMBED url below once the final
-     PDF is uploaded. The campaign link (/franchise-guide) never changes — only
-     this value does, so you can swap the PDF without touching the Facebook ads.
-     Example: "https://heyzine.com/flip-book/xxxxxxxx.html"
-     ===================================================================== */
-  const FLIPBOOK_EMBED_URL = "";
-  /* ===================================================================== */
-
   (function(){
     "use strict";
 
@@ -171,29 +185,49 @@
     }
     track("franchise_guide_view");
 
-    const flip = document.getElementById("flip");
-    const flipPh = document.getElementById("flipPh");
-
-    // Inject the flipbook iframe only when a URL is configured.
-    if(FLIPBOOK_EMBED_URL){
-      const iframe = document.createElement("iframe");
-      iframe.src = FLIPBOOK_EMBED_URL;
-      iframe.title = "Puccettoni Franchise Opportunity Guide";
-      iframe.allow = "fullscreen";
-      iframe.setAttribute("allowfullscreen", "");
-      iframe.loading = "lazy";
-      if(flipPh) flipPh.remove();
-      flip.appendChild(iframe);
+    // ---- image flipbook (8 rasterized pages) ----
+    const flipEl = document.getElementById("flip");
+    const trackEl = document.getElementById("flipTrack");
+    const TOTAL = trackEl ? trackEl.children.length : 0;
+    const curEl = document.getElementById("flipCur");
+    const prevBtn = document.getElementById("flipPrev");
+    const nextBtn = document.getElementById("flipNext");
+    let idx = 0;
+    function render(){
+      if(trackEl) trackEl.style.transform = "translateX(" + (-idx * 100) + "%)";
+      if(curEl) curEl.textContent = String(idx + 1);
+      if(prevBtn) prevBtn.disabled = idx === 0;
+      if(nextBtn) nextBtn.disabled = idx === TOTAL - 1;
     }
+    function go(d){
+      const n = Math.min(TOTAL - 1, Math.max(0, idx + d));
+      if(n !== idx){ idx = n; render(); track("guide_page_view", {page: idx + 1}); }
+    }
+    if(prevBtn) prevBtn.addEventListener("click", function(){ go(-1); });
+    if(nextBtn) nextBtn.addEventListener("click", function(){ go(1); });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "ArrowLeft") go(-1);
+      else if(e.key === "ArrowRight") go(1);
+    });
+    if(flipEl){
+      let x0 = null;
+      flipEl.addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+      flipEl.addEventListener("touchend", function(e){
+        if(x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        if(Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+        x0 = null;
+      });
+    }
+    render();
 
     // Fullscreen toggle for the flipbook area
     const fullBtn = document.getElementById("flipFull");
     if(fullBtn){
       fullBtn.addEventListener("click", function(){
-        const el = flip;
         if(document.fullscreenElement){ document.exitFullscreen && document.exitFullscreen(); return; }
-        if(el.requestFullscreen) el.requestFullscreen();
-        else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        if(flipEl.requestFullscreen) flipEl.requestFullscreen();
+        else if(flipEl.webkitRequestFullscreen) flipEl.webkitRequestFullscreen();
       });
     }
 

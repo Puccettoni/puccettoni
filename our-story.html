@@ -52,7 +52,7 @@
   .btn-ghost--dark{color:var(--charcoal);border-color:rgba(60,60,59,.3)}
   .btn-ghost--dark:hover,.btn-ghost--dark:focus-visible{border-color:var(--orange);color:var(--orange-deep);background:rgba(193,121,19,.06)}
 
-  /* SECTION 1 — hero */
+  /* SECTION 1, hero */
   .hero{position:relative;min-height:clamp(560px,92vh,860px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
     background:radial-gradient(120% 95% at 50% 0%, rgba(193,121,19,.22) 0%, transparent 55%), linear-gradient(180deg,#2a2018 0%,#1c150d 60%,#15100a 100%)}
   .hero__bg{position:absolute;inset:0;z-index:0}
@@ -67,7 +67,7 @@
   @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
   @media(prefers-reduced-motion:reduce){.scroll-cue{animation:none}}
 
-  /* SECTION 2 — journey */
+  /* SECTION 2, journey */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
   .split__media{height:clamp(360px,46vw,540px)}
   .sec-title{font-size:clamp(32px,5vw,52px);margin-bottom:22px}
@@ -78,7 +78,7 @@
   .pullquote span{color:var(--orange)}
   @media(max-width:860px){.split{grid-template-columns:1fr}.split__media{height:clamp(280px,72vw,420px);order:-1}}
 
-  /* SECTION 3 — name */
+  /* SECTION 3, name */
   .name-sec{background:var(--mozz);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
   .name-logo{width:200px;max-width:60%;height:auto;margin:0 auto 26px}
   .name-sec .sec-title{font-size:clamp(30px,4.6vw,46px)}
@@ -87,7 +87,7 @@
     line-height:1.22;max-width:760px;margin:40px auto 0;color:var(--charcoal)}
   .bigline em{color:var(--orange);font-style:italic}
 
-  /* SECTION 4 — philosophy */
+  /* SECTION 4, philosophy */
   .philo__keywords{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,3vw,40px);margin-bottom:34px;text-align:center}
   .philo__keywords span{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(15px,2.4vw,24px);letter-spacing:.12em;color:var(--orange)}
   .philo{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,60px);align-items:center}
@@ -98,7 +98,7 @@
   .philo__final{font-size:16px;color:var(--ink-soft)}
   @media(max-width:860px){.philo{grid-template-columns:1fr}.philo__media{height:clamp(280px,72vw,420px)}}
 
-  /* SECTION 5 — timeline */
+  /* SECTION 5, timeline */
   .tl-sec{background:var(--charcoal);color:var(--cream)}
   .tl-sec .sec-title{color:#fff;text-align:center;max-width:760px;margin:0 auto 52px}
   .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
@@ -118,7 +118,7 @@
     .tl-shot{height:200px}
   }
 
-  /* SECTION 6 — closing */
+  /* SECTION 6, closing */
   .closing{position:relative;text-align:center;overflow:hidden;color:var(--cream);
     min-height:clamp(520px,80vh,720px);display:flex;align-items:center;justify-content:center}
   .closing__bg{position:absolute;inset:0;z-index:0}
@@ -144,13 +144,13 @@
 <body>
 <div class="topband">Authentic Italian Pizza &amp; Food · <b>Our Story</b></div>
 
-<!-- SECTION 1 — HERO -->
+<!-- SECTION 1, HERO -->
 <header class="hero">
   <div class="hero__bg" aria-hidden="true">
     <img src="Images/story-hero.png" alt="" onerror="this.style.display='none'">
   </div>
   <div class="hero__in">
-    <img class="hero__logo" src="Images/logo.png" alt="Puccettoni — Authentic Italian Pizza &amp; Food">
+    <img class="hero__logo" src="Images/logo.png" alt="Puccettoni, Authentic Italian Pizza &amp; Food">
     <span class="eyebrow">Our Story</span>
     <h1>Italian Food Made With Heart</h1>
     <p class="hero__sub">From a food truck in 2023 to two South Florida locations, Puccettoni is a story built through authenticity, hospitality and love.</p>
@@ -163,7 +163,7 @@
   </div>
 </header>
 
-<!-- SECTION 2 — THE JOURNEY BEGAN ON WHEELS -->
+<!-- SECTION 2, THE JOURNEY BEGAN ON WHEELS -->
 <section class="sec" id="journey">
   <div class="wrap split">
     <div class="split__media rv">
@@ -184,7 +184,7 @@
   </div>
 </section>
 
-<!-- SECTION 3 — THE MEANING BEHIND OUR NAME -->
+<!-- SECTION 3, THE MEANING BEHIND OUR NAME -->
 <section class="sec name-sec">
   <div class="wrap">
     <img class="name-logo rv" src="Images/logo.png" alt="Puccettoni logo">
@@ -199,7 +199,7 @@
   </div>
 </section>
 
-<!-- SECTION 4 — OUR PHILOSOPHY -->
+<!-- SECTION 4, OUR PHILOSOPHY -->
 <section class="sec">
   <div class="wrap">
     <div class="philo__keywords rv"><span>Heart.</span><span>Authenticity.</span><span>Hospitality.</span></div>
@@ -229,7 +229,7 @@
   </div>
 </section>
 
-<!-- SECTION 5 — TIMELINE -->
+<!-- SECTION 5, TIMELINE -->
 <section class="sec tl-sec">
   <div class="wrap">
     <h2 class="sec-title rv">From a Food Truck to Two South Florida Locations</h2>
@@ -256,7 +256,7 @@
   </div>
 </section>
 
-<!-- SECTION 6 — CLOSING -->
+<!-- SECTION 6, CLOSING -->
 <section class="closing">
   <div class="closing__bg" aria-hidden="true">
     <img src="Images/story-closing.png" alt="" onerror="this.src='Images/Truffle%20Panzerotto.png'">

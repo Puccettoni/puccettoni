@@ -106,7 +106,7 @@
   .thanks.show{display:block}
 
   /* Start the Conversation, brochure-styled ornamental panel */
-  .conv-panel{position:relative;max-width:980px;margin:0 auto;background:radial-gradient(82% 52% at -10% 116%,rgba(33,20,10,.92),rgba(58,36,16,.6) 26%,rgba(150,90,32,.20) 48%,transparent 64%),linear-gradient(155deg,rgba(252,248,240,.98) 56%,rgba(244,234,218,.98));
+  .conv-panel{position:relative;max-width:980px;margin:0 auto;background:radial-gradient(78% 54% at 2% 120%,rgba(22,13,5,.96),rgba(54,33,14,.6) 30%,rgba(150,90,32,.17) 55%,transparent 72%),linear-gradient(180deg,rgba(252,248,240,.99) 0%,rgba(249,242,231,.99) 40%,rgba(238,224,203,.98) 68%,rgba(212,186,152,.97) 100%);
     border:1.5px solid rgba(193,121,19,.4);border-radius:10px;padding:clamp(30px,5vw,58px);
     box-shadow:var(--shadow-soft);overflow:hidden}
   .conv-panel::before{content:"";position:absolute;inset:13px;border:1px solid rgba(193,121,19,.3);border-radius:6px;pointer-events:none;z-index:1}
@@ -136,7 +136,8 @@
   /* hero food duo, pizza + panzerotto medallions, like the brochure corner */
   /* Brochure food photo, save the exact brochure image as Images/franchise-food.png.
      It auto-appears when the file exists; the slot hides itself until then (onerror). */
-  .conv-food{display:block;margin-top:auto;width:100%;max-width:340px;height:auto;border-radius:12px;box-shadow:0 26px 60px -20px rgba(18,10,3,.7),0 0 54px 10px rgba(50,30,12,.32);border:1px solid rgba(193,121,19,.28)}
+  .conv-food{display:block;margin-top:auto;width:100%;max-width:350px;height:auto;border-radius:10px;
+    -webkit-mask-image:radial-gradient(142% 120% at 0% 100%,#000 55%,transparent 95%);mask-image:radial-gradient(142% 120% at 0% 100%,#000 55%,transparent 95%)}
   @media(max-width:780px){.conv-grid{grid-template-columns:1fr}.conv-form-col{order:-1}.conv-process{margin-bottom:0;margin-top:10px}.conv-food{margin-top:22px;margin-left:auto;margin-right:auto;max-width:300px}}
 
   footer{padding:40px 0 52px;font-size:12px;color:var(--ink-soft);line-height:1.7;border-top:1px solid rgba(193,121,19,.12)}

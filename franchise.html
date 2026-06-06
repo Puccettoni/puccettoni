@@ -87,7 +87,7 @@
   .check-list li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;color:var(--ink-soft);line-height:1.5}
   .check-list span{width:26px;height:26px;border-radius:50%;background:rgba(63,107,59,.1);color:var(--basil);display:flex;align-items:center;justify-content:center;font-weight:800;flex:0 0 auto}
 
-  .interest{padding-bottom:90px}
+  .interest{padding-bottom:90px;background:radial-gradient(115% 95% at 10% 100%,rgba(99,60,26,.55),transparent 56%),linear-gradient(180deg,#241a0f 0%,#1a130b 100%)}
   .form-card{max-width:780px;margin:0 auto;padding:42px}
   .form-card h2{text-align:center;font-size:42px;line-height:1.05;margin-bottom:10px}
   .form-card .sub{text-align:center;color:var(--ink-soft);line-height:1.6;margin:0 auto 28px;max-width:580px}
@@ -106,7 +106,7 @@
   .thanks.show{display:block}
 
   /* Start the Conversation, brochure-styled ornamental panel */
-  .conv-panel{position:relative;max-width:980px;margin:0 auto;background:rgba(252,247,238,.96);
+  .conv-panel{position:relative;max-width:980px;margin:0 auto;background:radial-gradient(72% 56% at 0% 100%,rgba(193,121,19,.13),transparent 58%),rgba(252,247,238,.97);
     border:1.5px solid rgba(193,121,19,.4);border-radius:10px;padding:clamp(30px,5vw,58px);
     box-shadow:var(--shadow-soft);overflow:hidden}
   .conv-panel::before{content:"";position:absolute;inset:13px;border:1px solid rgba(193,121,19,.3);border-radius:6px;pointer-events:none;z-index:1}
@@ -135,8 +135,8 @@
   /* hero food duo, pizza + panzerotto medallions, like the brochure corner */
   /* Brochure food photo, save the exact brochure image as Images/franchise-food.png.
      It auto-appears when the file exists; the slot hides itself until then (onerror). */
-  .conv-food{display:block;margin-top:26px;width:100%;max-width:360px;height:auto}
-  @media(max-width:780px){.conv-grid{grid-template-columns:1fr}.conv-process{margin-bottom:6px}.conv-food{margin-left:auto;margin-right:auto;max-width:300px}}
+  .conv-food{display:block;margin-top:26px;width:100%;max-width:360px;height:auto;border-radius:12px;box-shadow:0 22px 50px -22px rgba(40,24,8,.55);border:1px solid rgba(193,121,19,.2)}
+  @media(max-width:780px){.conv-grid{grid-template-columns:1fr}.conv-form-col{order:-1}.conv-process{margin-bottom:0;margin-top:10px}.conv-food{margin-left:auto;margin-right:auto;max-width:300px}}
 
   footer{padding:40px 0 52px;font-size:12px;color:var(--ink-soft);line-height:1.7;border-top:1px solid rgba(193,121,19,.12)}
   footer .legal{max-width:900px;margin:0 auto;text-align:center;opacity:.86}
@@ -323,8 +323,7 @@
               <li><span class="step-n">3</span><span class="step-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9.5 13h5M9.5 16h5"/></svg></span><div>Tell us about your background</div></li>
               <li><span class="step-n">4</span><span class="step-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="m3 8 9 6 9-6"/></svg></span><div>Receive follow-up information</div></li>
             </ol>
-            <!-- Brochure food photo: save the exact pizza+panzerotto image as Images/franchise-food.png -->
-            <img class="conv-food" src="Images/franchise-food.png" alt="Puccettoni pizza and panzerotto" onerror="this.style.display='none'">
+            <img class="conv-food" src="Images/franchise-cafe.jpg" alt="Puccettoni espresso and sfogliatella, the authentic Italian taste" onerror="this.style.display='none'">
           </aside>
 
           <div class="conv-form-col">

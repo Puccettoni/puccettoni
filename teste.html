@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Puccettoni, Your First Taste of Italy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cinzel:wght@400;600;700&family=Manrope:wght@300..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#C17913; --orange-deep:#A5650E;
+    --cream:#FFF4E3; --tomato:#B73520; --basil:#3F6B3B;
+    --charcoal:#1E1E1E; --mozz:#FAF7F0;
+    --ink-soft:#5b4d3c;
+    --line:rgba(30,30,30,.12);
+    --shadow:0 26px 60px -30px rgba(30,20,10,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .display{font-family:'Cinzel',serif}
+  .serif{font-family:'Cormorant Garamond',serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+  a{color:inherit;text-decoration:none}
+
+  .concept-tag{position:fixed;bottom:16px;left:16px;z-index:9000;background:var(--charcoal);color:var(--cream);
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 13px;border-radius:30px;font-weight:600}
+  .concept-tag b{color:var(--orange)}
+
+  /* top band */
+  .topband{background:var(--charcoal);color:var(--cream);text-align:center;padding:9px;font-size:12.5px;letter-spacing:.05em}
+  .topband b{color:var(--orange)}
+
+  /* header / brand */
+  header{text-align:center;padding:40px 0 14px}
+  .brand{display:flex;justify-content:center;align-items:center}
+  .brand img{max-width:340px;width:80%;height:auto;display:block}
+  @media(max-width:520px){.brand img{max-width:260px}}
+
+  /* hero */
+  .hero{padding:30px 0 70px;text-align:center;position:relative;overflow:hidden}
+  .hero .glow{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);width:90vmax;height:60vmax;
+    background:radial-gradient(ellipse, rgba(193,121,19,.12), transparent 60%);z-index:0;pointer-events:none}
+  .hero-in{position:relative;z-index:2}
+  .eyebrow{display:inline-block;font-family:'Cinzel',serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--basil);font-weight:600;margin-bottom:18px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(42px,8vw,82px);line-height:1.02;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--orange)}
+  .lead{max-width:540px;margin:22px auto 0;font-size:18px;color:var(--ink-soft)}
+
+  /* offer card */
+  .offer{max-width:560px;margin:44px auto 0;background:var(--mozz);border:1px solid var(--line);border-radius:20px;
+    padding:42px 40px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .offer::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--basil),var(--cream),var(--tomato))}
+  .offer .ribbon{display:inline-block;background:var(--tomato);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:18px}
+  .offer h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.08;margin-bottom:8px}
+  .offer h2 em{font-style:italic;color:var(--orange)}
+  .offer .desc{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
+  .offer .placeholder-note{display:inline-block;font-size:11.5px;color:var(--tomato);font-weight:600;
+    background:rgba(183,53,32,.08);padding:5px 12px;border-radius:20px;margin-top:6px}
+
+  /* form */
+  form{margin-top:26px;display:flex;flex-direction:column;gap:13px;text-align:left}
+  .field label{display:block;font-size:12px;letter-spacing:.04em;font-weight:600;color:var(--ink-soft);margin-bottom:5px;text-transform:uppercase}
+  .field input,.field select{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit;
+    font-size:15px;background:#fff;color:var(--charcoal);transition:border-color .2s,box-shadow .2s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(193,121,19,.15)}
+  .submit{margin-top:6px;background:var(--orange);color:#fff;border:none;border-radius:40px;padding:17px;font-size:16px;font-weight:700;
+    letter-spacing:.02em;cursor:pointer;transition:transform .18s,box-shadow .2s;box-shadow:0 12px 26px -12px rgba(193,121,19,.8)}
+  .submit:hover{transform:translateY(-2px);background:var(--orange-deep);box-shadow:0 18px 32px -14px rgba(193,121,19,.9)}
+  .fineprint{font-size:11.5px;color:var(--ink-soft);text-align:center;margin-top:4px;opacity:.8}
+  .thanks{display:none;text-align:center;padding:20px 0}
+  .thanks.show{display:block}
+  .thanks .big{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--basil);font-style:italic;margin-bottom:6px}
+
+  /* trust strip */
+  .trust{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:38px;font-size:14px;color:var(--ink-soft)}
+  .trust .it{display:flex;align-items:center;gap:8px}
+  .trust .star{color:var(--orange)}
+  .trust b{color:var(--charcoal)}
+
+  /* why section */
+  .why{background:var(--mozz);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 0;margin-top:80px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .why .card{text-align:center;padding:10px}
+  .why .ic{width:54px;height:54px;margin:0 auto 16px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--orange);border:1.5px solid rgba(193,121,19,.3)}
+  .why h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;margin-bottom:6px}
+  .why p{font-size:14.5px;color:var(--ink-soft)}
+  @media(max-width:760px){.why-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* final cta */
+  .final{text-align:center;padding:84px 0}
+  .final h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5vw,50px);line-height:1.05}
+  .final h2 em{font-style:italic;color:var(--orange)}
+  .final .btn{display:inline-block;margin-top:26px;background:var(--charcoal);color:var(--cream);padding:16px 36px;border-radius:40px;font-weight:700;font-size:15px;transition:transform .18s}
+  .final .btn:hover{transform:translateY(-2px);background:var(--orange)}
+
+  footer{background:var(--charcoal);color:rgba(250,247,240,.7);text-align:center;padding:40px 20px;font-size:13px}
+  footer .bn{font-family:'Cinzel',serif;color:var(--cream);font-size:18px;letter-spacing:.1em;margin-bottom:6px}
+
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="concept-tag"><b>●</b> Concept · brand colors applied · Lucas</div>
+<div class="topband">Authentic Italian, made fresh in Fort Lauderdale · <b>Now delivering</b></div>
+
+<header>
+  <div class="brand">
+    <img src="Images/logo.png" alt="Puccettoni, Authentic Italian Pizza & Food">
+  </div>
+</header>
+
+<section class="hero">
+  <div class="glow"></div>
+  <div class="hero-in wrap">
+    <span class="eyebrow">A taste of the old country</span>
+    <h1>Your first bite,<br><em>on us.</em></h1>
+    <p class="lead">Hand-crafted dough, imported ingredients, family recipes. Join our table and get a little welcome gift with your first order.</p>
+
+    <div class="offer rv" id="offerCard">
+      <span class="ribbon">Welcome Offer</span>
+      <!-- ====== OFFER BLOCK, easy to swap once Marco decides ====== -->
+      <h2>A free <em>focaccia</em><br>with your first order</h2>
+      <p class="desc">Sign up below and we'll send your welcome gift straight to your phone. One taste of the focaccia people say beats Italy's.</p>
+
+      <form id="leadForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="field">
+          <label for="phone">WhatsApp / Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
+        </div>
+        <div class="field">
+          <label for="fav">What sounds best tonight?</label>
+          <select id="fav" name="fav">
+            <option>Pizza</option>
+            <option>Focaccia sandwiches</option>
+            <option>Pasta</option>
+            <option>Catering / events</option>
+          </select>
+        </div>
+        <button type="submit" class="submit">Claim My Welcome Gift</button>
+        <p class="fineprint">No spam, just the welcome gift and the occasional good offer. Unsubscribe anytime.</p>
+      </form>
+
+      <div class="thanks" id="thanks">
+        <div class="big">Benvenuto! 🇮🇹</div>
+        <p>Your welcome gift is on its way. Check your phone, and come hungry.</p>
+      </div>
+    </div>
+
+    <div class="trust">
+      <div class="it"><span class="star">★★★★★</span> <b>4.8</b> on delivery</div>
+      <div class="it">🔥 Wood-fired tradition</div>
+      <div class="it">🇮🇹 Imported ingredients</div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap why-grid">
+    <div class="card rv">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C7 2 4 6 4 11a8 8 0 0016 0c0-5-3-9-8-9z"/><path d="M9 11c0-2 1-4 3-4"/></svg></div>
+      <h3>Truly Italian</h3>
+      <p>Not American pizza. Real recipes, real ingredients, made by Chef Marco the way it's done in Italy.</p>
+    </div>
+    <div class="card rv">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M12 3v18" opacity=".0"/><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>Fresh, fast, local</h3>
+      <p>Made to order and delivered hot across Fort Lauderdale and the neighborhood.</p>
+    </div>
+    <div class="card rv">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16l-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg></div>
+      <h3>Loved already</h3>
+      <p>4.8 stars on delivery and reviews that mention the chef by name. Come see why.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final wrap">
+  <h2>Hungry <em>now?</em></h2>
+  <p class="lead" style="margin-top:14px">Order direct or through your favorite app, your welcome gift works either way.</p>
+  <a class="btn" href="#offerCard">Claim &amp; Order</a>
+</section>
+
+<footer>
+  <div class="bn">PUCCETTONI</div>
+  <div>3801 Davie Blvd, Fort Lauderdale, FL 33312 · (754) 307-4992</div>
+  <div style="margin-top:6px;opacity:.6">Concept landing page · brand identity applied · Lucas Bizinoto · 2026</div>
+</footer>
+
+<script>
+  // reveal
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+
+  // lead form, emails info@puccettoni.com via FormSubmit (no backend)
+  const lf=document.getElementById('leadForm');
+  lf.addEventListener('submit',function(e){
+    e.preventDefault();
+    const btn=lf.querySelector('.submit'); const orig=btn?btn.textContent:'';
+    if(btn){btn.disabled=true;btn.textContent='Sending…';}
+    const fd=new FormData(lf);
+    fd.append('_subject','New client lead, Puccettoni');
+    fd.append('_template','table');
+    fd.append('_captcha','false');
+    fetch('https://formsubmit.co/ajax/info@puccettoni.com',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      .then(r=>r.json()).then(()=>{
+        lf.style.display='none';
+        document.querySelector('#offerCard .desc').style.display='none';
+        document.querySelector('#offerCard .placeholder-note').style.display='none';
+        document.getElementById('thanks').classList.add('show');
+      })
+      .catch(()=>{if(btn){btn.disabled=false;btn.textContent=orig;}alert('Sorry, we could not send. Please email info@puccettoni.com.');});
+  });
+</script>
+  <script src="i18n-dict.js" defer></script>
+  <script src="i18n.js" defer></script>
+</body>
+</html>

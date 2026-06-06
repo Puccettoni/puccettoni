@@ -128,10 +128,10 @@ window.__PUC_DICT__ = {
     { es:"Nuestro concepto fue desarrollado para llevar una identidad gastronómica italiana auténtica y reconocible a nuevas comunidades locales.",
       it:"Il nostro concept è stato sviluppato per portare un'identità gastronomica italiana autentica e riconoscibile a nuove comunità locali.",
       pt:"Nosso conceito foi desenvolvido para levar uma identidade gastronômica italiana autêntica e reconhecível a novas comunidades locais." },
-  "The panzerotto is at the heart of the brand — alongside artisan pizza and a true Italian table that feels familiar and distinctive at once.":
-    { es:"El panzerotto está en el corazón de la marca — junto a la pizza artesanal y una verdadera mesa italiana que resulta familiar y distintiva a la vez.",
-      it:"Il panzerotto è al cuore del marchio — insieme alla pizza artigianale e a una vera tavola italiana che è al tempo stesso familiare e distintiva.",
-      pt:"O panzerotto está no coração da marca — ao lado da pizza artesanal e de uma verdadeira mesa italiana que é, ao mesmo tempo, familiar e distinta." },
+  "A signature mix of panzerotti, artisan pizza, focaccia, gnocchi and Italian pastries — a true Italian table that feels familiar and distinctive at once.":
+    { es:"Una mezcla emblemática de panzerotti, pizza artesanal, focaccia, gnocchi y pastelería italiana — una verdadera mesa italiana que resulta familiar y distintiva a la vez.",
+      it:"Un mix d'autore di panzerotti, pizza artigianale, focaccia, gnocchi e pasticceria italiana — una vera tavola italiana che è al tempo stesso familiare e distintiva.",
+      pt:"Uma combinação exclusiva de panzerotti, pizza artesanal, focaccia, gnocchi e doces italianos — uma verdadeira mesa italiana que é, ao mesmo tempo, familiar e distinta." },
   "Why Puccettoni": { es:"Por qué Puccettoni", it:"Perché Puccettoni", pt:"Por que Puccettoni" },
   "An identity worth <em>building on</em>": { es:"Una identidad sobre la que <em>construir</em>", it:"Un'identità su cui <em>costruire</em>", pt:"Uma identidade para <em>construir junto</em>" },
   "A focused Italian food experience, strong visual appeal and a hospitality model built for the neighborhood.":
@@ -222,7 +222,7 @@ window.__PUC_DICT__ = {
   "Compact Takeout": { es:"Para Llevar Compacto", it:"Asporto Compatto", pt:"Retirada Compacta" },
   "Food Truck": { es:"Food Truck", it:"Food Truck", pt:"Food Truck" },
   "Not Sure": { es:"No estoy seguro", it:"Non sono sicuro", pt:"Não tenho certeza" },
-  "Estimated Available Investment": { es:"Inversión Disponible Estimada", it:"Investimento Disponibile Stimato", pt:"Investimento Disponível Estimado" },
+  "Available Capital Range — Optional": { es:"Rango de Capital Disponible — Opcional", it:"Fascia di Capitale Disponibile — Facoltativo", pt:"Faixa de Capital Disponível — Opcional" },
   "Restaurant or Business Experience": { es:"Experiencia en Restaurantes o Negocios", it:"Esperienza in Ristorazione o Affari", pt:"Experiência em Restaurante ou Negócios" },
   "Yes": { es:"Sí", it:"Sì", pt:"Sim" },
   "No": { es:"No", it:"No", pt:"Não" },
@@ -242,10 +242,10 @@ window.__PUC_DICT__ = {
     { es:"Este material tiene fines exclusivamente informativos y no constituye una oferta de venta ni una solicitud de compra de una franquicia. Cualquier oferta de franquicia se realizará únicamente a través de la documentación de divulgación correspondiente y de conformidad con la legislación aplicable.",
       it:"Questo materiale ha finalità puramente informative e non costituisce un'offerta di vendita né una sollecitazione all'acquisto di un franchising. Qualsiasi offerta di franchising sarà effettuata solo tramite l'apposita documentazione informativa e nel rispetto della legge applicabile.",
       pt:"Este material tem finalidade exclusivamente informativa e não constitui uma oferta de venda nem uma solicitação de compra de uma franquia. Qualquer oferta de franquia será feita somente por meio da documentação de divulgação apropriada e em conformidade com a legislação aplicável." },
-  "This website is not an offer to sell, nor a solicitation of an offer to buy, a Puccettoni franchise. An offer can only be made through the applicable franchise disclosure documents and in compliance with applicable law. Franchise availability may vary by jurisdiction. No representation of financial performance is made on this page.":
-    { es:"Este sitio web no constituye una oferta de venta ni una solicitud de oferta de compra de una franquicia Puccettoni. Una oferta solo puede realizarse a través de los documentos de divulgación de franquicia aplicables y de conformidad con la legislación vigente. La disponibilidad de franquicias puede variar según la jurisdicción. En esta página no se hace ninguna declaración sobre el rendimiento financiero.",
-      it:"Questo sito web non costituisce un'offerta di vendita né una sollecitazione di un'offerta di acquisto di un franchising Puccettoni. Un'offerta può essere fatta solo tramite gli appositi documenti informativi sul franchising e nel rispetto della legge vigente. La disponibilità dei franchising può variare a seconda della giurisdizione. In questa pagina non viene fatta alcuna dichiarazione sul rendimento finanziario.",
-      pt:"Este site não constitui uma oferta de venda nem uma solicitação de oferta de compra de uma franquia Puccettoni. Uma oferta só pode ser feita por meio dos documentos de divulgação de franquia aplicáveis e em conformidade com a legislação vigente. A disponibilidade de franquias pode variar conforme a jurisdição. Nenhuma declaração de desempenho financeiro é feita nesta página." },
+  "This website is for informational purposes only and does not constitute an offer to sell a franchise. Any franchise opportunity will be offered only through the appropriate Franchise Disclosure Document and in compliance with applicable federal and state franchise laws. No financial performance, revenue, profit or return-on-investment representation is made on this website.":
+    { es:"Este sitio web tiene únicamente fines informativos y no constituye una oferta de venta de una franquicia. Cualquier oportunidad de franquicia se ofrecerá exclusivamente a través del Documento de Divulgación de Franquicia correspondiente y de conformidad con las leyes federales y estatales de franquicias aplicables. No se realiza ninguna declaración de desempeño financiero, ingresos, ganancias o retorno de inversión en este sitio web.",
+      it:"Questo sito web ha finalità puramente informative e non costituisce un'offerta di vendita di un franchising. Qualsiasi opportunità di franchising sarà offerta esclusivamente tramite l'apposito Franchise Disclosure Document e nel rispetto delle leggi federali e statali applicabili in materia di franchising. Su questo sito non viene fornita alcuna dichiarazione di performance finanziaria, ricavi, profitti o ritorno sull'investimento.",
+      pt:"Este site tem caráter exclusivamente informativo e não constitui uma oferta de venda de franquia. Qualquer oportunidade de franquia será oferecida apenas por meio do Franchise Disclosure Document apropriado e em conformidade com as leis federais e estaduais de franquia aplicáveis. Nenhuma declaração de desempenho financeiro, receita, lucro ou retorno sobre investimento é feita neste site." },
 
   /* ---------- Franchise guide page ---------- */
   "Franchise Opportunity Guide": { es:"Guía de Oportunidad de Franquicia", it:"Guida all'Opportunità di Franchising", pt:"Guia de Oportunidade de Franquia" },
@@ -525,10 +525,10 @@ window.__PUC_DICT__ = {
       it:"Ciò che è iniziato su quattro ruote è diventato un luogo che le persone potevano chiamare la loro <span>tavola italiana.</span>",
       pt:"O que começou sobre rodas virou um lugar que as pessoas podiam chamar de sua <span>mesa italiana.</span>" },
   "The Meaning Behind Our Name": { es:"El Significado Detrás de Nuestro Nombre", it:"Il Significato Dietro il Nostro Nome", pt:"O Significado por Trás do Nosso Nome" },
-  "The name Puccettoni comes from an Italian world of affection, tenderness and human connection.":
-    { es:"El nombre Puccettoni proviene de un mundo italiano de afecto, ternura y conexión humana.",
-      it:"Il nome Puccettoni nasce da un mondo italiano fatto di affetto, tenerezza e connessione umana.",
-      pt:"O nome Puccettoni vem de um mundo italiano de afeto, ternura e conexão humana." },
+  "The name Puccettoni comes from an Italian expression of affection, tenderness and human connection.":
+    { es:"El nombre Puccettoni proviene de una expresión italiana de afecto, ternura y conexión humana.",
+      it:"Il nome Puccettoni nasce da un'espressione italiana di affetto, tenerezza e connessione umana.",
+      pt:"O nome Puccettoni vem de uma expressão italiana de afeto, ternura e conexão humana." },
   "It is inspired by the playful Italian expression “pucci pucci,” a way of evoking sweetness, closeness and love. It also carries a nostalgic reference to Italian popular culture: a figure who was often underestimated or laughed at, yet remained deeply human.":
     { es:"Está inspirado en la cariñosa expresión italiana “pucci pucci,” una forma de evocar dulzura, cercanía y amor. También lleva una referencia nostálgica a la cultura popular italiana: una figura a menudo subestimada o motivo de risa, pero que permanecía profundamente humana.",
       it:"È ispirato all'affettuosa espressione italiana “pucci pucci,” un modo di evocare dolcezza, vicinanza e amore. Porta anche un riferimento nostalgico alla cultura popolare italiana: una figura spesso sottovalutata o derisa, eppure profondamente umana.",
@@ -711,5 +711,15 @@ window.__PUC_DICT__ = {
   "Download PDF": { es:"Descargar PDF", it:"Scarica PDF", pt:"Baixar PDF" },
 
   /* ---------- Game Day sponsor ---------- */
-  "Follow the Hurricanes": { es:"Sigue a los Hurricanes", it:"Segui gli Hurricanes", pt:"Siga os Hurricanes" }
+  "Follow the Hurricanes": { es:"Sigue a los Hurricanes", it:"Segui gli Hurricanes", pt:"Siga os Hurricanes" },
+
+  /* ---------- Our Story: food truck origin (softened) ---------- */
+  "In 2023, our journey began on wheels, bringing authentic Italian flavors directly to South Florida communities.":
+    { es:"En 2023, nuestro camino comenzó sobre ruedas, llevando auténticos sabores italianos directamente a las comunidades del sur de Florida.",
+      it:"Nel 2023, il nostro viaggio è iniziato su quattro ruote, portando autentici sapori italiani direttamente alle comunità del sud della Florida.",
+      pt:"Em 2023, nossa jornada começou sobre rodas, levando autênticos sabores italianos diretamente às comunidades do sul da Flórida." },
+  "Through long days, carefully selected ingredients and direct contact with customers, the foundation of Puccettoni began to take shape.":
+    { es:"A lo largo de jornadas intensas, ingredientes cuidadosamente seleccionados y el contacto directo con los clientes, los cimientos de Puccettoni comenzaron a tomar forma.",
+      it:"Tra lunghe giornate, ingredienti selezionati con cura e il contatto diretto con i clienti, le fondamenta di Puccettoni hanno iniziato a prendere forma.",
+      pt:"Ao longo de longos dias, ingredientes cuidadosamente selecionados e o contato direto com os clientes, os alicerces da Puccettoni começaram a tomar forma." }
 };

@@ -177,7 +177,8 @@
 
   .contact{text-align:center}
   .cgrid{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:30px;font-size:15px}
-  .cgrid .it b{display:block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--basil);margin-bottom:4px}
+  .cgrid .it b{display:block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--basil);margin-bottom:0;transition:color .2s}
+  .cgrid a.it:hover b,.cgrid a.it:focus-visible b{color:var(--orange)}
 
   footer{background:var(--charcoal);color:rgba(250,247,240,.7);text-align:center;padding:46px 20px;font-size:13px}
   footer .bn{font-family:'Cinzel',serif;color:var(--cream);font-size:20px;letter-spacing:.12em;margin-bottom:8px}
@@ -396,10 +397,10 @@
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:20px"><div class="sec-eyebrow">Get in touch</div><h2>Say <em>ciao</em></h2></div>
     <div class="cgrid">
-      <div class="it"><b>Orders</b>(754) 307-4992</div>
-      <div class="it"><b>Franchise</b>Open a Puccettoni</div>
-      <div class="it"><b>Follow</b><a href="https://instagram.com/puccettonipizza" target="_blank" rel="noopener">@puccettonipizza</a></div>
-      <div class="it"><b>Website</b><a href="https://www.puccettoni.com" target="_blank" rel="noopener">www.puccettoni.com</a></div>
+      <a class="it" href="index.html"><b>Orders</b></a>
+      <a class="it" href="franchise.html"><b>Franchise</b></a>
+      <a class="it" href="https://www.instagram.com/puccettonipizza/" target="_blank" rel="noopener"><b>Follow</b></a>
+      <a class="it" href="mailto:info@puccettoni.com"><b>Email Us</b></a>
     </div>
   </div>
 </section>

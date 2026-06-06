@@ -739,5 +739,9 @@ window.__PUC_DICT__ = {
   "Selected products are sourced from Italy to protect flavor, authenticity and ingredient integrity.": { es:"Productos seleccionados que traemos de Italia para proteger el sabor, la autenticidad y la integridad de los ingredientes.", it:"Prodotti selezionati che importiamo dall'Italia per proteggere il sapore, l'autenticità e l'integrità degli ingredienti.", pt:"Produtos selecionados trazidos da Itália para proteger o sabor, a autenticidade e a integridade dos ingredientes." },
   "Everyday Value": { es:"Valor para el Día a Día", it:"Valore di Ogni Giorno", pt:"Valor no Dia a Dia" },
   "We choose better ingredients, even when they cost us more, while keeping the experience accessible.": { es:"Elegimos mejores ingredientes, incluso cuando nos cuestan más, manteniendo la experiencia accesible.", it:"Scegliamo ingredienti migliori, anche quando ci costano di più, mantenendo l'esperienza accessibile.", pt:"Escolhemos ingredientes melhores, mesmo quando custam mais para nós, mantendo a experiência acessível." },
-  "Taste the difference in every order.": { es:"Saborea la diferencia en cada pedido.", it:"Assapora la differenza in ogni ordine.", pt:"Sinta a diferença em cada pedido." }
+  "Taste the difference in every order.": { es:"Saborea la diferencia en cada pedido.", it:"Assapora la differenza in ogni ordine.", pt:"Sinta a diferença em cada pedido." },
+
+  /* ---------- Store pages: Say ciao contact labels ---------- */
+  "Orders": { es:"Pedidos", it:"Ordini", pt:"Pedidos" },
+  "Email Us": { es:"Escríbenos", it:"Scrivici", pt:"Escreva-nos" }
 };

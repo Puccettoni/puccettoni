@@ -37,7 +37,16 @@
     padding:10px 18px;border-radius:24px;white-space:nowrap;box-shadow:0 12px 26px -14px rgba(193,121,19,.8);
     transition:background .2s,transform .2s}
   .gh__cta:hover,.gh__cta:focus-visible{background:var(--orange-deep);transform:translateY(-1px);outline:none}
+  .gh__right{flex:0 0 auto;display:inline-flex;align-items:center;gap:14px}
+  .gh__lang{flex:0 0 auto;display:inline-flex;align-items:center;gap:1px;border:1px solid rgba(193,121,19,.28);
+    border-radius:11px;padding:2px;background:rgba(255,255,255,.5)}
+  .gh__lang button{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.03em;font-weight:700;color:#5b4d3c;
+    background:none;border:none;border-radius:7px;padding:6px 8px;cursor:pointer;transition:background .15s,color .15s}
+  .gh__lang button[aria-current='true']{background:var(--orange);color:#fff}
+  .gh__lang button:hover{color:var(--orange)}
+  @media(max-width:620px){.gh{flex-wrap:wrap}.gh__right{margin-left:auto}}
   @media(max-width:560px){.gh__title{display:none}.gh__brand img{height:44px}}
+  @media(max-width:430px){.gh__cta{font-size:9.5px;padding:9px 14px}.gh__lang button{padding:5px 6px}}
 
   /* flipbook stage */
   .stage{max-width:1180px;margin:0 auto;padding:clamp(20px,4vw,40px) clamp(16px,4vw,32px) 8px}
@@ -87,7 +96,15 @@
 <header class="gh">
   <a class="gh__brand" href="franchise.html" aria-label="Puccettoni franchise"><img src="Images/logo.png" alt="Puccettoni"></a>
   <span class="gh__title">Franchise Opportunity Guide</span>
-  <a class="gh__cta" href="franchise.html#franchise-interest" data-track="guide_request_info_header">Request Information</a>
+  <div class="gh__right">
+    <div class="gh__lang puc-lang" aria-label="Choose language">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="it">IT</button>
+      <button type="button" data-lang="pt">PT</button>
+    </div>
+    <a class="gh__cta" href="franchise.html#franchise-interest" data-track="guide_request_info_header">Request Information</a>
+  </div>
 </header>
 
 <main>

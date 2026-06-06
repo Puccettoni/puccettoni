@@ -708,5 +708,8 @@ window.__PUC_DICT__ = {
       pt:"Catering da Puccettoni · preparado pela equipe do nosso restaurante<span class=\"sep\">·</span><a href=\"index.html\">Voltar às unidades</a>" },
 
   /* ---------- Franchise guide flipbook ---------- */
-  "Download PDF": { es:"Descargar PDF", it:"Scarica PDF", pt:"Baixar PDF" }
+  "Download PDF": { es:"Descargar PDF", it:"Scarica PDF", pt:"Baixar PDF" },
+
+  /* ---------- Game Day sponsor ---------- */
+  "Follow the Hurricanes": { es:"Sigue a los Hurricanes", it:"Segui gli Hurricanes", pt:"Siga os Hurricanes" }
 };

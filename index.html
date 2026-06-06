@@ -386,6 +386,7 @@
     border:1.5px dashed var(--orange);display:flex;align-items:center;justify-content:center;
     color:var(--ink-soft);font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.18em;
     text-transform:uppercase;text-align:center;padding:0 24px;line-height:1.6}
+  .sponsor-modal__flyer[hidden]{display:none!important}
   .sponsor-modal__copy{max-width:480px;margin:0 auto 22px;font-size:15px;line-height:1.6;color:var(--ink-soft)}
   .sponsor-modal__cta{display:inline-flex;align-items:center;gap:10px;text-decoration:none;
     font-family:'Cinzel',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
@@ -590,7 +591,7 @@
     <div class="sponsor-modal__eyebrow">Game Day</div>
     <h2 class="sponsor-modal__title" id="sponsorModalTitle">Proudly supporting the <em>South Florida Hurricanes</em></h2>
     <img class="sponsor-modal__flyer" id="sponsorFlyer" alt="Puccettoni × South Florida Hurricanes tribute flyer" hidden>
-    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder">Puccettoni × South Florida Hurricanes</div>
+    <div class="sponsor-modal__flyer is-placeholder" id="sponsorFlyerPlaceholder" hidden>Puccettoni × South Florida Hurricanes</div>
     <p class="sponsor-modal__copy">Italian roots, South Florida pride. Come watch the game with us — kitchen open before every kickoff at both Pompano Beach and Fort Lauderdale.</p>
     <!-- South Florida Hurricanes site not live yet — revealed by JS once SPONSOR_CAMPAIGN.learnMoreUrl is set -->
     <a class="sponsor-modal__cta" id="sponsorLearnMore" href="#" target="_blank" rel="noopener" aria-label="Follow the South Florida Hurricanes on Instagram (opens in new tab)" hidden>
@@ -624,9 +625,8 @@
     if(!playBtn||!modal) return;
 
     if(SPONSOR_CAMPAIGN.flyerImage){
-      flyer.loading='lazy';
       flyer.onload=()=>{flyer.hidden=false;flyerPh.hidden=true;};
-      flyer.onerror=()=>{/* keep CSS placeholder visible */};
+      flyer.onerror=()=>{flyerPh.hidden=false;};
       flyer.src=SPONSOR_CAMPAIGN.flyerImage;
     }
     // Reveal the external-site buttons only once a URL is configured.

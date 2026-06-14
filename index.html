@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Puccettoni, Choose Your Location</title>
+<title>Puccettoni Italian Pizza &amp; Food | A Modern Italian Bottega Concept</title>
 <meta name="description" content="Puccettoni, Authentic Italian Pizza & Food. Two locations in South Florida: Pompano Beach and Fort Lauderdale. Choose yours to view the menu and order." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,9 +109,15 @@
   .wordmark span{color:var(--orange)}
   .welcome{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--basil);
     font-weight:600;margin-top:8px;margin-bottom:6px;animation:rise .9s .08s cubic-bezier(.2,.8,.2,1) both}
-  .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(21px,3.6vw,31px);color:var(--ink-soft);
-    margin-bottom:clamp(34px,5vh,48px);animation:rise .9s .16s cubic-bezier(.2,.8,.2,1) both}
-  .tagline em{color:var(--orange);font-style:italic}
+  .brand-headline{margin:2px auto 0;animation:rise .9s .16s cubic-bezier(.2,.8,.2,1) both}
+  .brand-headline__name{display:block;font-family:'Cinzel',serif;font-weight:700;
+    font-size:clamp(20px,3.4vw,30px);line-height:1.1;letter-spacing:.045em;color:var(--charcoal)}
+  .brand-headline__concept{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-weight:600;font-size:clamp(19px,3.1vw,28px);line-height:1.18;color:var(--orange);margin-top:7px}
+  .brand-subtitle{font-family:'Cinzel',serif;font-weight:600;font-size:clamp(10px,1.4vw,12px);
+    letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);
+    margin-top:14px;margin-bottom:clamp(34px,5vh,48px);
+    animation:rise .9s .2s cubic-bezier(.2,.8,.2,1) both}
   .hero-phone{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:inherit;
     margin-bottom:clamp(28px,4vh,40px);padding:8px 16px;transition:transform .25s cubic-bezier(.2,.8,.2,1);
     animation:rise .9s .2s cubic-bezier(.2,.8,.2,1) both}
@@ -505,7 +511,11 @@
   </a>
 
   <div class="welcome">Benvenuti</div>
-  <div class="tagline">Authentic Italian, <em>made fresh</em>, choose your table</div>
+  <h1 class="brand-headline">
+    <span class="brand-headline__name">Puccettoni Italian Pizza &amp; Food</span>
+    <span class="brand-headline__concept">A Modern Italian Bottega Concept</span>
+  </h1>
+  <p class="brand-subtitle">Authentic Italian Pizza &amp; Food</p>
 
   <div class="choose-label">Select your location</div>
 
